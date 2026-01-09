@@ -1,0 +1,39 @@
+
+> trc-robostim@0.0.0 build
+> docusaurus build
+
+
+ ------------------------------------------------------------------------------                                                                                                          Update available 3.8.1 → 3.9.2                                                                                                                 To upgrade Docusaurus packages with the latest version, run the                                       following command:                                        `npm i @docusaurus/core@latest @docusaurus/preset-classic@latest                @docusaurus/module-type-aliases@latest @docusaurus/types@latest                              @docusaurus/plugin-ideal-image@latest                                        @docusaurus/plugin-google-analytics@latest`                                                                                                    ------------------------------------------------------------------------------ 
+
+[INFO] [en] Creating an optimized production build...
+[ERROR] Loading of version failed for version current
+
+[ERROR] Error: Unable to build website for locale en.
+    at tryToBuildLocale (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/commands/build/build.js:78:15)
+    at async /home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/commands/build/build.js:34:9
+    at async mapAsyncSequential (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/utils/lib/jsUtils.js:21:24)
+    at async Command.build (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/commands/build/build.js:33:5)
+    at async Promise.all (index 0)
+    at async runCLI (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/commands/cli.js:56:5)
+    at async file:///home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Can't process doc metadata for doc at path path=/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Electronics/Test2.mdx in version name=current
+      at processDocMetadata (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/docs.js:151:15)
+      at async Promise.all (index 12)
+      ... 6 lines matching cause stack trace ...
+      at async /home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/server/plugins/plugins.js:140:25
+      at async loadSite (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/server/site.js:144:45) {
+    [cause]: Error: Document id "Electronics/Test2" cannot include slash.
+        at doProcessDocMetadata (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/docs.js:63:15)
+        at async processDocMetadata (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/docs.js:148:16)
+        at async Promise.all (index 12)
+        at async doLoadVersion (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/versions/loadVersion.js:43:26)
+        at async loadVersion (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/versions/loadVersion.js:83:16)
+        at async Promise.all (index 0)
+        at async Object.loadContent (/home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/plugin-content-docs/lib/index.js:152:33)
+        at async /home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/server/plugins/plugins.js:39:23
+        at async Promise.all (index 0)
+        at async /home/octave/Documentation-TRC2k25-TEAM-ROBOSTIM/node_modules/@docusaurus/core/lib/server/plugins/plugins.js:140:25
+  }
+}
+[INFO] Docusaurus version: 3.8.1
+Node version: v20.19.6

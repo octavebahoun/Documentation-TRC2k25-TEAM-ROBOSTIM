@@ -1,12 +1,11 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: template-mecanique
 title: Template Documentation Mécanique
 sidebar_label: Template Mécanique
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 # ⚙️ Template de Documentation Technique - Pôle Mécanique
 
@@ -17,13 +16,9 @@ sidebar_label: Template Mécanique
 ## 📝 Structure du Document
 
 ### 1. Imports nécessaires (en haut du fichier)
-```jsx
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-```
 
 ### 2. Frontmatter (métadonnées)
+
 ```markdown
 ---
 id: nom-du-test
@@ -37,12 +32,7 @@ sidebar_label: Nom court
 ## 📖 Exemple Complet de Documentation
 
 ```jsx
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
 
----
-id: test-assemblage-chassis
 title: Test Assemblage Chassis Robot
 sidebar_label: Test Chassis
 ---
@@ -96,12 +86,14 @@ Valider la conception, l'assemblage et la robustesse du chassis principal du rob
 
 **Fichiers de conception** :
 ```
+
 chassis/
 ├── chassis_main.step
 ├── chassis_main.f3d
 ├── assembly.f3d
 └── drawings.pdf
-```
+
+````
 
 **Spécifications de conception** :
 - **Matériau** : PLA/PETG/ABS
@@ -121,9 +113,10 @@ INFILL_DENSITY=30%
 PRINT_TEMPERATURE=210°C
 BED_TEMPERATURE=60°C
 PRINT_SPEED=50mm/s
-```
+````
 
 **Checklist avant impression** :
+
 - [ ] Nettoyage du plateau
 - [ ] Calibration de la hauteur
 - [ ] Vérification du filament
@@ -132,6 +125,7 @@ PRINT_SPEED=50mm/s
 ### Étape 3 : Assemblage
 
 **Ordre d'assemblage** :
+
 1. Montage de la base
 2. Fixation des entretoises
 3. Installation des composants électroniques
@@ -139,6 +133,7 @@ PRINT_SPEED=50mm/s
 5. Vérification de l'alignement
 
 **Schéma d'assemblage** :
+
 ```
 [Base] ──┐
          ├── [Entretoises] ──┐
@@ -149,6 +144,7 @@ PRINT_SPEED=50mm/s
 ### Étape 4 : Tests de résistance
 
 **Test de charge statique** :
+
 ```python
 # Simulation de test de charge
 import numpy as np
@@ -171,30 +167,42 @@ plt.show()
 
 ### Spécifications techniques
 
-<Table headers={["Propriété", "Valeur cible", "Valeur mesurée", "Statut"]}
+<Table
+  headers={["Propriété", "Valeur cible", "Valeur mesurée", "Statut"]}
   data={[
     ["Poids total", "<2kg", "1.8kg", "✅"],
     ["Résistance charge", ">20kg", "25kg", "✅"],
     ["Déflexion max", "<2mm", "1.5mm", "✅"],
     ["Rigidité", ">5 GPa", "6.2 GPa", "✅"],
-    ["Temps d'impression", "<12h", "10.5h", "✅"]
+    ["Temps d'impression", "<12h", "10.5h", "✅"],
   ]}
 />
 
 ### Tests de durabilité
 
-<FeatureGrid items={[
-  {icon:"🔄", title:"Cycles de charge", description:"1000 cycles sans défaillance"},
-  {icon:"🌡️", title:"Résistance thermique", description:"-10°C à +60°C"},
-  {icon:"💨", title:"Résistance vibrations", description:"5-100Hz, 2G max"},
-  {icon:"⚡", title:"Résistance chocs", description:"50G pendant 1ms"}
-]} />
+<FeatureGrid
+  items={[
+    {
+      icon: "🔄",
+      title: "Cycles de charge",
+      description: "1000 cycles sans défaillance",
+    },
+    { icon: "🌡️", title: "Résistance thermique", description: "-10°C à +60°C" },
+    {
+      icon: "💨",
+      title: "Résistance vibrations",
+      description: "5-100Hz, 2G max",
+    },
+    { icon: "⚡", title: "Résistance chocs", description: "50G pendant 1ms" },
+  ]}
+/>
 
 ## 🔍 Validation des résultats
 
 ### Analyse dimensionnelle
 
 **Vérification des tolérances** :
+
 ```python
 # Script de vérification dimensionnelle
 import numpy as np
@@ -224,6 +232,7 @@ for dim in theoretical:
 ### Tests de performance
 
 **Graphique de performance** :
+
 ```python
 import matplotlib.pyplot as plt
 
@@ -253,14 +262,17 @@ plt.show()
 ### Problèmes courants
 
 #### 1. Déformation lors de l'impression
+
 - Vérifier la température du plateau
 - Ajuster la vitesse d'impression
 - Utiliser des supports si nécessaire
 - Vérifier le refroidissement
 
 #### 2. Assemblage difficile
+
 ```markdown
 **Solutions** :
+
 - Vérifier les tolérances de conception
 - Utiliser des outils de calibrage
 - Ajuster les paramètres d'impression
@@ -268,6 +280,7 @@ plt.show()
 ```
 
 #### 3. Résistance insuffisante
+
 - Augmenter l'épaisseur des parois
 - Modifier le motif de remplissage
 - Changer de matériau (PETG au lieu de PLA)
@@ -284,6 +297,7 @@ plt.show()
 ## 📝 Rapport de test
 
 ### Résumé des performances
+
 - **Durée de conception** : [X] heures
 - **Temps d'impression** : [X] heures
 - **Temps d'assemblage** : [X] heures
@@ -291,6 +305,7 @@ plt.show()
 - **Résistance validée** : [X] kg
 
 ### Recommandations
+
 1. **Optimisation** : Réduire le poids si possible
 2. **Amélioration** : Tester d'autres matériaux
 3. **Maintenance** : Prévoir des pièces de rechange
@@ -299,6 +314,7 @@ plt.show()
 ## 🔄 Tests de suivi
 
 ### Scénarios de test
+
 - Test de résistance statique
 - Test de résistance dynamique
 - Test de vibrations
@@ -306,6 +322,7 @@ plt.show()
 - Test de vieillissement
 
 ### Métriques à surveiller
+
 - Déformation sous charge
 - Résistance à la fatigue
 - Stabilité dimensionnelle
@@ -326,42 +343,48 @@ Pour ajouter des images, placez-les dans `static/img/` :
 ## 🔗 Liens utiles
 
 - [Fusion 360 Documentation](https://help.autodesk.com/view/fusion360/)
-- [Guide d'impression 3D](/docs/Mechanics/3d-printing-guide)
-- [Calculs de résistance](/docs/Mechanics/strength-calculations)
+- [Guide d'impression 3D](/docs/Mechanics/Overview)
+- [Calculs de résistance](/docs/Mechanics/Overview)
 
 ---
 
 ## 💡 Composants React disponibles
 
 ### InfoCard
+
 ```jsx
 <InfoCard type="info" title="Titre" icon="🔧">
-Contenu de la carte d'information
+  Contenu de la carte d'information
 </InfoCard>
 ```
 
 Types disponibles : `info`, `warning`, `success`, `danger`
 
 ### FeatureGrid
+
 ```jsx
-<FeatureGrid items={[
-  {icon:"🔧", title:"Titre 1", description:"Description 1"},
-  {icon:"⚙️", title:"Titre 2", description:"Description 2"}
-]} />
+<FeatureGrid
+  items={[
+    { icon: "🔧", title: "Titre 1", description: "Description 1" },
+    { icon: "⚙️", title: "Titre 2", description: "Description 2" },
+  ]}
+/>
 ```
 
 ### Table
+
 ```jsx
-<Table headers={["Propriété", "Valeur"]}
+<Table
+  headers={["Propriété", "Valeur"]}
   data={[
     ["Poids", "1.8kg"],
-    ["Résistance", "25kg"]
+    ["Résistance", "25kg"],
   ]}
 />
 ```
 
 ---
 
-*Template créé le : [Date]*
-*Dernière mise à jour : [Date]*
-*Statut : ✅ Template prêt à l'emploi*
+_Template créé le : [Date]_
+_Dernière mise à jour : [Date]_
+_Statut : ✅ Template prêt à l'emploi_

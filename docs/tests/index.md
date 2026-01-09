@@ -5,37 +5,42 @@ Cette section contient tous les tests et validations effectués par l'équipe TR
 ## 🔍 Navigation par catégorie
 
 ### 🤖 Tests ROS (Robot Operating System)
-- **[Navigation autonome](ros/)** - Tests de navigation et de planification de trajectoire
-- **[Perception](ros/)** - Tests de capteurs et de traitement d'images
-- **[Contrôle](ros/)** - Tests de contrôle et de commande des robots
+
+- **[Navigation autonome](../ROS/Overview.mdx)** - Tests de navigation et de planification de trajectoire
+- **[Perception](../ROS/Overview.mdx)** - Tests de capteurs et de traitement d'images
+- **[Contrôle](../ROS/Overview.mdx)** - Tests de contrôle et de commande des robots
 
 ### 🧠 Tests IA (Intelligence Artificielle)
-- **[Machine Learning](ai/)** - Tests d'algorithmes d'apprentissage automatique
-- **[Computer Vision](ai/)** - Tests de vision par ordinateur
-- **[NLP](ai/)** - Tests de traitement du langage naturel
+
+- **[Machine Learning](../IA/Overview.mdx)** - Tests d'algorithmes d'apprentissage automatique
+- **[Computer Vision](../IA/Overview.mdx)** - Tests de vision par ordinateur
+- **[NLP](../IA/Overview.mdx)** - Tests de traitement du langage naturel
 
 ### ⚡ Tests Électronique
-- **[Circuits](electronics/)** - Tests de conception et de validation de circuits
-- **[Capteurs](electronics/)** - Tests de capteurs et d'acquisition de données
-- **[Communication](electronics/)** - Tests de protocoles de communication
+
+- **[Circuits](../Electronics/Overview.mdx)** - Tests de conception et de validation de circuits
+- **[Capteurs](../Electronics/Overview.mdx)** - Tests de capteurs et d'acquisition de données
+- **[Communication](../Electronics/Overview.mdx)** - Tests de protocoles de communication
 
 ### 🔧 Tests Mécanique
-- **[Résistance](mechanical/)** - Tests de résistance et de durabilité
-- **[Précision](mechanical/)** - Tests de précision et de répétabilité
-- **[Durabilité](mechanical/)** - Tests de vieillissement et de fatigue
+
+- **[Résistance](../Mechanics/Overview.mdx)** - Tests de résistance et de durabilité
+- **[Précision](../Mechanics/Overview.mdx)** - Tests de précision et de répétabilité
+- **[Durabilité](../Mechanics/Overview.mdx)** - Tests de vieillissement et de fatigue
 
 ## 📊 Statistiques des tests
 
-| Catégorie | Nombre de tests | Dernière mise à jour |
-|-----------|------------------|---------------------|
-| ROS | 0 | - |
-| IA | 0 | - |
-| Électronique | 0 | - |
-| Mécanique | 0 | - |
+| Catégorie    | Nombre de tests | Dernière mise à jour |
+| ------------ | --------------- | -------------------- |
+| ROS          | 0               | -                    |
+| IA           | 0               | -                    |
+| Électronique | 0               | -                    |
+| Mécanique    | 0               | -                    |
 
 ## 🚀 Créer un nouveau test
 
 ### Via la ligne de commande
+
 ```bash
 # Test ROS
 npm run create-test ros "Nom du test" "Auteur"
@@ -51,6 +56,7 @@ npm run create-test mechanical "Nom du test" "Auteur"
 ```
 
 ### Exemples d'utilisation
+
 ```bash
 # Créer un test de navigation ROS
 npm run create-test ros "Test de navigation en environnement dynamique" "Giscard"
@@ -102,4 +108,5 @@ Chaque test suit un template standardisé :
 - **Partage** - Faciliter la collaboration entre équipes
 
 ---
-*Section mise à jour automatiquement lors de l'ajout de nouveaux tests*
+
+_Section mise à jour automatiquement lors de l'ajout de nouveaux tests_

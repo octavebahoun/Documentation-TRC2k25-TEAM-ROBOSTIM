@@ -1,53 +1,83 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: Electronics/Test1
-title: 'Test 1 — Gyroscope et Accéléromètre'
+id: electronics-test1
+slug: Test1
+title: "Test 1 — Gyroscope et Accéléromètre"
 sidebar_label: Test 1
 ---
 
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
+
 ## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
 
-<InfoCard type="info" title="Aperçu du test" icon="🧭">
-Détection de l'orientation dans l'espace et de la vitesse de déplacement de la main à l'aide d'un capteur gyroscope et accéléromètre, avec affichage sur écran LCD.
+<InfoCard type="info" title="Objectif du test" icon="🧭">
+  Identifier puis exploiter les valeurs d'un capteur gyroscope et accéléromètre
+  (MPU6050) pour détecter l'orientation dans l'espace et la vitesse de
+  mouvement.
 </InfoCard>
 
-### Objectif
+### 🎯 Objectifs techniques
 
-Ce test vise à évaluer votre capacité à identifier puis exploiter les valeurs d'un capteur gyroscope et accéléromètre pour donner l'orientation dans l'espace ainsi que la vitesse de votre main.
+- **Identification** : Choisir un capteur I2C (ex: MPU6050) et expliquer son fonctionnement.
+- **Réalisation** : Détecter 6 directions (Haut, Bas, Gauche, Droite, Avant, Arrière).
+- **Affichage** : Indiquer le sens de déplacement et l'accélération sur un écran LCD.
+- **Conception** : Créer un schéma électronique sous KiCad et fabriquer une alimentation stabilisée.
 
-### Matériel requis
+### 🛠️ Matériel requis
 
-<Table headers={["Composant", "Référence", "Rôle"]}
-  data={[
-    ["MPU6050", "GY-521", "Capteur gyroscope/accéléromètre 6 axes"],
-    ["Arduino Nano", "ATmega328P", "Microcontrôleur"],
-    ["LCD 16x2", "I2C", "Affichage des données"],
-    ["Régulateurs", "LM7805, AMS1117", "Alimentation sécurisée"],
-    ["Résistances", "4.7kΩ", "Pull-up I2C"]
+<FeatureGrid
+  items={[
+    {
+      icon: "📟",
+      title: "MPU6050",
+      description: "Gyroscope & Accéléromètre 6 axes",
+    },
+    { icon: "♾️", title: "Arduino", description: "Nano ou Uno (ATmega328P)" },
+    { icon: "🖥️", title: "LCD 16x2", description: "Interface I2C (PCF8574)" },
+    {
+      icon: "⚡",
+      title: "Alimentation",
+      description: "Régulateurs LM7805 / AMS1117",
+    },
   ]}
 />
 
-### Livrables attendus
+### 📊 Procédure de test
 
-<FeatureGrid items={[
-  {icon:"🔍", title:"Identification", description:"Capteur gyro/accéléro avec I2C"},
-  {icon:"📐", title:"Schéma KICAD", description:"Schéma électronique complet"},
-  {icon:"💻", title:"Code Arduino", description:"Code détaillé avec commentaires"},
-  {icon:"🔋", title:"Alimentation", description:"Alimentation électrique personnalisée"},
-  {icon:"📹", title:"Vidéo", description:"Démonstration avec équipe visible"}
-]} />
+#### Code Arduino (Extrait)
 
-### Critères de notation (100 points)
+```cpp
+#include <Wire.h>
+#include <MPU6050.h>
+#include <LiquidCrystal_I2C.h>
 
-1. **Circuiterie (25 points)** : Schéma, alimentation sécurisée, gestion câbles
-2. **Code (25 points)** : Compréhension, optimisation, lisibilité
-3. **Fonctionnement (30 points)** : Détection précise des 6 directions, affichage LCD
-4. **Documentation (10 points)** : Structure claire et complète
-5. **Présentation (10 points)** : Slides, maîtrise, réponses aux questions
+void loop() {
+  mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+
+  // Détection de la direction dominante
+  if (absX > absY && absX > absZ) {
+    if (accelX > THRESHOLD) direction = "DROITE";
+    else direction = "GAUCHE";
+  }
+  // ... affichage sur LCD
+}
+```
+
+### 📈 Grille de notation (100 pts)
+
+<Table
+  headers={["Critère", "Points", "Focus"]}
+  data={[
+    ["Circuiterie", "25", "Sécurité alimentation & gestion câbles"],
+    ["Code", "25", "Lisibilité & commentaires"],
+    ["Fonctionnement", "30", "Précision de détection & stabilité"],
+    ["Documentation", "10", "Organisation GitHub & clarté"],
+    ["Présentation", "10", "Maîtrise du sujet & démo"],
+  ]}
+/>
 
 ---
 
-*Pour plus de détails, consultez la version complète en [Markdown](./Test1.md)*
+_Test réalisé le : Octobre 2025_
+_Responsable : Pôle Électronique_

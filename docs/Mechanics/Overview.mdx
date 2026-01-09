@@ -1,23 +1,62 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: Mechanics/Overview
-title: 'Aperçu — Pôle Mécanique'
+id: mechanics-overview
+slug: Overview
+title: "Aperçu — Pôle Mécanique"
 sidebar_label: Overview
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
 
 <InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
-Structure pour les tests mécaniques: châssis, transmission, intégration mécatronique.
+  Conception 3D, fabrication et assemblage de la structure physique du robot
+  pour garantir robustesse et agilité.
 </InfoCard>
 
-### Sommaire
-<Table headers={["Section", "Description"]}
-  data={[["Test 1", "Afficheur 7 segments mécanique"],["Test 2", "Châssis et Transmission"],["Test 3", "Intégration Mécatronique"]]} />
+### 🎯 Objectifs du pôle
 
-<FeatureGrid items={[{icon:"📐", title:"CAO", description:"Conception & tolérances"},{icon:"⚙️", title:"Cinématique", description:"Mouvements & efforts"},{icon:"🧱", title:"Matériaux", description:"PLA/PETG/Alu"}]} />
+- **Conception 3D** : Modélisation CAO et simulation
+- **Fabrication** : Impression 3D (FDM/SLA), usinage et découpe laser
+- **Assemblage** : Montage précis et intégration mécatronique
+- **Tests de résistance** : Validation des châssis et transmissions
+- **Optimisation** : Allègement et durabilité structurelle
 
+### 📋 Sommaire des tests
 
+<Table
+  headers={["Section", "Description"]}
+  data={[
+    ["Test 1", "Afficheur 7 segments mécanique"],
+    ["Test 2", "Châssis et Transmission"],
+    ["Test 3", "Intégration Mécatronique"],
+  ]}
+/>
+
+<FeatureGrid
+  items={[
+    { icon: "📐", title: "CAO", description: "Conception & tolérances" },
+    { icon: "⚙️", title: "Cinématique", description: "Mouvements & efforts" },
+    { icon: "🧱", title: "Matériaux", description: "PLA/PETG/Alu" },
+  ]}
+/>
+
+### 🛠️ Outils utilisés
+
+- **CAO** : SolidWorks, Fusion 360, CATIA
+- **Fabrication** : Imprimantes 3D, CNC, Tour, Fraiseuse
+- **Analyse** : Simulation FEA, Analyse dynamique
+
+### 📊 Métriques de performance
+
+| Test   | Objectif    | Critère de réussite       | Statut |
+| ------ | ----------- | ------------------------- | ------ |
+| Test 1 | Simulation  | &lt;5% écart avec réalité | ✅     |
+| Test 2 | Prototypage | ±0.1mm précision          | ✅     |
+| Test 3 | Assemblage  | 100% compatibilité        | 🔄     |
+
+---
+
+_Dernière mise à jour : Octobre 2025_

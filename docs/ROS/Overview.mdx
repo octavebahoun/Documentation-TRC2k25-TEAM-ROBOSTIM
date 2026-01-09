@@ -1,23 +1,62 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: ROS/Overview
-title: 'Aperçu — Pôle ROS 2'
+id: ros-overview
+slug: Overview
+title: "Aperçu — Pôle ROS 2"
 sidebar_label: Overview
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
 
 <InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
-Structure pour les tests ROS 2: topics, nœuds, navigation et perception.
+  Architecture logicielle distribuée utilisant ROS 2 pour la navigation, la
+  perception et le contrôle temps-réel du robot.
 </InfoCard>
 
-### Sommaire
-<Table headers={["Section", "Description"]}
-  data={[["Test 1", "Capteurs et Topics"],["Test 2", "Navigation de Base"],["Test 3", "Perception et Fusion"]]} />
+### 🎯 Objectifs du pôle
 
-<FeatureGrid items={[{icon:"📡", title:"TF", description:"Chaînes de repères"},{icon:"🧭", title:"Nav2", description:"Odométrie & planification"},{icon:"🧮", title:"Fusion", description:"EKF/UKF"}]} />
+- **Architecture logicielle** : Conception de systèmes de nœuds distribués
+- **Navigation autonome** : SLAM, planification de trajectoire et localisation
+- **Perception** : Fusion de données (Lidar, Caméra, IMU)
+- **Contrôle** : Algorithmes de contrôle PID et commande de vol
+- **Intégration** : Communication transparente via DDS
 
+### 📋 Sommaire des tests
 
+<Table
+  headers={["Section", "Description"]}
+  data={[
+    ["Test 1", "Capteurs et Topics"],
+    ["Test 2", "Navigation de Base"],
+    ["Test 3", "Perception et Fusion"],
+  ]}
+/>
+
+<FeatureGrid
+  items={[
+    { icon: "📡", title: "TF", description: "Chaînes de repères" },
+    { icon: "🧭", title: "Nav2", description: "Odométrie & planification" },
+    { icon: "🧮", title: "Fusion", description: "EKF/UKF" },
+  ]}
+/>
+
+### 🛠️ Outils utilisés
+
+- **Distribution** : ROS 2 Humble / Iron
+- **Simulation** : Gazebo Ignition, RViz 2, Webots
+- **Outils** : Docker, Colcon, Rosdep, Foxglove
+
+### 📊 Métriques de performance
+
+| Test   | Objectif      | Critère de réussite | Statut |
+| ------ | ------------- | ------------------- | ------ |
+| Test 1 | Installation  | 100% fonctionnel    | ✅     |
+| Test 2 | Communication | &lt;10ms latence    | ✅     |
+| Test 3 | Navigation    | >95% précision      | 🔄     |
+
+---
+
+_Dernière mise à jour : Octobre 2025_

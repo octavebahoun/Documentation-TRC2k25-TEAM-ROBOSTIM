@@ -1,3 +1,4 @@
+
 # 🔌 Template de Documentation Technique - Pôle Électronique
 
 > **📋 Guide d'utilisation** : Ce template vous aide à créer une documentation technique complète pour les tests et développements électroniques. Copiez ce fichier et remplissez les sections selon vos besoins.
@@ -7,6 +8,7 @@
 ## 📝 Structure du Document
 
 ### 1. En-tête avec Métadonnées (Frontmatter)
+
 ```markdown
 ---
 id: nom-du-test
@@ -16,6 +18,7 @@ sidebar_label: Nom court
 ```
 
 ### 2. Titre Principal avec Badge
+
 ```markdown
 # 🔌 Nom du Test - Description
 
@@ -26,7 +29,7 @@ sidebar_label: Nom court
 
 ## 📖 Exemple Complet de Documentation
 
-```markdown
+````markdown
 ---
 id: test-capteur-distance
 title: Test Capteur de Distance HC-SR04
@@ -53,6 +56,7 @@ Valider le fonctionnement et la précision du capteur de distance HC-SR04 dans d
 Listez les critères qui déterminent si le test est réussi.
 
 **Exemple** :
+
 - **Précision** : >95% de précision sur les mesures
 - **Portée** : Détection de 2cm à 400cm
 - **Stabilité** : <2% de variation sur 1 heure
@@ -61,12 +65,14 @@ Listez les critères qui déterminent si le test est réussi.
 ## 🛠️ Matériel requis
 
 ### Composants électroniques
+
 - **Capteur** : HC-SR04 (Ultrason)
 - **Microcontrôleur** : Arduino Uno / ESP32
 - **Résistances** : 10kΩ, 4.7kΩ
 - **Alimentation** : 5V/3.3V stabilisée
 
 ### Équipement de test
+
 - **Oscilloscope** : Tektronix TBS1000
 - **Multimètre** : Fluke 87V
 - **Breadboard** : Prototypage
@@ -87,6 +93,7 @@ void setup() {
   pinMode(ECHO_PIN, INPUT);
 }
 ```
+````
 
 ### Étape 2 : Code de test
 
@@ -97,7 +104,7 @@ float measureDistance() {
   digitalWrite(TRIG_PIN, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-  
+
   long duration = pulseIn(ECHO_PIN, HIGH);
   float distance = duration * 0.034 / 2;
   return distance;
@@ -115,6 +122,7 @@ void loop() {
 ### Étape 3 : Schéma de câblage
 
 **Schéma ASCII** :
+
 ```
 Arduino          HC-SR04
 --------         -------
@@ -127,6 +135,7 @@ Pin 3    ----->  ECHO
 ## 📈 Résultats attendus
 
 ### Spécifications techniques
+
 - **Portée** : 2cm à 400cm
 - **Précision** : ±3mm
 - **Fréquence** : 40Hz max
@@ -148,6 +157,7 @@ Pin 3    ----->  ECHO
 ### Graphiques de performance
 
 **Exemple de code Python pour visualisation** :
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -170,16 +180,17 @@ plt.show()
 ### Problèmes courants
 
 #### 1. Capteur ne répond pas
+
 ```cpp
 // Vérification du câblage
 void testWiring() {
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
-  
+
   digitalWrite(TRIG_PIN, HIGH);
   delay(100);
   digitalWrite(TRIG_PIN, LOW);
-  
+
   if (digitalRead(ECHO_PIN) == HIGH) {
     Serial.println("✅ Câblage correct");
   } else {
@@ -189,12 +200,14 @@ void testWiring() {
 ```
 
 #### 2. Mesures instables
+
 - Vérifier l'alimentation (5V stable)
 - Contrôler les connexions
 - Éviter les interférences électromagnétiques
 - Vérifier la surface de réflexion
 
 #### 3. Portée limitée
+
 - Vérifier l'angle d'incidence
 - S'assurer que la surface est réfléchissante
 - Contrôler la température ambiante
@@ -202,12 +215,14 @@ void testWiring() {
 ## 📝 Rapport de test
 
 ### Résumé des performances
+
 - **Durée du test** : [X] heures
 - **Nombre de mesures** : [X]
 - **Taux de réussite** : [X]%
 - **Précision moyenne** : [X]%
 
 ### Recommandations
+
 1. **Calibration** : Effectuer une calibration mensuelle
 2. **Maintenance** : Nettoyer régulièrement le capteur
 3. **Monitoring** : Surveiller la dérive des mesures
@@ -216,11 +231,13 @@ void testWiring() {
 ## 🔄 Tests de suivi
 
 ### Test de robustesse
+
 - **Température** : -10°C à +60°C
 - **Humidité** : 20% à 80% HR
 - **Vibrations** : 5Hz à 100Hz
 
 ### Test de vieillissement
+
 - **Durée** : 1000 heures
 - **Conditions** : Température ambiante
 - **Monitoring** : En continu
@@ -236,6 +253,7 @@ Pour ajouter des images, placez-les dans le dossier `static/img/` et utilisez :
 ```
 
 **Exemple** :
+
 ```markdown
 ![Schéma de câblage HC-SR04](/img/cablage-hc-sr04.jpg)
 ![Résultats de test](/img/graphique-distance.png)
@@ -249,6 +267,6 @@ Pour ajouter des images, placez-les dans le dossier `static/img/` et utilisez :
 
 ---
 
-*Template créé le : [Date]*
-*Dernière mise à jour : [Date]*
-*Statut : ✅ Template prêt à l'emploi*
+_Template créé le : [Date]_
+_Dernière mise à jour : [Date]_
+_Statut : ✅ Template prêt à l'emploi_

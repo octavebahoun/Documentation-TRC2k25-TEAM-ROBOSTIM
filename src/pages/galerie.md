@@ -1,5 +1,6 @@
 import InfoCard from '@site/src/components/InfoCard';
 import FeatureGrid from '@site/src/components/FeatureGrid';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export const title = 'Galerie';
 export const description = 'Découvrez notre équipe en action et nos réalisations dans la galerie TRC - Team ROBOSTIM';
@@ -34,7 +35,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/team-group.jpg" 
+      src={useBaseUrl('/img/gallery/team-group.jpg')} 
       alt="Photo de groupe de l'équipe TRC"
       style={{
         width: '100%',
@@ -74,7 +75,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/team-working.jpg" 
+      src={useBaseUrl('/img/gallery/team-meeting.jpg')} 
       alt="Équipe au travail"
       style={{
         width: '100%',
@@ -114,7 +115,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/team-meeting.jpg" 
+      src={useBaseUrl('/img/gallery/team-meeting.jpg')} 
       alt="Réunion d'équipe"
       style={{
         width: '100%',
@@ -163,7 +164,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/robot-prototype.jpg" 
+      src={useBaseUrl('/img/trc2.png')} 
       alt="Prototype de robot"
       style={{
         width: '100%',
@@ -203,7 +204,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/electronics-lab.jpg" 
+      src={useBaseUrl('/img/team-electronique.jpg')} 
       alt="Laboratoire électronique"
       style={{
         width: '100%',
@@ -243,7 +244,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/mechanical-workshop.jpg" 
+      src={useBaseUrl('/img/team-mecanique.jpg')} 
       alt="Atelier mécanique"
       style={{
         width: '100%',
@@ -283,7 +284,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/software-development.jpg" 
+      src={useBaseUrl('/img/team-it.jpg')} 
       alt="Développement logiciel"
       style={{
         width: '100%',
@@ -332,7 +333,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/competition-prep.jpg" 
+      src={useBaseUrl('/img/trc-competition.jpg')} 
       alt="Préparation compétition"
       style={{
         width: '100%',
@@ -372,7 +373,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/robot-testing.jpg" 
+      src={useBaseUrl('/img/trc1.png')} 
       alt="Tests du robot"
       style={{
         width: '100%',
@@ -412,7 +413,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/team-celebration.jpg" 
+      src={useBaseUrl('/img/gallery/team-group.jpg')} 
       alt="Célébration d'équipe"
       style={{
         width: '100%',
@@ -461,7 +462,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/university-campus.jpg" 
+      src={useBaseUrl('/img/university-campus.jpg')} 
       alt="Campus universitaire"
       style={{
         width: '100%',
@@ -501,7 +502,7 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     e.target.style.transform = 'translateY(0)';
   }}>
     <img 
-      src="/img/gallery/lab-session.jpg" 
+      src={useBaseUrl('/img/gallery/team-meeting.jpg')} 
       alt="Session de laboratoire"
       style={{
         width: '100%',
@@ -527,6 +528,5 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
     </div>
   </div>
 </div>
-
 
 ---

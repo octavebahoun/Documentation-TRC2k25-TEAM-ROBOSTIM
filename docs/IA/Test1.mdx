@@ -1,82 +1,92 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: IA/Test1
-title: "Test 1 — Système de Classe de Gestion d'un Robot"
+id: ia-test1
+slug: Test1
+title: "Test 1 — Classification d'images"
 sidebar_label: Test 1
 ---
 
-## Présentation <span className="badge-sticker badge-it">💻 IT</span>
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
-<InfoCard type="info" title="Aperçu du test" icon="🤖">
-Réalisation d'un système de classe de gestion d'un Robot. Conception orientée objet pour gérer les différents composants et fonctionnalités d'un robot de manière modulaire et maintenable.
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Objectif du test" icon="📷">
+  Développer et tester un modèle de classification d'images pour la
+  reconnaissance d'objets dans notre environnement robotique.
 </InfoCard>
 
-### Objectif
+### 🎯 Critères de réussite
 
-Ce test évalue votre capacité à concevoir et implémenter une architecture logicielle robuste pour la gestion d'un robot. Vous devrez créer un système de classes permettant de gérer les différents sous-systèmes du robot (moteurs, capteurs, actionneurs, etc.).
+- **Précision** : >95% sur le dataset de test
+- **Temps d'inférence** : &lt;100ms par image
+- **Robustesse** : >90% sur données bruitées
+- **Généralisation** : >85% sur données non vues
 
-### Concepts clés
+### 🛠️ Environnement technique
 
-<FeatureGrid items={[
-  {icon:"🏗️", title:"Architecture", description:"Conception modulaire et extensible"},
-  {icon:"🔧", title:"Classes", description:"Encapsulation des fonctionnalités"},
-  {icon:"🔌", title:"Interfaces", description:"Communication entre modules"},
-  {icon:"📦", title:"Héritage", description:"Réutilisation de code"},
-  {icon:"🛡️", title:"Robustesse", description:"Gestion d'erreurs et exceptions"}
-]} />
-
-### Structure de classes attendue
-
-<Table headers={["Classe", "Responsabilité", "Méthodes principales"]}
-  data={[
-    ["Robot", "Classe principale", "init(), start(), stop(), update()"],
-    ["MotorController", "Gestion moteurs", "setSpeed(), getSpeed(), stop()"],
-    ["SensorManager", "Gestion capteurs", "readSensor(), calibrate()"],
-    ["ActuatorController", "Gestion actionneurs", "activate(), deactivate()"],
-    ["CommunicationHandler", "Communication", "send(), receive(), connect()"]
+<FeatureGrid
+  items={[
+    { icon: "🔥", title: "TensorFlow", description: "v2.13.0" },
+    { icon: "🧠", title: "Keras", description: "v2.13.1" },
+    { icon: "👁️", title: "OpenCV", description: "v4.8.0" },
+    { icon: "📊", title: "NumPy", description: "v1.24.3" },
   ]}
 />
 
-### Langages recommandés
+### 📊 Procédure de test
 
-- **Python** : Orienté objet, facile à maintenir
-- **C++** : Performance, contrôle fin
-- **Java** : Architecture robuste, portabilité
-
-### Critères de notation (100 points)
-
-1. **Architecture (30 points)** : Design patterns, modularité, extensibilité
-2. **Implémentation (35 points)** : Code fonctionnel, gestion d'erreurs, robustesse
-3. **Documentation (20 points)** : Commentaires, UML, explications
-4. **Tests (10 points)** : Tests unitaires, validation
-5. **Présentation (5 points)** : Démonstration, réponses aux questions
-
-### Exemple de structure
+#### Étape 1 : Préparation des données
 
 ```python
-class Robot:
-    def __init__(self):
-        self.motors = MotorController()
-        self.sensors = SensorManager()
-        self.actuators = ActuatorController()
-        self.communication = CommunicationHandler()
-    
-    def start(self):
-        """Démarre tous les sous-systèmes"""
-        self.motors.initialize()
-        self.sensors.calibrate()
-        # ...
-    
-    def update(self):
-        """Boucle principale de mise à jour"""
-        sensor_data = self.sensors.readAll()
-        # Traitement des données
-        # Actions
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import cv2
+
+# Configuration des paramètres
+IMG_SIZE = 224
+BATCH_SIZE = 32
+
+def load_dataset(data_path):
+    # Chargement et préprocessing des images
+    pass
 ```
+
+#### Étape 2 : Architecture du modèle (MobileNetV2)
+
+```python
+def create_model(input_shape, num_classes):
+    base_model = keras.applications.MobileNetV2(
+        input_shape=input_shape,
+        include_top=False,
+        weights='imagenet'
+    )
+    base_model.trainable = False
+
+    model = keras.Sequential([
+        base_model,
+        keras.layers.GlobalAveragePooling2D(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(num_classes, activation='softmax')
+    ])
+    return model
+```
+
+### 📈 Résultats attendus
+
+<Table
+  headers={["Métrique", "Objectif", "Statut"]}
+  data={[
+    ["Accuracy", ">95%", "✅"],
+    ["Precision", ">94%", "✅"],
+    ["Recall", ">93%", "✅"],
+    ["F1-Score", ">94%", "✅"],
+  ]}
+/>
 
 ---
 
-*Pour plus de détails, consultez la documentation complète.*
+_Test réalisé le : Octobre 2025_
+_Responsable : Pôle IA_

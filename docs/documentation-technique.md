@@ -5,6 +5,7 @@ Ce guide vous explique comment créer et organiser la documentation technique po
 ## 📁 Structure de la documentation
 
 ### Organisation des dossiers
+
 ```
 docs/
 ├── tests/
@@ -36,20 +37,21 @@ docs/
 ## 🧪 Template pour les tests
 
 ### Template de base pour un test
+
 Créez le fichier `docs/templates/test-template.md` :
 
-```markdown
+````markdown
 # 🧪 [Nom du Test] - [Catégorie]
 
 ## 📋 Informations générales
 
-| Propriété | Valeur |
-|-----------|--------|
+| Propriété     | Valeur                          |
+| ------------- | ------------------------------- |
 | **Catégorie** | [ROS/IA/Électronique/Mécanique] |
-| **Date** | [Date du test] |
-| **Auteur** | [Nom de l'auteur] |
-| **Version** | [Version du test] |
-| **Statut** | [En cours/Réussi/Échec] |
+| **Date**      | [Date du test]                  |
+| **Auteur**    | [Nom de l'auteur]               |
+| **Version**   | [Version du test]               |
+| **Statut**    | [En cours/Réussi/Échec]         |
 
 ## 🎯 Objectif du test
 
@@ -58,27 +60,33 @@ Créez le fichier `docs/templates/test-template.md` :
 ## 📋 Prérequis
 
 ### Matériel requis
+
 - [ ] [Liste du matériel nécessaire]
 - [ ] [Équipements spécifiques]
 
 ### Logiciel requis
+
 - [ ] [Liste des logiciels]
 - [ ] [Versions requises]
 
 ### Connaissances préalables
+
 - [ ] [Compétences nécessaires]
 - [ ] [Formation requise]
 
 ## 🔧 Configuration
 
 ### Installation
+
 ```bash
 # Commandes d'installation
 sudo apt update
 sudo apt install [package]
 ```
+````
 
 ### Configuration
+
 ```bash
 # Configuration spécifique
 export ROS_DISTRO=noetic
@@ -88,16 +96,19 @@ source /opt/ros/noetic/setup.bash
 ## 📝 Procédure de test
 
 ### Étape 1 : Préparation
+
 1. [Action 1]
 2. [Action 2]
 3. [Action 3]
 
 ### Étape 2 : Exécution
+
 1. [Action 1]
 2. [Action 2]
 3. [Action 3]
 
 ### Étape 3 : Vérification
+
 1. [Action 1]
 2. [Action 2]
 3. [Action 3]
@@ -105,34 +116,40 @@ source /opt/ros/noetic/setup.bash
 ## 📊 Résultats attendus
 
 ### Critères de réussite
+
 - [ ] [Critère 1]
 - [ ] [Critère 2]
 - [ ] [Critère 3]
 
 ### Métriques de performance
-| Métrique | Valeur attendue | Valeur obtenue | Statut |
-|----------|------------------|----------------|--------|
-| [Métrique 1] | [Valeur] | [Valeur] | ✅/❌ |
-| [Métrique 2] | [Valeur] | [Valeur] | ✅/❌ |
+
+| Métrique     | Valeur attendue | Valeur obtenue | Statut |
+| ------------ | --------------- | -------------- | ------ |
+| [Métrique 1] | [Valeur]        | [Valeur]       | ✅/❌  |
+| [Métrique 2] | [Valeur]        | [Valeur]       | ✅/❌  |
 
 ## 📈 Résultats obtenus
 
 ### Données collectées
+
 ```
 [Logs ou données du test]
 ```
 
 ### Analyse des résultats
+
 [Analyse détaillée des résultats]
 
 ## 🐛 Problèmes rencontrés
 
 ### Problème 1
+
 - **Description** : [Description du problème]
 - **Solution** : [Solution appliquée]
 - **Statut** : [Résolu/En cours/Non résolu]
 
 ### Problème 2
+
 - **Description** : [Description du problème]
 - **Solution** : [Solution appliquée]
 - **Statut** : [Résolu/En cours/Non résolu]
@@ -140,10 +157,12 @@ source /opt/ros/noetic/setup.bash
 ## 📸 Captures d'écran
 
 ### Interface utilisateur
-*[Image à ajouter : Interface utilisateur du test]*
+
+_[Image à ajouter : Interface utilisateur du test]_
 
 ### Résultats visuels
-*[Image à ajouter : Résultats visuels du test]*
+
+_[Image à ajouter : Résultats visuels du test]_
 
 ## 📝 Notes et observations
 
@@ -170,8 +189,10 @@ source /opt/ros/noetic/setup.bash
 - **Superviseur** : [Nom]
 
 ---
-*Test créé le [Date] par [Auteur]*
-```
+
+_Test créé le [Date] par [Auteur]_
+
+````
 
 ## 🏗️ Création rapide de tests
 
@@ -246,12 +267,12 @@ function createTest(category, testName, author) {
 
   const categoryDir = path.join('docs', 'tests', category.toLowerCase());
   const filePath = path.join(categoryDir, `${testName.toLowerCase().replace(/\s+/g, '-')}.md`);
-  
+
   // Créer le dossier s'il n'existe pas
   if (!fs.existsSync(categoryDir)) {
     fs.mkdirSync(categoryDir, { recursive: true });
   }
-  
+
   // Écrire le fichier
   fs.writeFileSync(filePath, template);
   console.log(`✅ Test créé : ${filePath}`);
@@ -266,9 +287,10 @@ if (args.length < 3) {
 }
 
 createTest(args[0], args[1], args[2]);
-```
+````
 
 ### Script de création rapide
+
 Ajoutez dans `package.json` :
 
 ```json
@@ -286,14 +308,16 @@ Ajoutez dans `package.json` :
 ## 📖 Guides spécialisés
 
 ### Guide ROS
+
 Créez `docs/guides/installation-ros.md` :
 
-```markdown
+````markdown
 # 🤖 Installation et configuration ROS
 
 ## 📋 Prérequis système
 
 ### Ubuntu 20.04 LTS
+
 ```bash
 # Vérifier la version
 lsb_release -a
@@ -301,10 +325,12 @@ lsb_release -a
 # Mettre à jour le système
 sudo apt update && sudo apt upgrade -y
 ```
+````
 
 ## 🔧 Installation ROS Noetic
 
 ### Installation complète
+
 ```bash
 # Ajouter le repository ROS
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -330,6 +356,7 @@ source ~/.bashrc
 ## 🧪 Tests de validation
 
 ### Test 1 : Vérification de l'installation
+
 ```bash
 # Vérifier ROS
 rosversion -d
@@ -340,6 +367,7 @@ rosnode list
 ```
 
 ### Test 2 : Communication entre nœuds
+
 ```bash
 # Lancer un nœud de test
 rostopic pub /chatter std_msgs/String "data: 'Hello ROS'"
@@ -349,8 +377,9 @@ rostopic pub /chatter std_msgs/String "data: 'Hello ROS'"
 
 - [ROS Wiki](http://wiki.ros.org/)
 - [Tutorials ROS](http://wiki.ros.org/ROS/Tutorials)
-- [Documentation TRC](docs/tests/ros/)
-```
+- [Documentation TRC](tests/ros/test-de-navigation-autonome)
+
+````
 
 ## 🎯 Création facile de nouvelles pages
 
@@ -364,47 +393,51 @@ npm run create-ia-test "Test Reconnaissance" "Martine"
 
 # Créer un test Électronique
 npm run create-electronique-test "Test Capteurs" "Juste"
-```
+````
 
 ### Méthode 2 : Copie de template
+
 1. Copiez `docs/templates/test-template.md`
 2. Renommez-le selon votre test
 3. Remplissez les informations
 
 ### Méthode 3 : Interface web
+
 Créez `src/pages/create-test.js` :
 
 ```javascript
 // src/pages/create-test.js
-import React, { useState } from 'react';
-import Layout from '@theme/Layout';
+import React, { useState } from "react";
+import Layout from "@theme/Layout";
 
 export default function CreateTest() {
   const [formData, setFormData] = useState({
-    category: '',
-    testName: '',
-    author: '',
-    objective: ''
+    category: "",
+    testName: "",
+    author: "",
+    objective: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logique de création du test
-    console.log('Création du test:', formData);
+    console.log("Création du test:", formData);
   };
 
   return (
     <Layout title="Créer un nouveau test">
       <div className="container margin-vert--lg">
         <h1>🧪 Créer un nouveau test</h1>
-        
+
         <form onSubmit={handleSubmit}>
           <div className="margin-bottom--md">
             <label htmlFor="category">Catégorie :</label>
-            <select 
+            <select
               id="category"
               value={formData.category}
-              onChange={(e) => setFormData({...formData, category: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, category: e.target.value })
+              }
             >
               <option value="">Sélectionner une catégorie</option>
               <option value="ROS">ROS</option>
@@ -413,40 +446,46 @@ export default function CreateTest() {
               <option value="Mécanique">Mécanique</option>
             </select>
           </div>
-          
+
           <div className="margin-bottom--md">
             <label htmlFor="testName">Nom du test :</label>
             <input
               type="text"
               id="testName"
               value={formData.testName}
-              onChange={(e) => setFormData({...formData, testName: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, testName: e.target.value })
+              }
               placeholder="Ex: Test Navigation"
             />
           </div>
-          
+
           <div className="margin-bottom--md">
             <label htmlFor="author">Auteur :</label>
             <input
               type="text"
               id="author"
               value={formData.author}
-              onChange={(e) => setFormData({...formData, author: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, author: e.target.value })
+              }
               placeholder="Ex: Giscard"
             />
           </div>
-          
+
           <div className="margin-bottom--md">
             <label htmlFor="objective">Objectif :</label>
             <textarea
               id="objective"
               value={formData.objective}
-              onChange={(e) => setFormData({...formData, objective: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, objective: e.target.value })
+              }
               placeholder="Description de l'objectif du test"
               rows="4"
             />
           </div>
-          
+
           <button type="submit" className="button button--primary">
             Créer le test
           </button>
@@ -460,6 +499,7 @@ export default function CreateTest() {
 ## 📊 Organisation des tests
 
 ### Structure par catégorie
+
 ```
 docs/tests/
 ├── ros/
@@ -482,38 +522,46 @@ docs/tests/
 ```
 
 ### Index automatique
+
 Créez `docs/tests/README.md` :
 
-```markdown
+````markdown
 # 🧪 Tests TRC - Team ROBOSTIM
 
 ## 📋 Index des tests
 
 ### 🤖 Tests ROS
+
 - [Test Navigation](ros/test-navigation.md)
 - [Test SLAM](ros/test-slam.md)
 - [Test Communication](ros/test-communication.md)
 
 ### 🧠 Tests Intelligence Artificielle
+
 - [Test Reconnaissance](ia/test-reconnaissance.md)
 - [Test Prise de décision](ia/test-decision.md)
 
 ### ⚡ Tests Électronique
+
 - [Test Capteurs](electronique/test-capteurs.md)
 - [Test Communication](electronique/test-communication.md)
 
 ### 🔧 Tests Mécanique
+
 - [Test Mouvement](mecanique/test-mouvement.md)
 - [Test Stabilité](mecanique/test-stabilite.md)
 
 ## 🚀 Créer un nouveau test
 
 ### Méthode rapide
+
 ```bash
 npm run create-test "ROS" "Test Navigation" "Giscard"
 ```
+````
 
 ### Méthode manuelle
+
 1. Copiez le template depuis `docs/templates/test-template.md`
 2. Renommez le fichier selon votre test
 3. Remplissez les informations
@@ -524,6 +572,7 @@ npm run create-test "ROS" "Test Navigation" "Giscard"
 - [Installation ROS](#installation-ros) - Guide d'installation ROS
 - [Configuration IA](#configuration-ia) - Guide de configuration IA
 - [Protocoles de tests](#protocoles-tests) - Protocoles de tests
+
 ```
 
 ## 🎯 Avantages de cette structure
@@ -536,3 +585,4 @@ npm run create-test "ROS" "Test Navigation" "Giscard"
 - ✅ **Documentation complète** : Guides techniques
 
 Avec cette structure, vous pourrez facilement créer des tests comme "test1", "test2", etc. dans chaque catégorie, et ils seront automatiquement organisés et accessibles ! 🎉📚✨
+```

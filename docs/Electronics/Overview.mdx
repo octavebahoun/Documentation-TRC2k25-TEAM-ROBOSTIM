@@ -1,23 +1,62 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: Electronics/Overview
-title: 'Aperçu — Pôle Électronique'
+id: electronics-overview
+slug: Overview
+title: "Aperçu — Pôle Électronique"
 sidebar_label: Overview
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
 
 <InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
-Structure pour les tests d’électronique: capteurs, bus I2C/SPI, actionneurs, PCB.
+  Conception de circuits, programmation embarquée et intégration de systèmes
+  électroniques pour le contrôle du robot.
 </InfoCard>
 
-### Sommaire
-<Table headers={["Section", "Description"]}
-  data={[["Test 1", "Capteurs Inertiels (MPU6050)"],["Test 2", "Acquisition et Filtrage IMU"],["Test 3", "Contrôle Servomoteurs (PCA9685)"]]} />
+### 🎯 Objectifs du pôle
 
-<FeatureGrid items={[{icon:"🧭", title:"Capteurs", description:"IMU, encoders, etc."},{icon:"🔗", title:"Bus", description:"I2C, SPI, UART"},{icon:"🧰", title:"Actionneurs", description:"Servos, moteurs"}]} />
+- **Conception de circuits** : Schémas et PCB
+- **Programmation embarquée** : Microcontrôleurs (ESP32, Arduino)
+- **Capteurs et actionneurs** : Intégration et calibration
+- **Communication** : Protocoles I2C, SPI, UART, CAN
+- **Tests et validation** : Vérification des performances électriques
 
+### 📋 Sommaire des tests
 
+<Table
+  headers={["Section", "Description"]}
+  data={[
+    ["Test 1", "Capteurs Inertiels (MPU6050)"],
+    ["Test 2", "Acquisition et Filtrage IMU"],
+    ["Test 3", "Contrôle Servomoteurs (PCA9685)"],
+  ]}
+/>
+
+<FeatureGrid
+  items={[
+    { icon: "🧭", title: "Capteurs", description: "IMU, encodeurs, etc." },
+    { icon: "🔗", title: "Bus", description: "I2C, SPI, UART" },
+    { icon: "🧰", title: "Actionneurs", description: "Servos, moteurs" },
+  ]}
+/>
+
+### 🛠️ Outils utilisés
+
+- **Logiciels** : KiCad, Arduino IDE, PlatformIO
+- **Matériel** : Oscilloscope, Multimètre, Analyseur logique
+- **Composants** : ESP32, STM32, Arduino, Drivers moteurs
+
+### 📊 Métriques de performance
+
+| Test   | Objectif      | Critère de réussite | Statut |
+| ------ | ------------- | ------------------- | ------ |
+| Test 1 | Capteurs      | >95% précision      | ✅     |
+| Test 2 | Communication | &lt;10ms latence    | ✅     |
+| Test 3 | Alimentation  | Stabilité ±5%       | 🔄     |
+
+---
+
+_Dernière mise à jour : Octobre 2025_

@@ -1,23 +1,62 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: IA/Overview
-title: 'Aperçu — Pôle IA'
+id: ia-overview
+slug: Overview
+title: "Aperçu — Pôle IA"
 sidebar_label: Overview
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
 
 <InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
-Structure pour les tests IA: vision, suivi, planification et RL.
+  Le pôle IA se concentre sur le Machine Learning, la Vision par Ordinateur et
+  le Deep Learning pour rendre notre robot intelligent et autonome.
 </InfoCard>
 
-### Sommaire
-<Table headers={["Section", "Description"]}
-  data={[["Test 1", "Vision et Classification"],["Test 2", "Suivi d'Objets"],["Test 3", "Planification et RL"]]} />
+### 🎯 Objectifs du pôle
 
-<FeatureGrid items={[{icon:"📷", title:"Vision", description:"Détection & classification"},{icon:"🎯", title:"Tracking", description:"Suivi temps réel"},{icon:"🧭", title:"Planification", description:"RL & path planning"}]} />
+- **Machine Learning** : Algorithmes d'apprentissage automatique
+- **Computer Vision** : Traitement d'images et reconnaissance
+- **Deep Learning** : Réseaux de neurones et architectures avancées
+- **NLP** : Traitement du langage naturel
+- **Optimisation** : Algorithmes génétiques et optimisation
 
+### 📋 Sommaire des tests
 
+<Table
+  headers={["Section", "Description"]}
+  data={[
+    ["Test 1", "Vision et Classification"],
+    ["Test 2", "Suivi d'Objets"],
+    ["Test 3", "Planification et RL"],
+  ]}
+/>
+
+<FeatureGrid
+  items={[
+    { icon: "📷", title: "Vision", description: "Détection & classification" },
+    { icon: "🎯", title: "Tracking", description: "Suivi temps réel" },
+    { icon: "🧭", title: "Planification", description: "RL & path planning" },
+  ]}
+/>
+
+### 🛠️ Outils utilisés
+
+- **Frameworks** : TensorFlow, PyTorch, Scikit-learn
+- **Langages** : Python, R, Julia
+- **Outils** : Jupyter, VS Code, Git
+
+### 📊 Métriques de performance
+
+| Test   | Objectif       | Critère de réussite | Statut |
+| ------ | -------------- | ------------------- | ------ |
+| Test 1 | Classification | >95% précision      | ✅     |
+| Test 2 | Détection      | >90% mAP            | ✅     |
+| Test 3 | Prédiction     | &lt;5% erreur       | 🔄     |
+
+---
+
+_Dernière mise à jour : Octobre 2025_

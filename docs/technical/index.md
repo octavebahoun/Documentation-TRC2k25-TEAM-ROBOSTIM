@@ -5,37 +5,42 @@ Cette section contient toute la documentation technique des systèmes développ�
 ## 🏗️ Architecture des systèmes
 
 ### 🤖 ROS Documentation
-- **[Navigation Stack](ros/)** - Documentation du système de navigation
-- **[Perception Pipeline](ros/)** - Pipeline de traitement des données sensorielles
-- **[Control Systems](ros/)** - Systèmes de contrôle et de commande
+
+- **[Navigation Stack](../ROS/Overview.mdx)** - Documentation du système de navigation
+- **[Perception Pipeline](../ROS/Overview.mdx)** - Pipeline de traitement des données sensorielles
+- **[Control Systems](../ROS/Overview.mdx)** - Systèmes de contrôle et de commande
 
 ### 🧠 IA Documentation
-- **[ML Models](ai/)** - Documentation des modèles de machine learning
-- **[Computer Vision](ai/)** - Systèmes de vision par ordinateur
-- **[NLP Systems](ai/)** - Systèmes de traitement du langage naturel
+
+- **[ML Models](../IA/Overview.mdx)** - Documentation des modèles de machine learning
+- **[Computer Vision](../IA/Overview.mdx)** - Systèmes de vision par ordinateur
+- **[NLP Systems](../IA/Overview.mdx)** - Systèmes de traitement du langage naturel
 
 ### ⚡ Électronique Documentation
-- **[Circuit Design](electronics/)** - Conception et validation de circuits
-- **[Sensor Integration](electronics/)** - Intégration et calibration de capteurs
-- **[Communication Protocols](electronics/)** - Protocoles de communication
+
+- **[Circuit Design](../Electronics/Overview.mdx)** - Conception et validation de circuits
+- **[Sensor Integration](../Electronics/Overview.mdx)** - Intégration et calibration de capteurs
+- **[Communication Protocols](../Electronics/Overview.mdx)** - Protocoles de communication
 
 ### 🔧 Mécanique Documentation
-- **[Mechanical Design](mechanical/)** - Conception mécanique et CAO
-- **[Precision Engineering](mechanical/)** - Ingénierie de précision
-- **[Durability Testing](mechanical/)** - Tests de durabilité et de fatigue
+
+- **[Mechanical Design](../Mechanics/Overview.mdx)** - Conception mécanique et CAO
+- **[Precision Engineering](../Mechanics/Overview.mdx)** - Ingénierie de précision
+- **[Durability Testing](../Mechanics/Overview.mdx)** - Tests de durabilité et de fatigue
 
 ## 📊 Statistiques de documentation
 
-| Domaine | Nombre de docs | Dernière mise à jour |
-|---------|----------------|---------------------|
-| ROS | 0 | - |
-| IA | 0 | - |
-| Électronique | 0 | - |
-| Mécanique | 0 | - |
+| Domaine      | Nombre de docs | Dernière mise à jour |
+| ------------ | -------------- | -------------------- |
+| ROS          | 0              | -                    |
+| IA           | 0              | -                    |
+| Électronique | 0              | -                    |
+| Mécanique    | 0              | -                    |
 
 ## 🚀 Créer une nouvelle documentation
 
 ### Via la ligne de commande
+
 ```bash
 # Documentation ROS
 npm run create-technical ros "Titre de la documentation" "Auteur"
@@ -51,6 +56,7 @@ npm run create-technical mechanical "Titre de la documentation" "Auteur"
 ```
 
 ### Exemples d'utilisation
+
 ```bash
 # Créer une documentation ROS Navigation Stack
 npm run create-technical ros "Documentation ROS Navigation Stack" "Giscard"
@@ -106,6 +112,7 @@ Chaque documentation suit un template standardisé :
 ## 🔍 Navigation rapide
 
 ### Par type de contenu
+
 - **Guides d'installation** - Configuration et setup
 - **Tutoriels** - Apprentissage pas à pas
 - **Références API** - Documentation des interfaces
@@ -113,6 +120,7 @@ Chaque documentation suit un template standardisé :
 - **Dépannage** - Résolution de problèmes
 
 ### Par niveau d'expertise
+
 - **Débutant** - Introduction et concepts de base
 - **Intermédiaire** - Implémentation et configuration
 - **Avancé** - Optimisation et personnalisation
@@ -125,4 +133,5 @@ Chaque documentation suit un template standardisé :
 - **[Guide de tests automatisés](testing-documentation.md)** - Tests et qualité
 
 ---
-*Section mise à jour automatiquement lors de l'ajout de nouvelles documentations*
+
+_Section mise à jour automatiquement lors de l'ajout de nouvelles documentations_

@@ -1,17 +1,20 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: IA/Test3
-title: 'Test 3 — Algorithme de Pathfinding'
+id: ia-test3
+slug: Test3
+title: "Test 3 — Algorithme de Pathfinding"
 sidebar_label: Test 3
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
 
 <InfoCard type="info" title="Aperçu du test" icon="🧭">
-Création d'un algorithme de pathfinding permettant à un robot de trouver le chemin optimal entre un point de départ et un point d'arrivée dans un environnement avec obstacles.
+  Création d'un algorithme de pathfinding permettant à un robot de trouver le
+  chemin optimal entre un point de départ et un point d'arrivée dans un
+  environnement avec obstacles.
 </InfoCard>
 
 ### Objectif
@@ -20,23 +23,34 @@ Ce test évalue votre capacité à implémenter des algorithmes de recherche de 
 
 ### Algorithmes possibles
 
-<FeatureGrid items={[
-  {icon:"⭐", title:"A*", description:"Algorithme A* (A-star) - Optimal et efficace"},
-  {icon:"🌳", title:"Dijkstra", description:"Algorithme de Dijkstra - Plus court chemin"},
-  {icon:"🔄", title:"RRT", description:"Rapidly-exploring Random Tree"},
-  {icon:"📐", title:"RRT*", description:"RRT* - Version optimisée"},
-  {icon:"🧩", title:"Autre", description:"Algorithme personnalisé"}
-]} />
+<FeatureGrid
+  items={[
+    {
+      icon: "⭐",
+      title: "A*",
+      description: "Algorithme A* (A-star) - Optimal et efficace",
+    },
+    {
+      icon: "🌳",
+      title: "Dijkstra",
+      description: "Algorithme de Dijkstra - Plus court chemin",
+    },
+    { icon: "🔄", title: "RRT", description: "Rapidly-exploring Random Tree" },
+    { icon: "📐", title: "RRT*", description: "RRT* - Version optimisée" },
+    { icon: "🧩", title: "Autre", description: "Algorithme personnalisé" },
+  ]}
+/>
 
 ### Fonctionnalités attendues
 
-<Table headers={["Fonctionnalité", "Description", "Priorité"]}
+<Table
+  headers={["Fonctionnalité", "Description", "Priorité"]}
   data={[
     ["Recherche de chemin", "Trouver un chemin valide", "Obligatoire"],
     ["Éviter obstacles", "Détection et contournement", "Obligatoire"],
     ["Optimisation", "Chemin le plus court/rapide", "Recommandé"],
     ["Visualisation", "Affichage graphique du chemin", "Recommandé"],
-    ["Temps réel", "Calcul rapide du chemin", "Bonus"]
+    ["Temps réel", "Calcul rapide du chemin", "Bonus"],
   ]}
 />
 
@@ -61,31 +75,31 @@ class Node:
 4. **Documentation (10 points)** : Explications, schémas, complexité
 5. **Présentation (5 points)** : Démonstration, visualisation
 
-### Exemple A*
+### Exemple A\*
 
 ```python
 def a_star(start, goal, grid):
     open_set = [start]
     closed_set = []
-    
+
     while open_set:
         current = min(open_set, key=lambda n: n.f_cost)
         if current == goal:
             return reconstruct_path(current)
-        
+
         open_set.remove(current)
         closed_set.append(current)
-        
+
         for neighbor in get_neighbors(current, grid):
             if neighbor in closed_set:
                 continue
-            
+
             tentative_g = current.g_cost + distance(current, neighbor)
             if neighbor not in open_set:
                 open_set.append(neighbor)
             elif tentative_g >= neighbor.g_cost:
                 continue
-            
+
             neighbor.parent = current
             neighbor.g_cost = tentative_g
             neighbor.h_cost = heuristic(neighbor, goal)
@@ -94,4 +108,4 @@ def a_star(start, goal, grid):
 
 ---
 
-*Pour plus de détails, consultez la documentation complète.*
+_Pour plus de détails, consultez la documentation complète._

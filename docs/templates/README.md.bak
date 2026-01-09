@@ -1,3 +1,4 @@
+
 # 📚 Guide d'utilisation des Templates de Documentation Technique
 
 Bienvenue dans le guide d'utilisation des templates pour créer des documentations techniques pour chaque pôle (Électronique, ROS, IA, Mécanique).
@@ -7,6 +8,7 @@ Bienvenue dans le guide d'utilisation des templates pour créer des documentatio
 ## 🎯 Objectif
 
 Ces templates ont été créés pour :
+
 - **Standardiser** la structure des documentations techniques
 - **Faciliter** la création de nouvelles documentations
 - **Assurer** la cohérence entre les différentes documentations
@@ -35,12 +37,12 @@ docs/templates/
 
 Sélectionnez le template correspondant à votre pôle :
 
-| Pôle | Fichier template | Format |
-|------|------------------|--------|
+| Pôle                | Fichier template           | Format         |
+| ------------------- | -------------------------- | -------------- |
 | 🔌 **Électronique** | `template-electronique.md` | Markdown (.md) |
-| 🤖 **ROS** | `template-ros.mdx` | MDX (.mdx) |
-| 🧠 **IA** | `template-ia.mdx` | MDX (.mdx) |
-| ⚙️ **Mécanique** | `template-mecanique.mdx` | MDX (.mdx) |
+| 🤖 **ROS**          | `template-ros.mdx`         | MDX (.mdx)     |
+| 🧠 **IA**           | `template-ia.mdx`          | MDX (.mdx)     |
+| ⚙️ **Mécanique**    | `template-mecanique.mdx`   | MDX (.mdx)     |
 
 ### Étape 2 : Copier le template
 
@@ -75,6 +77,7 @@ sidebar_label: Nom court pour la sidebar
 ```
 
 **Exemple** :
+
 ```markdown
 ---
 id: test-capteur-temperature
@@ -120,6 +123,7 @@ Votre description courte du test ici.
 ```
 
 **Exemple** :
+
 ```markdown
 ![Schéma de câblage](/img/cablage-capteur.jpg)
 ![Résultats de test](/img/graphique-resultats.png)
@@ -133,11 +137,12 @@ Si vous utilisez un fichier `.mdx`, vous pouvez utiliser des composants React :
 
 ```jsx
 <InfoCard type="info" title="Titre" icon="📡">
-Contenu de la carte
+  Contenu de la carte
 </InfoCard>
 ```
 
 **Types disponibles** :
+
 - `info` : Information générale (bleu)
 - `warning` : Avertissement (jaune)
 - `success` : Succès (vert)
@@ -146,20 +151,23 @@ Contenu de la carte
 #### FeatureGrid
 
 ```jsx
-<FeatureGrid items={[
-  {icon:"📡", title:"Titre 1", description:"Description 1"},
-  {icon:"🗺️", title:"Titre 2", description:"Description 2"},
-  {icon:"💾", title:"Titre 3", description:"Description 3"}
-]} />
+<FeatureGrid
+  items={[
+    { icon: "📡", title: "Titre 1", description: "Description 1" },
+    { icon: "🗺️", title: "Titre 2", description: "Description 2" },
+    { icon: "💾", title: "Titre 3", description: "Description 3" },
+  ]}
+/>
 ```
 
 #### Table
 
 ```jsx
-<Table headers={["Colonne 1", "Colonne 2", "Colonne 3"]}
+<Table
+  headers={["Colonne 1", "Colonne 2", "Colonne 3"]}
   data={[
     ["Donnée 1", "Donnée 2", "Donnée 3"],
-    ["Donnée 4", "Donnée 5", "Donnée 6"]
+    ["Donnée 4", "Donnée 5", "Donnée 6"],
   ]}
 />
 ```
@@ -171,6 +179,7 @@ Contenu de la carte
 ### 🔌 Électronique
 
 **Structure typique** :
+
 1. Objectif et critères
 2. Matériel (composants + équipement)
 3. Procédure (code Arduino/ESP32)
@@ -183,6 +192,7 @@ Contenu de la carte
 ### 🤖 ROS
 
 **Structure typique** :
+
 1. Architecture ROS (nœuds, topics, services)
 2. Configuration et lancement
 3. Tests et validation
@@ -194,6 +204,7 @@ Contenu de la carte
 ### 🧠 IA
 
 **Structure typique** :
+
 1. Modèle et architecture
 2. Dataset et préparation
 3. Entraînement
@@ -206,6 +217,7 @@ Contenu de la carte
 ### ⚙️ Mécanique
 
 **Structure typique** :
+
 1. Conception CAO
 2. Impression 3D
 3. Assemblage
@@ -241,6 +253,7 @@ Avant de publier votre documentation, vérifiez :
 - Évitez les espaces et caractères spéciaux
 
 **Exemples** :
+
 - ✅ `test-capteur-distance.md`
 - ✅ `test-navigation-stack.mdx`
 - ❌ `Test Capteur Distance.md`
@@ -260,6 +273,7 @@ Avant de publier votre documentation, vérifiez :
 - **Testez le code** : Assurez-vous qu'il fonctionne
 
 **Exemple** :
+
 ````markdown
 ```cpp
 // Configuration des pins
@@ -281,6 +295,7 @@ Avant de publier votre documentation, vérifiez :
 ### Composants disponibles
 
 Tous les composants React sont dans `src/components/` :
+
 - `InfoCard.js`
 - `FeatureGrid.js`
 - `Table.js`
@@ -288,6 +303,7 @@ Tous les composants React sont dans `src/components/` :
 ### Exemples visuels
 
 Consultez le fichier [`exemples-visuels.md`](./exemples-visuels.md) pour des exemples de :
+
 - Schémas ASCII pour l'électronique
 - Diagrammes pour ROS
 - Pipelines pour l'IA
@@ -304,7 +320,8 @@ Consultez le fichier [`exemples-visuels.md`](./exemples-visuels.md) pour des exe
 
 ### Q: Dois-je utiliser .md ou .mdx ?
 
-**R:** 
+**R:**
+
 - **.md** : Pour l'électronique (markdown simple)
 - **.mdx** : Pour ROS, IA, Mécanique (si vous voulez utiliser des composants React)
 
@@ -348,6 +365,6 @@ Si vous avez des questions ou besoin d'aide :
 
 ---
 
-*Guide créé le : [Date]*
-*Dernière mise à jour : [Date]*
-*Version : 1.0*
+_Guide créé le : [Date]_
+_Dernière mise à jour : [Date]_
+_Version : 1.0_

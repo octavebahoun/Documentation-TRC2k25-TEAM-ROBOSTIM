@@ -1,17 +1,20 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: ROS/Test3
-title: 'Test 3 — Algorithme de Pathfinding'
+id: ros-test3
+slug: Test3
+title: "Test 3 — Algorithme de Pathfinding"
 sidebar_label: Test 3
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
 
 <InfoCard type="info" title="Aperçu du test" icon="🧭">
-Création d'un algorithme de pathfinding permettant à un robot de trouver le chemin optimal entre un point de départ et un point d'arrivée dans un environnement avec obstacles.
+  Création d'un algorithme de pathfinding permettant à un robot de trouver le
+  chemin optimal entre un point de départ et un point d'arrivée dans un
+  environnement avec obstacles.
 </InfoCard>
 
 ### Objectif
@@ -20,22 +23,29 @@ Ce test évalue votre capacité à implémenter des algorithmes de recherche de 
 
 ### Algorithmes possibles
 
-<FeatureGrid items={[
-  {icon:"⭐", title:"A*", description:"Algorithme A* (A-star) - Optimal"},
-  {icon:"🌳", title:"Dijkstra", description:"Plus court chemin"},
-  {icon:"🔄", title:"RRT", description:"Rapidly-exploring Random Tree"},
-  {icon:"📐", title:"RRT*", description:"Version optimisée"},
-  {icon:"🧩", title:"Autre", description:"Algorithme personnalisé"}
-]} />
+<FeatureGrid
+  items={[
+    {
+      icon: "⭐",
+      title: "A*",
+      description: "Algorithme A* (A-star) - Optimal",
+    },
+    { icon: "🌳", title: "Dijkstra", description: "Plus court chemin" },
+    { icon: "🔄", title: "RRT", description: "Rapidly-exploring Random Tree" },
+    { icon: "📐", title: "RRT*", description: "Version optimisée" },
+    { icon: "🧩", title: "Autre", description: "Algorithme personnalisé" },
+  ]}
+/>
 
 ### Fonctionnalités attendues
 
-<Table headers={["Fonctionnalité", "Description", "Priorité"]}
+<Table
+  headers={["Fonctionnalité", "Description", "Priorité"]}
   data={[
     ["Recherche de chemin", "Trouver un chemin valide", "Obligatoire"],
     ["Éviter obstacles", "Détection et contournement", "Obligatoire"],
     ["Optimisation", "Chemin le plus court/rapide", "Recommandé"],
-    ["Visualisation", "Affichage graphique", "Recommandé"]
+    ["Visualisation", "Affichage graphique", "Recommandé"],
   ]}
 />
 
@@ -49,4 +59,4 @@ Ce test évalue votre capacité à implémenter des algorithmes de recherche de 
 
 ---
 
-*Pour plus de détails, consultez la documentation complète.*
+_Pour plus de détails, consultez la documentation complète._

@@ -1,53 +1,70 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: ROS/Test1
-title: "Test 1 — Système de Classe de Gestion d'un Robot"
+id: ros-test1
+slug: Test1
+title: "Test 1 — Installation et configuration ROS"
 sidebar_label: Test 1
 ---
 
-## Présentation <span className="badge-sticker badge-it">💻 IT</span>
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
-<InfoCard type="info" title="Aperçu du test" icon="🤖">
-Réalisation d'un système de classe de gestion d'un Robot. Conception orientée objet pour gérer les différents composants et fonctionnalités d'un robot de manière modulaire et maintenable.
+## Présentation <span className="badge-sticker badge-it">🤖 ROS</span>
+
+<InfoCard type="info" title="Objectif du test" icon="🛠️">
+  Installer et configurer un environnement ROS fonctionnel pour le développement
+  de notre système robotique distribué.
 </InfoCard>
 
-### Objectif
+### 🎯 Critères de réussite
 
-Ce test évalue votre capacité à concevoir et implémenter une architecture logicielle robuste pour la gestion d'un robot. Vous devrez créer un système de classes permettant de gérer les différents sous-systèmes du robot.
+- **Installation complète** : ROS Noetic (Ubuntu 20.04) ou ROS 2 installé sans erreurs.
+- **Environnement** : Variables d'environnement (`.bashrc`) configurées.
+- **Communication** : Topics et services opérationnels.
+- **Simulation** : Gazebo et RViz fonctionnels.
 
-### Concepts clés
+### 🛠️ Prérequis système
 
-<FeatureGrid items={[
-  {icon:"🏗️", title:"Architecture", description:"Conception modulaire et extensible"},
-  {icon:"🔧", title:"Classes", description:"Encapsulation des fonctionnalités"},
-  {icon:"🔌", title:"Interfaces", description:"Communication entre modules"},
-  {icon:"📦", title:"Héritage", description:"Réutilisation de code"},
-  {icon:"🛡️", title:"Robustesse", description:"Gestion d'erreurs et exceptions"}
-]} />
-
-### Structure de classes
-
-<Table headers={["Classe", "Responsabilité", "Méthodes principales"]}
-  data={[
-    ["Robot", "Classe principale", "init(), start(), stop(), update()"],
-    ["MotorController", "Gestion moteurs", "setSpeed(), getSpeed(), stop()"],
-    ["SensorManager", "Gestion capteurs", "readSensor(), calibrate()"],
-    ["ActuatorController", "Gestion actionneurs", "activate(), deactivate()"],
-    ["CommunicationHandler", "Communication", "send(), receive(), connect()"]
+<FeatureGrid
+  items={[
+    { icon: "🐧", title: "OS", description: "Ubuntu 20.04 LTS" },
+    { icon: "💾", title: "RAM/Disk", description: "8GB RAM / 20GB HDD" },
+    { icon: "⚡", title: "CPU", description: "Min. 4 cœurs" },
+    {
+      icon: "📦",
+      title: "Logiciels",
+      description: "Git, Python3, build-essential",
+    },
   ]}
 />
 
-### Critères de notation (100 points)
+### 📊 Procédure d'installation (Extrait)
 
-1. **Architecture (30 points)** : Design patterns, modularité, extensibilité
-2. **Implémentation (35 points)** : Code fonctionnel, gestion d'erreurs
-3. **Documentation (20 points)** : Commentaires, UML, explications
-4. **Tests (10 points)** : Tests unitaires, validation
-5. **Présentation (5 points)** : Démonstration, réponses
+```bash
+# Ajout du repository ROS et clé GPG
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+# Installation
+sudo apt update && sudo apt install -y ros-noetic-desktop-full
+
+# Workspace
+mkdir -p ~/catkin_ws/src && cd ~/catkin_ws && catkin_make
+```
+
+### 📉 Validation des performances
+
+<Table
+  headers={["Métrique", "Valeur attendue", "Statut"]}
+  data={[
+    ["Temps démarrage", "&lt; 30s", "✅"],
+    ["Utilisation RAM", "&lt; 500MB (Core)", "✅"],
+    ["Latence Topics", "&lt; 10ms", "✅"],
+    ["Tests réussis", "100%", "✅"],
+  ]}
+/>
 
 ---
 
-*Pour plus de détails, consultez la documentation complète.*
+_Test réalisé le : Octobre 2025_
+_Responsable : Pôle ROS_

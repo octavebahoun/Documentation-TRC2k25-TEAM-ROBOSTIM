@@ -1,71 +1,74 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: Mechanics/Test1
-title: 'Test 1 — Niveau Débutant'
+id: mechanics-test1
+slug: Test1
+title: "Test 1 — Simulation FEA"
 sidebar_label: Test 1
 ---
 
-## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
-<InfoCard type="info" title="Aperçu du test" icon="📐">
-Test de niveau débutant en mécanique : Modélisation CAO de pièces simples avec application des contraintes géométriques de base, respect des dimensions et calcul des masses.
+## Présentation <span className="badge-sticker badge-mecanique">⚙️ Mécanique</span>
+
+<InfoCard type="info" title="Objectif du test" icon="🔬">
+  Effectuer une analyse par éléments finis (FEA) sur les composants mécaniques
+  critiques pour valider leur résistance et optimiser leur conception
+  structurelle.
 </InfoCard>
 
-### Objectif
+### 🎯 Critères de réussite
 
-Ce test évalue vos compétences de base en modélisation CAO (Conception Assistée par Ordinateur). Vous devrez modéliser des pièces simples en respectant les dimensions fournies et appliquer les contraintes géométriques appropriées.
+- **Contrainte maximale** : &lt;80% de la limite élastique
+- **Facteur de sécurité** : >2.0
+- **Déformation maximale** : &lt;1mm
+- **Fréquence propre** : >50Hz (pour éviter la résonance)
 
-### Compétences évaluées
+### 🛠️ Logiciels et Paramètres
 
-<FeatureGrid items={[
-  {icon:"📐", title:"Contraintes", description:"Application des contraintes géométriques"},
-  {icon:"📏", title:"Dimensions", description:"Respect de toutes les dimensions"},
-  {icon:"⚖️", title:"Masses", description:"Calcul des valeurs de masses"},
-  {icon:"🧩", title:"Assemblage", description:"Utilisation de toutes les pièces fournies"},
-  {icon:"📍", title:"Centre de masse", description:"Calcul des coordonnées du centre de masse"}
-]} />
-
-### Logiciels CAO recommandés
-
-<Table headers={["Logiciel", "Avantages", "Niveau"]}
-  data={[
-    ["Fusion 360", "Gratuit pour étudiants, complet", "Débutant à Avancé"],
-    ["SolidWorks", "Industriel, très puissant", "Intermédiaire à Avancé"],
-    ["FreeCAD", "Open source, gratuit", "Débutant à Intermédiaire"],
-    ["Onshape", "En ligne, collaboratif", "Débutant à Avancé"]
+<FeatureGrid
+  items={[
+    {
+      icon: "💻",
+      title: "SolidWorks",
+      description: "Simulation Statique Linéaire",
+    },
+    {
+      icon: "🕸️",
+      title: "Maillage",
+      description: "Tétraèdres 2ème ordre (0.5mm)",
+    },
+    { icon: "🧮", title: "Solveur", description: "Direct Sparse" },
+    { icon: "🔩", title: "Matériau", description: "Aluminium 7075-T6" },
   ]}
 />
 
-### Critères de notation (70 points sur 300, ramené à 100)
+### 📊 Procédure de test
 
-Les challenges débutant et intermédiaire seront notés sur **70 points chacun** :
+#### Analyse Statique (Extrait YAML)
 
-1. **Contraintes géométriques (15 points)** : Application des contraintes adéquates
-2. **Dimensions (15 points)** : Respect de toutes les dimensions
-3. **Masses (15 points)** : Capacité à trouver les bonnes valeurs de masses
-4. **Assemblage (15 points)** : Utilisation de toutes les pièces fournies
-5. **Contraintes d'assemblage (10 points)** : Utilisation de toutes les contraintes nécessaires
+```yaml
+Boundary_Conditions:
+  - type: "Fixed_Support"
+    location: "Base_plate"
+  - type: "Force"
+    magnitude: 1000 N
+    direction: [0, 0, -1] # Vers le bas
+```
 
-### Livrables attendus
+### 📈 Résultats de validation
 
-- **Fichiers CAO** : Modèles 3D de chaque pièce (.step, .f3d, .sldprt)
-- **Assemblage** : Fichier d'assemblage complet
-- **Documentation** : Rapport avec captures d'écran, dimensions, masses
-- **GitHub** : Dépôt avec tous les fichiers et documentation
-
-### Étapes recommandées
-
-1. **Analyse** : Lire et comprendre les spécifications
-2. **Esquisse** : Créer les esquisses de base
-3. **Modélisation** : Créer les pièces en 3D
-4. **Contraintes** : Appliquer les contraintes géométriques
-5. **Assemblage** : Assembler toutes les pièces
-6. **Vérification** : Vérifier dimensions, masses, centre de masse
-7. **Documentation** : Créer le rapport complet
+<Table
+  headers={["Paramètre", "Valeur calculée", "Valeur limite", "Statut"]}
+  data={[
+    ["Contrainte max", "350 MPa", "400 MPa", "✅"],
+    ["Déformation max", "0.8 mm", "1.0 mm", "✅"],
+    ["Facteur sécurité", "2.3", "2.0", "✅"],
+    ["Fréquence propre", "75 Hz", "50 Hz", "✅"],
+  ]}
+/>
 
 ---
 
-*Pour plus de détails, consultez les spécifications complètes du test.*
+_Test réalisé le : Octobre 2025_
+_Responsable : Pôle Mécanique_

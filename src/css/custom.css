@@ -2538,3 +2538,77 @@ html, body {
     font-size: 0.85rem !important;
   }
 }
+
+/* --- HOME PAGE STATS & CARDS --- */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 150px;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 500;
+  color: white;
+}
+
+.ambition-banner {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin: clamp(1.5rem, 4vw, 3rem) 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.decoration-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.ambition-quote {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 4px solid #fbbf24;
+  padding-left: 1.5rem;
+  text-align: left;
+  color: white;
+}

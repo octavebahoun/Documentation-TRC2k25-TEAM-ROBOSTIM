@@ -1,17 +1,20 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: IA/Test2
-title: 'Test 2 — Introduction à ROS 2'
+id: ia-test2
+slug: Test2
+title: "Test 2 — Introduction à ROS 2"
 sidebar_label: Test 2
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
 
 <InfoCard type="info" title="Aperçu du test" icon="🛰️">
-Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2, création de nœuds, publication/abonnement de topics, et utilisation des services.
+  Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2,
+  création de nœuds, publication/abonnement de topics, et utilisation des
+  services.
 </InfoCard>
 
 ### Objectif
@@ -20,22 +23,35 @@ Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des 
 
 ### Concepts ROS 2
 
-<FeatureGrid items={[
-  {icon:"📡", title:"Topics", description:"Publication/Subscription"},
-  {icon:"🔧", title:"Services", description:"Requête/Réponse"},
-  {icon:"🗺️", title:"TF", description:"Transformations"},
-  {icon:"📦", title:"Packages", description:"Organisation"},
-  {icon:"🛠️", title:"Nodes", description:"Processus ROS 2"}
-]} />
+<FeatureGrid
+  items={[
+    { icon: "📡", title: "Topics", description: "Publication/Subscription" },
+    { icon: "🔧", title: "Services", description: "Requête/Réponse" },
+    { icon: "🗺️", title: "TF", description: "Transformations" },
+    { icon: "📦", title: "Packages", description: "Organisation" },
+    { icon: "🛠️", title: "Nodes", description: "Processus ROS 2" },
+  ]}
+/>
 
 ### Nœuds à créer
 
-<Table headers={["Nœud", "Topic/Service", "Type", "Description"]}
+<Table
+  headers={["Nœud", "Topic/Service", "Type", "Description"]}
   data={[
     ["publisher_node", "/chatter", "std_msgs/String", "Publication"],
     ["subscriber_node", "/chatter", "std_msgs/String", "Réception"],
-    ["service_server", "/add_two_ints", "example_interfaces/AddTwoInts", "Service"],
-    ["service_client", "/add_two_ints", "example_interfaces/AddTwoInts", "Client"]
+    [
+      "service_server",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Service",
+    ],
+    [
+      "service_client",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Client",
+    ],
   ]}
 />
 
@@ -49,4 +65,4 @@ Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des 
 
 ---
 
-*Pour plus de détails, consultez la documentation ROS 2 officielle.*
+_Pour plus de détails, consultez la documentation ROS 2 officielle._

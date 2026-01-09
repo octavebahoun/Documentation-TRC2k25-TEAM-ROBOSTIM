@@ -1,17 +1,20 @@
-import InfoCard from '@site/src/components/InfoCard';
-import FeatureGrid from '@site/src/components/FeatureGrid';
-import Table from '@site/src/components/Table';
-
 ---
-id: ROS/Test2
-title: 'Test 2 — Introduction à ROS 2'
+id: ros-test2
+slug: Test2
+title: "Test 2 — Introduction à ROS 2"
 sidebar_label: Test 2
 ---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
 ## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
 
 <InfoCard type="info" title="Aperçu du test" icon="🛰️">
-Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2, création de nœuds, publication/abonnement de topics, et utilisation des services.
+  Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2,
+  création de nœuds, publication/abonnement de topics, et utilisation des
+  services.
 </InfoCard>
 
 ### Objectif
@@ -20,22 +23,48 @@ Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des 
 
 ### Concepts ROS 2
 
-<FeatureGrid items={[
-  {icon:"📡", title:"Topics", description:"Publication/Subscription de messages"},
-  {icon:"🔧", title:"Services", description:"Communication requête/réponse"},
-  {icon:"🗺️", title:"TF", description:"Transformations de repères"},
-  {icon:"📦", title:"Packages", description:"Organisation du code"},
-  {icon:"🛠️", title:"Nodes", description:"Processus ROS 2"}
-]} />
+<FeatureGrid
+  items={[
+    {
+      icon: "📡",
+      title: "Topics",
+      description: "Publication/Subscription de messages",
+    },
+    {
+      icon: "🔧",
+      title: "Services",
+      description: "Communication requête/réponse",
+    },
+    { icon: "🗺️", title: "TF", description: "Transformations de repères" },
+    { icon: "📦", title: "Packages", description: "Organisation du code" },
+    { icon: "🛠️", title: "Nodes", description: "Processus ROS 2" },
+  ]}
+/>
 
 ### Nœuds et topics à créer
 
-<Table headers={["Nœud", "Topic/Service", "Type", "Description"]}
+<Table
+  headers={["Nœud", "Topic/Service", "Type", "Description"]}
   data={[
-    ["publisher_node", "/chatter", "std_msgs/String", "Publication de messages"],
+    [
+      "publisher_node",
+      "/chatter",
+      "std_msgs/String",
+      "Publication de messages",
+    ],
     ["subscriber_node", "/chatter", "std_msgs/String", "Réception de messages"],
-    ["service_server", "/add_two_ints", "example_interfaces/AddTwoInts", "Service de calcul"],
-    ["service_client", "/add_two_ints", "example_interfaces/AddTwoInts", "Client de service"]
+    [
+      "service_server",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Service de calcul",
+    ],
+    [
+      "service_client",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Client de service",
+    ],
   ]}
 />
 
@@ -73,7 +102,7 @@ class PublisherNode(Node):
         super().__init__('publisher_node')
         self.publisher = self.create_publisher(String, 'chatter', 10)
         self.timer = self.create_timer(1.0, self.publish_message)
-    
+
     def publish_message(self):
         msg = String()
         msg.data = 'Hello ROS 2!'
@@ -83,4 +112,4 @@ class PublisherNode(Node):
 
 ---
 
-*Pour plus de détails, consultez la documentation ROS 2 officielle.*
+_Pour plus de détails, consultez la documentation ROS 2 officielle._

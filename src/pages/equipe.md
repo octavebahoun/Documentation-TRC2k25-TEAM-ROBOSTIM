@@ -1,6 +1,7 @@
 import InfoCard from '@site/src/components/InfoCard';
 import FeatureGrid from '@site/src/components/FeatureGrid';
 import Table from '@site/src/components/Table';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export const title = 'Notre Équipe';
 export const description = 'Découvrez l\'équipe passionnée derrière le projet TRC - Team ROBOSTIM';
@@ -51,7 +52,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
     position: 'relative'
   }}>
     <img 
-      src="/img/team/team-photo.jpg" 
+      src={useBaseUrl('/img/team/team-photo.jpg')} 
       alt="Photo de l'équipe TRC - Team ROBOSTIM" 
       style={{
         width: '100%',
@@ -124,7 +125,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '3rem', flexShrink: 0}}>
     <img 
-      src="/img/team/giscard.jpg" 
+      src={useBaseUrl('/img/team/giscard.jpg')} 
       alt="Giscard AKINERINLA" 
       style={{
         width: '300px', 
@@ -202,7 +203,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '3rem', flexShrink: 0}}>
     <img 
-      src="/img/team/gracia.jpg" 
+      src={useBaseUrl('/img/team/gracia.jpg')} 
       alt="Gracia HOUANNOU" 
       style={{
         width: '300px', 
@@ -280,7 +281,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/newton.jpg" 
+      src={useBaseUrl('/img/team/newton.jpg')} 
       alt="Newton AFFADONOUGBO" 
       style={{
         width: '300px', 
@@ -358,7 +359,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/hamzat.jpg" 
+      src={useBaseUrl('/img/team/hamzat.jpg')} 
       alt="Hamzat BELLO" 
       style={{
         width: '300px', 
@@ -438,7 +439,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/juste.jpg" 
+      src={useBaseUrl('/img/team/juste.jpg')} 
       alt="Juste ATHAWET" 
       style={{
         width: '300px', 
@@ -516,7 +517,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/martine.jpg" 
+      src={useBaseUrl('/img/team/martine.jpg')} 
       alt="Martine Inès ADEOTAN" 
       style={{
         width: '300px', 
@@ -594,7 +595,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/console.jpg" 
+      src={useBaseUrl('/img/team/console.jpg')} 
       alt="Consolé AGOSSOU" 
       style={{
         width: '300px', 
@@ -674,7 +675,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/merveille.jpg" 
+      src={useBaseUrl('/img/team/merveille.jpg')} 
       alt="Merveille" 
       style={{
         width: '300px', 
@@ -752,7 +753,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/jaures.jpg" 
+      src={useBaseUrl('/img/team/jaures.jpg')} 
       alt="HOUANNOU Jaurès" 
       style={{
         width: '300px', 
@@ -830,7 +831,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 }}>
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
-      src="/img/team/aboubakar.jpg" 
+      src={useBaseUrl('/img/team/aboubakar.jpg')} 
       alt="Aboubakar ADRAMANE" 
       style={{
         width: '300px', 

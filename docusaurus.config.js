@@ -67,7 +67,7 @@ module.exports = {
         },
         {
           to: '/galerie',
-          label: '🖼️ Pictures',
+          label: '🖼️ Picture',
           position: 'right'
         },
         {

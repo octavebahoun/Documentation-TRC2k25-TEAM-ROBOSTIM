@@ -5,13 +5,13 @@ module.exports = {
   tagline: '',
 
   // ✅ URL GitHub Pages PERSONNELLE
-  url: 'https://akinerinlamoulerogiscardisidore.github.io',
+  url: 'https://octavebahoun.github.io',
 
   // ✅ NOM EXACT DU REPO
   baseUrl: '/Documentation-TRC2k25-TEAM-ROBOSTIM/',
 
   // ✅ TON COMPTE GITHUB
-  organizationName: 'Akinerinlamoulerogiscardisidore',
+  organizationName: 'octavebahoun',
 
   // ✅ NOM EXACT DU REPO
   projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
@@ -20,10 +20,10 @@ module.exports = {
   trailingSlash: false,
   favicon: 'img/favicon.ico',
 
-  
+
   // Configuration pour GitHub Pages
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   // Configuration corrigée pour le mode sombre
   themeConfig: {
@@ -46,7 +46,7 @@ module.exports = {
         height: 60,
       },
       hideOnScroll: false,
-      
+
       items: [
         {
           to: '/',

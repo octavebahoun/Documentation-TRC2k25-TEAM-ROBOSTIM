@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    '@docusaurus/eslint-config',
+    'plugin:@docusaurus/recommended',
     'plugin:react/recommended',
     'plugin:testing-library/react',
     'plugin:jest/recommended',
@@ -27,6 +27,9 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@docusaurus/prefer-docusaurus-heading': 'off',
+    'no-unused-vars': 'warn',
   },
   settings: {
     react: {

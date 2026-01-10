@@ -42,6 +42,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -82,6 +84,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -122,6 +126,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -171,6 +177,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '300px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -211,6 +219,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '300px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -251,6 +261,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '300px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -291,6 +303,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '300px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -340,6 +354,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -380,6 +396,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -420,6 +438,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -469,6 +489,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',
@@ -509,6 +531,8 @@ Cette galerie capture les moments clés de notre parcours, de la conception à l
         height: '250px',
         objectFit: 'cover'
       }}
+      loading="lazy"
+      decoding="async"
     />
     <div style={{
       position: 'absolute',

@@ -11,9 +11,9 @@ export default function Home() {
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      
+
       {/* SECTION HERO AVEC IMAGE COMPLÈTE */}
-      <header className="hero-section" style={{ 
+      <header className="hero-section" style={{
         background: `url(${imgUrl('robot-background.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -37,10 +37,10 @@ export default function Home() {
           background: 'rgba(0, 0, 0, 0.3)',
           zIndex: 1
         }}></div>
-        
+
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <h1 style={{ 
-            fontSize: 'clamp(2rem, 5vw, 4rem)', 
+          <h1 style={{
+            fontSize: 'clamp(2rem, 5vw, 4rem)',
             marginBottom: '1.5rem',
             fontWeight: '800',
             textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
@@ -48,9 +48,9 @@ export default function Home() {
           }}>
             {siteConfig.title}
           </h1>
-          
-          <p style={{ 
-            fontSize: 'clamp(1rem, 2.5vw, 1.5rem)', 
+
+          <p style={{
+            fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
             marginBottom: '3rem',
             textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
             color: 'white',
@@ -58,10 +58,10 @@ export default function Home() {
           }}>
             {siteConfig.tagline}
           </p>
-          
-          <div style={{ 
-            display: 'flex', 
-            gap: '1.5rem', 
+
+          <div style={{
+            display: 'flex',
+            gap: '1.5rem',
             justifyContent: 'center',
             flexWrap: 'wrap'
           }}>
@@ -72,7 +72,7 @@ export default function Home() {
             >
               📖 Explorer la documentation
             </Link>
-            
+
             {/* BOUTON 2 - Rencontrer l'Équipe */}
             <Link
               className="hero-btn-outline"
@@ -83,60 +83,60 @@ export default function Home() {
           </div>
         </div>
       </header>
-      
+
       {/* NOUVELLE SECTION : À PROPOS DU CONCOURS TRC */}
-      <section className="custom-section" style={{ 
-        padding: 'clamp(3rem, 8vw, 6rem) 0', 
+      <section className="custom-section" style={{
+        padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-surface-color)'
       }}>
         <div className="container">
           <div className="row align-items-center">
             {/* Texte à gauche */}
             <div className="col col--6">
-              <h2 style={{ 
+              <h2 style={{
                 color: 'var(--ifm-color-content)',
                 marginBottom: '1.5rem',
                 fontSize: 'clamp(1.5rem, 3vw, 2.3rem)',
                 fontWeight: '700'
               }}>
-                Qu'est ce que le TRC ? 
+                Qu'est ce que le TRC ?
               </h2>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
                 marginBottom: '1.5rem'
               }}>
-                Le <strong>TEKBOT Robotics Challenge ou TRC</strong> est une compétition internationale 
-                annuelle de robotique et d'intelligence artificielle, lancée en 2023 au Bénin. 
-                
+                Le <strong>TEKBOT Robotics Challenge ou TRC</strong> est une compétition internationale
+                annuelle de robotique et d'intelligence artificielle, lancée en 2023 au Bénin.
+
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
                 marginBottom: '1.5rem'
               }}>
-                Elle vise à développer les compétences en <strong>robotique en Afrique</strong> et à répondre 
-                aux défis technologiques du continent liées à des problématiques locales comme 
+                Elle vise à développer les compétences en <strong>robotique en Afrique</strong> et à répondre
+                aux défis technologiques du continent liées à des problématiques locales comme
                 la logistique, la gestion des déchets, l'agriculture ou la mobilité.
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
                 marginBottom: '2rem'
               }}>
-                Au-delà de la compétition, le <strong>TRC</strong> est une plateforme d'apprentissage, de 
-                collaboration et d'innovation pour aborder des enjeux mondiaux tels que l'eau, 
+                Au-delà de la compétition, le <strong>TRC</strong> est une plateforme d'apprentissage, de
+                collaboration et d'innovation pour aborder des enjeux mondiaux tels que l'eau,
                 l'énergie, la santé, l'alimentation et l'éducation.
               </p>
-              
-              <Link 
-                to="/about" 
+
+              <Link
+                to="/about"
                 className="button button--primary"
                 style={{
                   borderRadius: '8px',
@@ -147,17 +147,17 @@ export default function Home() {
                 En savoir plus sur le TRC
               </Link>
             </div>
-            
+
             {/* Image à droite */}
             <div className="col col--6">
-              <div style={{ 
+              <div style={{
                 padding: '2rem',
                 textAlign: 'center'
               }}>
-                <img 
-                  src={imgUrl('trc-competition.jpg')} 
+                <img
+                  src={imgUrl('trc-competition.jpg')}
                   alt="Compétition Tekbot Robotics Challenge"
-                  style={{ 
+                  style={{
                     width: '100%',
                     borderRadius: '12px',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
@@ -169,6 +169,8 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     e.target.style.transform = 'scale(1)';
                   }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/*<p style={{ 
                   marginTop: '1rem',
@@ -184,10 +186,10 @@ export default function Home() {
         </div>
       </section>
 
-      
+
 
       {/* SECTION NOTRE AMBITION - Style moderne avec cartes */}
-      <section style={{ 
+      <section style={{
         padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-surface-color)'
       }}>
@@ -222,7 +224,7 @@ export default function Home() {
               background: 'rgba(255, 255, 255, 0.1)',
               borderRadius: '50%'
             }}></div>
-            
+
             <div style={{ position: 'relative', zIndex: 2 }}>
               {/* Icone inspiration */}
               <div style={{
@@ -232,7 +234,7 @@ export default function Home() {
               }}>
                 ⚡
               </div>
-              
+
               <h2 style={{
                 fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                 marginBottom: '1.5rem',
@@ -242,7 +244,7 @@ export default function Home() {
               }}>
                 Notre ambition
               </h2>
-              
+
               <div style={{
                 maxWidth: '800px',
                 margin: '0 auto',
@@ -252,19 +254,19 @@ export default function Home() {
                 color: 'var(--ifm-color-content)'
               }}>
                 <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)', marginBottom: '1.5rem', color: 'var(--ifm-color-content)' }}>
-                  <strong>Notre mission est claire</strong> : non seulement participer au Tekbot Robotics Challenge, 
-                  mais <span style={{ color: '#fbbf24' }}>établir de nouvelles références en matière d'innovation 
-                  robotique</span> et démontrer l'excellence de l'ingénierie made in Africa.
+                  <strong>Notre mission est claire</strong> : non seulement participer au Tekbot Robotics Challenge,
+                  mais <span style={{ color: '#fbbf24' }}>établir de nouvelles références en matière d'innovation
+                    robotique</span> et démontrer l'excellence de l'ingénierie made in Africa.
                 </p>
-                
+
                 <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)', marginBottom: '1.5rem', color: 'var(--ifm-color-content)' }}>
-                  Nous percevons une compétition mais notre but véritable se trouve dans la <strong>construction d'un héritage : </strong> 
-                  une plateforme ouverte et collaborative, apte à inspirer les générations suivantes, à accélérer la 
-                  production de solutions africaines aux problématiques de notre monde et à établir notre continent 
+                  Nous percevons une compétition mais notre but véritable se trouve dans la <strong>construction d'un héritage : </strong>
+                  une plateforme ouverte et collaborative, apte à inspirer les générations suivantes, à accélérer la
+                  production de solutions africaines aux problématiques de notre monde et à établir notre continent
                   comme un <span style={{ color: '#fbbf24' }}>incontournable dans le secteur de la robotique et de l'intelligence artificielle</span>.
                 </p>
-                
-                <p style={{ 
+
+                <p style={{
                   fontSize: 'clamp(0.95rem, 2vw, 1.2rem)',
                   marginBottom: '2rem',
                   fontStyle: 'italic',
@@ -273,12 +275,12 @@ export default function Home() {
                   textAlign: 'left',
                   color: 'var(--ifm-color-content)'
                 }}>
-                  "L'innovation ne consiste pas à faire du nouveau, mais à faire du mieux. 
-                  Notre ambition est de repousser les limites du possible et d'inspirer 
+                  "L'innovation ne consiste pas à faire du nouveau, mais à faire du mieux.
+                  Notre ambition est de repousser les limites du possible et d'inspirer
                   une nouvelle génération de roboticien·ne·s."
                 </p>
               </div>
-              
+
               {/* Statistiques dans des cartes modernes */}
               <div style={{
                 display: 'flex',
@@ -302,63 +304,63 @@ export default function Home() {
                     textAlign: 'center',
                     minWidth: '150px'
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = 'rgba(255, 255, 255, 0.3)';
-                    e.target.style.transform = 'translateY(-5px)';
-                    e.target.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.2)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = 'rgba(255, 255, 255, 0.2)';
-                    e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = 'none';
-                  }}>
+                    onMouseEnter={(e) => {
+                      e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+                      e.target.style.transform = 'translateY(-5px)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = 'none';
+                    }}>
                     <div style={{
                       fontSize: '2rem',
                       marginBottom: '0.5rem'
                     }}>
                       {stat.icon}
                     </div>
-                      <div style={{
-                        fontSize: '2.5rem',
-                        fontWeight: '700',
-                        color: '#fbbf24',
-                        marginBottom: '0.5rem',
-                        textShadow: '0 2px 4px rgba(0,0,0,0.3)'
-                      }}>
-                        {stat.number}
-                      </div>
-                      <div style={{
-                        fontSize: '1rem',
-                        opacity: 0.9,
-                        fontWeight: '500',
-                        color: 'var(--ifm-color-content)'
-                      }}>
-                        {stat.label}
-                      </div>
+                    <div style={{
+                      fontSize: '2.5rem',
+                      fontWeight: '700',
+                      color: '#fbbf24',
+                      marginBottom: '0.5rem',
+                      textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                    }}>
+                      {stat.number}
+                    </div>
+                    <div style={{
+                      fontSize: '1rem',
+                      opacity: 0.9,
+                      fontWeight: '500',
+                      color: 'var(--ifm-color-content)'
+                    }}>
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
-              
+
               {/* Call to Action moderne */}
               <div style={{ marginTop: '3rem' }}>
                 <Link
                   className="button button--warning button--lg ambition-button"
                   to="/about"
-                    style={{
-                      backgroundColor: '#fbbf24',
-                      color: '#1e3a8a',
-                      border: 'none',
-                      fontWeight: '600',
-                      borderRadius: '15px',
-                      padding: '1rem 2.5rem',
-                      boxShadow: '0 8px 25px rgba(251, 191, 36, 0.4)',
-                      fontSize: '1.2rem',
-                      transition: 'all 0.3s ease',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      cursor: 'pointer'
-                    }}
+                  style={{
+                    backgroundColor: '#fbbf24',
+                    color: '#1e3a8a',
+                    border: 'none',
+                    fontWeight: '600',
+                    borderRadius: '15px',
+                    padding: '1rem 2.5rem',
+                    boxShadow: '0 8px 25px rgba(251, 191, 36, 0.4)',
+                    fontSize: '1.2rem',
+                    transition: 'all 0.3s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    cursor: 'pointer'
+                  }}
                 >
                   🌟 Découvrir notre vision complète
                 </Link>
@@ -370,13 +372,13 @@ export default function Home() {
 
 
       {/* SECTION PÔLE ÉLECTRONIQUE - Texte à gauche, Photo à droite */}
-      <section style={{ 
-        padding: 'clamp(3rem, 8vw, 6rem) 0', 
+      <section style={{
+        padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-surface-color)'
       }}>
         <div className="container">
           <div className="text--center" style={{ marginBottom: '4rem' }}>
-            <h2 style={{ 
+            <h2 style={{
               color: 'var(--ifm-color-content)',
               marginBottom: '3rem',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -384,7 +386,7 @@ export default function Home() {
             }}>
               <span style={{ color: 'var(--ifm-color-primary)' }}>👥</span> Une team diversifiée et passionnée
             </h2>
-            <h2 style={{ 
+            <h2 style={{
               color: 'var(--ifm-color-content)',
               marginBottom: '1rem',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -392,26 +394,26 @@ export default function Home() {
             }}>
               <span style={{ color: 'var(--ifm-color-primary)' }}>🔌</span> Pôle Électronique
             </h2>
-            <p style={{ 
+            <p style={{
               color: 'var(--ifm-color-content-secondary)',
               fontSize: '1.2rem'
             }}>
-              Les architectes de notre système électronique 
+              Les architectes de notre système électronique
             </p>
           </div>
 
           <div className="row align-items-center">
             {/* Texte à gauche */}
             <div className="col col--6">
-              <h3 style={{ 
+              <h3 style={{
                 color: 'var(--ifm-color-content)',
                 marginBottom: '1.5rem',
                 fontSize: '1.8rem'
               }}>
-                
+
               </h3>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -422,8 +424,8 @@ export default function Home() {
                 système concret. Ensuite, nous faisons le choix des composants les plus adaptés,
                 en tenant compte de ce qui est disponible et fiable.
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -435,8 +437,8 @@ export default function Home() {
                 passons à la réalisation du circuit sur PCB, jusqu’à aboutir à
                 la version finale, stable et prête pour le robot.
               </p>
-              
-              <div style={{ 
+
+              <div style={{
                 backgroundColor: 'var(--ifm-background-surface-color)',
                 padding: '1.5rem',
                 borderRadius: '12px',
@@ -444,7 +446,7 @@ export default function Home() {
                 marginBottom: '2rem',
                 border: '1px solid var(--ifm-color-emphasis-200)'
               }}>
-                <p style={{ 
+                <p style={{
                   margin: 0,
                   color: 'var(--ifm-color-content)',
                   fontStyle: 'italic',
@@ -455,17 +457,17 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
+
             {/* Photo à droite */}
             <div className="col col--6">
-              <div style={{ 
+              <div style={{
                 padding: '1rem',
                 textAlign: 'center'
               }}>
-                <img 
-                  src={imgUrl('team-electronique.jpg')} 
+                <img
+                  src={imgUrl('team-electronique.jpg')}
                   alt="Équipe Électronique TRC"
-                  style={{ 
+                  style={{
                     width: '100%',
                     borderRadius: '16px',
                     boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
@@ -477,8 +479,10 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     e.target.style.transform = 'scale(1)';
                   }}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <p style={{ 
+                <p style={{
                   marginTop: '1rem',
                   color: 'var(--ifm-color-content-secondary)',
                   fontSize: '0.9rem',
@@ -493,13 +497,13 @@ export default function Home() {
       </section>
 
       {/* SECTION PÔLE IT - Photo à gauche, Texte à droite */}
-      <section style={{ 
-        padding: 'clamp(3rem, 8vw, 6rem) 0', 
+      <section style={{
+        padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-color)'
       }}>
         <div className="container">
           <div className="text--center" style={{ marginBottom: '4rem' }}>
-            <h2 style={{ 
+            <h2 style={{
               color: 'var(--ifm-color-content)',
               marginBottom: '1rem',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -507,7 +511,7 @@ export default function Home() {
             }}>
               <span style={{ color: 'var(--color-it)' }}>💻</span> Pôle IT & Software
             </h2>
-            <p style={{ 
+            <p style={{
               color: 'var(--ifm-color-content-secondary)',
               fontSize: '1.2rem'
             }}>
@@ -518,14 +522,14 @@ export default function Home() {
           <div className="row align-items-center">
             {/* Photo à gauche */}
             <div className="col col--6">
-              <div style={{ 
+              <div style={{
                 padding: '1rem',
                 textAlign: 'center'
               }}>
-                <img 
-                  src={imgUrl('team-it.jpg')} 
+                <img
+                  src={imgUrl('team-it.jpg')}
                   alt="Équipe IT TRC"
-                  style={{ 
+                  style={{
                     width: '100%',
                     borderRadius: '16px',
                     boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
@@ -537,8 +541,10 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     e.target.style.transform = 'scale(1)';
                   }}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <p style={{ 
+                <p style={{
                   marginTop: '1rem',
                   color: 'var(--ifm-color-content-secondary)',
                   fontSize: '0.9rem',
@@ -548,18 +554,18 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
+
             {/* Texte à droite */}
             <div className="col col--6">
-              <h3 style={{ 
+              <h3 style={{
                 color: 'var(--ifm-color-content)',
                 marginBottom: '1.5rem',
                 fontSize: '1.8rem'
               }}>
-                
+
               </h3>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -570,8 +576,8 @@ export default function Home() {
                 de percevoir son environnement, de prendre des décisions
                 et d’agir de manière autonome.
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -585,8 +591,8 @@ export default function Home() {
                 reste simple et intuitive pour l’utilisateur tout en
                 étant performante et fiable.
               </p>
-              
-              <div style={{ 
+
+              <div style={{
                 backgroundColor: 'var(--ifm-background-surface-color)',
                 padding: '1.5rem',
                 borderRadius: '12px',
@@ -594,7 +600,7 @@ export default function Home() {
                 marginBottom: '2rem',
                 border: '1px solid var(--ifm-color-emphasis-200)'
               }}>
-                <p style={{ 
+                <p style={{
                   margin: 0,
                   color: 'var(--ifm-color-content)',
                   fontStyle: 'italic',
@@ -611,13 +617,13 @@ export default function Home() {
       </section>
 
       {/* SECTION PÔLE MÉCANIQUE - Texte à gauche, Photo à droite */}
-      <section style={{ 
-        padding: 'clamp(3rem, 8vw, 6rem) 0', 
+      <section style={{
+        padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-surface-color)'
       }}>
         <div className="container">
           <div className="text--center" style={{ marginBottom: '4rem' }}>
-            <h2 style={{ 
+            <h2 style={{
               color: 'var(--ifm-color-content)',
               marginBottom: '1rem',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -625,7 +631,7 @@ export default function Home() {
             }}>
               <span style={{ color: 'var(--color-mecanique)' }}>⚙️</span> Pôle Mécanique
             </h2>
-            <p style={{ 
+            <p style={{
               color: 'var(--ifm-color-content-secondary)',
               fontSize: '1.2rem'
             }}>
@@ -636,15 +642,15 @@ export default function Home() {
           <div className="row align-items-center">
             {/* Texte à gauche */}
             <div className="col col--6">
-              <h3 style={{ 
+              <h3 style={{
                 color: 'var(--ifm-color-content)',
                 marginBottom: '1.5rem',
                 fontSize: '1.8rem'
               }}>
-                
+
               </h3>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -654,8 +660,8 @@ export default function Home() {
                 Elle conçoit et fabrique la structure qui abrite et supporte
                 tous les composants électroniques et logiciels du robot.
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -664,11 +670,11 @@ export default function Home() {
                 Chaque étape est pensée : de la Conception Assistée par Ordinateur (CAO) à la fabrication,
                 en passant par l’impression 3D et l’usinage, chaque pièce est testée
                 et ajustée pour garantir légèreté, robustesse et précision.
-                L’objectif est que la structure permette au robot de 
+                L’objectif est que la structure permette au robot de
                 fonctionner parfaitement tout en étant esthétique et fiable.
               </p>
-              
-              <div style={{ 
+
+              <div style={{
                 backgroundColor: 'var(--ifm-background-surface-color)',
                 padding: '1.5rem',
                 borderRadius: '12px',
@@ -676,28 +682,28 @@ export default function Home() {
                 marginBottom: '2rem',
                 border: '1px solid var(--ifm-color-emphasis-200)'
               }}>
-                <p style={{ 
+                <p style={{
                   margin: 0,
                   color: 'var(--ifm-color-content)',
                   fontStyle: 'italic',
                   lineHeight: '1.6'
                 }}>
-                  "Notre défi : donner au robot une ossature solide et ingénieuse, 
+                  "Notre défi : donner au robot une ossature solide et ingénieuse,
                   capable de soutenir chaque innovation que nous y intégrons."
                 </p>
               </div>
             </div>
-            
+
             {/* Photo à droite */}
             <div className="col col--6">
-              <div style={{ 
+              <div style={{
                 padding: '1rem',
                 textAlign: 'center'
               }}>
-                <img 
-                  src={imgUrl('team-mecanique.jpg')} 
+                <img
+                  src={imgUrl('team-mecanique.jpg')}
                   alt="Équipe Mécanique TRC"
-                  style={{ 
+                  style={{
                     width: '100%',
                     borderRadius: '16px',
                     boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
@@ -709,8 +715,10 @@ export default function Home() {
                   onMouseLeave={(e) => {
                     e.target.style.transform = 'scale(1)';
                   }}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <p style={{ 
+                <p style={{
                   marginTop: '1rem',
                   color: 'var(--ifm-color-content-secondary)',
                   fontSize: '0.9rem',
@@ -726,23 +734,23 @@ export default function Home() {
 
 
       {/* SECTION NOTRE UNIVERSITÉ - Photo à gauche, texte à droite */}
-      <section style={{ 
-        padding: 'clamp(3rem, 8vw, 6rem) 0', 
+      <section style={{
+        padding: 'clamp(3rem, 8vw, 6rem) 0',
         backgroundColor: 'var(--ifm-background-color)'
       }}>
         <div className="container">
           <div className="row align-items-center">
             {/* Photo à gauche */}
             <div className="col col--6">
-              <div style={{ 
+              <div style={{
                 padding: '1rem',
                 textAlign: 'center',
                 position: 'relative'
               }}>
-                <img 
-                  src={imgUrl('university-campus.jpg')} 
+                <img
+                  src={imgUrl('university-campus.jpg')}
                   alt="Campus de notre Université"
-                  style={{ 
+                  style={{
                     width: '100%',
                     borderRadius: '16px',
                     boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
@@ -756,8 +764,10 @@ export default function Home() {
                     e.target.style.transform = 'scale(1)';
                     e.target.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)';
                   }}
+                  loading="lazy"
+                  decoding="async"
                 />
-                
+
                 {/* Badge de prestige */}
                 <div style={{
                   position: 'absolute',
@@ -775,10 +785,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             {/* Texte à droite */}
             <div className="col col--6">
-              <h2 style={{ 
+              <h2 style={{
                 color: 'var(--ifm-color-content)',
                 marginBottom: '1.5rem',
                 fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -786,8 +796,8 @@ export default function Home() {
               }}>
                 Notre écosystème <span style={{ color: '#2563eb' }}>académique</span>
               </h2>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -796,8 +806,8 @@ export default function Home() {
                 <strong>Fierté de l'INSTI (Institut National Supérieur de Technologie Industrielle)</strong>, le projet TRC est l’expression concrète
                 de la vision pédagogique de notre université : combiner excellence académique et innovation pratique.
               </p>
-              
-              <p style={{ 
+
+              <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.7',
                 color: 'var(--ifm-color-content-secondary)',
@@ -809,15 +819,15 @@ export default function Home() {
                 et les ressources disponibles renforcent encore notre capacité à
                 expérimenter et innover.
               </p>
-              
-              <div style={{ 
+
+              <div style={{
                 backgroundColor: 'var(--ifm-background-surface-color)',
                 padding: '1.5rem',
                 borderRadius: '12px',
                 borderLeft: '4px solid #2563eb',
                 marginBottom: '2rem'
               }}>
-                <p style={{ 
+                <p style={{
                   margin: 0,
                   color: 'var(--ifm-color-content-secondary)',
                   fontStyle: 'italic',
@@ -826,7 +836,7 @@ export default function Home() {
                   "La force de l'INSTI ? Transformer les théories en projets tangibles. Le TRC en est la preuve."
                 </p>
               </div>
-              
+
               {/* Points forts */}
               <div style={{ marginBottom: '2rem' }}>
                 {/*<div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.8rem' }}>
@@ -847,16 +857,16 @@ export default function Home() {
                   </span>
                   <span style={{ color: '#374151' }}>Laboratoires de pointe</span>
                 </div>*/}
-                
+
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.8rem' }}>
-                  <span style={{ 
-                    background: 'var(--ifm-color-primary)', 
-                    color: 'white', 
-                    borderRadius: '50%', 
-                    width: '24px', 
-                    height: '24px', 
-                    display: 'flex', 
-                    alignItems: 'center', 
+                  <span style={{
+                    background: 'var(--ifm-color-primary)',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '24px',
+                    height: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '1rem',
                     fontSize: '0.8rem',
@@ -866,16 +876,16 @@ export default function Home() {
                   </span>
                   <span style={{ color: 'var(--ifm-color-content)' }}>Encadrement personnalisé</span>
                 </div>
-                
+
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.8rem' }}>
-                  <span style={{ 
-                    background: 'var(--ifm-color-primary)', 
-                    color: 'white', 
-                    borderRadius: '50%', 
-                    width: '24px', 
-                    height: '24px', 
-                    display: 'flex', 
-                    alignItems: 'center', 
+                  <span style={{
+                    background: 'var(--ifm-color-primary)',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '24px',
+                    height: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '1rem',
                     fontSize: '0.8rem',
@@ -886,9 +896,9 @@ export default function Home() {
                   <span style={{ color: 'var(--ifm-color-content)' }}>Partenariats industriels</span>
                 </div>
               </div>
-              
-              <Link 
-                to="/universite" 
+
+              <Link
+                to="/universite"
                 className="button button--primary university-button"
                 style={{
                   background: 'linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%)',
@@ -918,7 +928,7 @@ export default function Home() {
       <section style={{ padding: 'clamp(3rem, 8vw, 6rem) 0', backgroundColor: 'var(--ifm-background-color)' }}>
         <div className="container">
           <div className="text--center" style={{ marginBottom: '4rem' }}>
-            <h2 style={{ 
+            <h2 style={{
               color: 'var(--ifm-color-content)',
               marginBottom: '1rem',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
@@ -926,7 +936,7 @@ export default function Home() {
             }}>
               Notre expertise technique
             </h2>
-            <p style={{ 
+            <p style={{
               color: 'var(--ifm-color-content-secondary)',
               fontSize: '1.2rem',
               maxWidth: '700px',
@@ -935,22 +945,22 @@ export default function Home() {
               Une plongée complète dans notre travail au TRC
             </p>
           </div>
-          
+
           <div className="row">
             {[
-              { 
-                icon: '🔌', 
-                title: 'Électronique de précision', 
+              {
+                icon: '🔌',
+                title: 'Électronique de précision',
                 description: 'Analyse, conception et tests des circuits et systèmes de puissance pour un robot fiable et performant'
               },
-              { 
-                icon: '💻', 
-                title: 'Développement Software', 
+              {
+                icon: '💻',
+                title: 'Développement Software',
                 description: 'Programmation ROS, développement IA et interfaces pour un robot autonome et intelligent'
               },
-              { 
-                icon: '⚙️', 
-                title: 'Ingénierie Mécanique', 
+              {
+                icon: '⚙️',
+                title: 'Ingénierie Mécanique',
                 description: 'Modélisation 3D, prototypage et fabrication de la structure pour allier robustesse, précision et légèreté'
               }
             ].map((item, index) => (
@@ -959,15 +969,15 @@ export default function Home() {
                   <div className="feature-icon">
                     {item.icon}
                   </div>
-                  <h3 style={{ 
-                    color: 'var(--ifm-color-content)', 
+                  <h3 style={{
+                    color: 'var(--ifm-color-content)',
                     marginBottom: '1.5rem',
                     fontSize: '1.4rem',
                     fontWeight: '600'
                   }}>
                     {item.title}
                   </h3>
-                  <p style={{ 
+                  <p style={{
                     color: 'var(--ifm-color-content-secondary)',
                     lineHeight: '1.7',
                     fontSize: '1.1rem'
@@ -982,13 +992,13 @@ export default function Home() {
       </section>
 
       {/* Section CTA finale */}
-      <section style={{ 
+      <section style={{
         padding: 'clamp(3.5rem, 10vw, 7rem) 0',
         background: 'var(--ifm-background-surface-color)',
         textAlign: 'center'
       }}>
         <div className="container">
-          <h2 style={{ 
+          <h2 style={{
             marginBottom: '1.5rem',
             color: 'var(--ifm-color-content)',
             fontSize: 'clamp(1.75rem, 5vw, 2.8rem)',
@@ -996,8 +1006,8 @@ export default function Home() {
           }}>
             Prêt à explorer notre parcours ?
           </h2>
-          
-          <p style={{ 
+
+          <p style={{
             fontSize: '1.2rem',
             color: 'var(--ifm-color-content-secondary)',
             marginBottom: '3rem',
@@ -1006,7 +1016,7 @@ export default function Home() {
           }}>
             Découvrez chaque détail technique de notre parcours depuis les tests de présélection à la réalisation finale.
           </p>
-          
+
           <Link
             className="final-cta-btn"
             to="/docs/Electronics/Test1"

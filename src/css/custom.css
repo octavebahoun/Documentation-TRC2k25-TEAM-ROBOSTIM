@@ -2612,3 +2612,39 @@ html, body {
   text-align: left;
   color: white;
 }
+
+/* --- OPTIMISATIONS MOBILE --- */
+@media (max-width: 996px) {
+  /* Utiliser toute la largeur disponible sur mobile */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Empiler les colonnes et prendre 100% de largeur */
+  .col {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 2rem;
+  }
+
+  /* Ajuster le padding des sections */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Ajuster les titres sur mobile */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  
+  /* Images en pleine largeur */
+  img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

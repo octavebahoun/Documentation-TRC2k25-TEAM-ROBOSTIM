@@ -2,11 +2,10 @@ import InfoCard from '@site/src/components/InfoCard';
 import FeatureGrid from '@site/src/components/FeatureGrid';
 import Table from '@site/src/components/Table';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import TeamMember from '@site/src/components/TeamMember';
 
 export const title = 'Notre Équipe';
 export const description = 'Découvrez l\'équipe passionnée derrière le projet TRC - Team ROBOSTIM';
-
-
 
 # Rencontrez l'équipe derrière le TRC
 
@@ -19,21 +18,21 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 ## 🏗️ Structure de l'équipe
 
 <FeatureGrid items={[
-  {
-    icon: "⚡",
-    title: "Pôle Électronique",
-    description: "Conception et intégration des systèmes électroniques, capteurs et microcontrôleurs"
-  },
-  {
-    icon: "💻",
-    title: "Pôle IT",
-    description: "Développement logiciel, interfaces utilisateur et communication réseau"
-  },
-  {
-    icon: "  ",
-    title: "Pôle Mécanique",
-    description: "Conception 3D, fabrication et assemblage des structures robotiques"
-  }
+{
+icon: "⚡",
+title: "Pôle Électronique",
+description: "Conception et intégration des systèmes électroniques, capteurs et microcontrôleurs"
+},
+{
+icon: "💻",
+title: "Pôle IT",
+description: "Développement logiciel, interfaces utilisateur et communication réseau"
+},
+{
+icon: " ",
+title: "Pôle Mécanique",
+description: "Conception 3D, fabrication et assemblage des structures robotiques"
+}
 ]} />
 
 ## 👥 Notre **Team**
@@ -112,814 +111,123 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 
 ### 🔌 Pôle Électronique
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '4rem', 
-  padding: '3rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '20px', 
-  boxShadow: '0 12px 48px rgba(0,0,0,0.15)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '3rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/giscard.jpg')} 
-      alt="Giscard AKINERINLA" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-electronique)',
-        boxShadow: '0 16px 48px rgba(14, 165, 233, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(14, 165, 233, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 16px 48px rgba(14, 165, 233, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1.5rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Giscard AKINERINLA
-      </h3>
-      <span style={{
-        background: 'var(--color-electronique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        🔌 Électronique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Systèmes embarqués
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Passionné d'électronique et de systèmes embarqués, Giscard apporte son expertise en conception de circuits et programmation de microcontrôleurs pour nos projets robotiques. Son approche méthodique et sa créativité technique font de lui un atout précieux pour l'équipe.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Giscard AKINERINLA"
+  role="Membre"
+  specialty="Systèmes embarqués"
+  description="Passionné d'électronique et de systèmes embarqués, Giscard apporte son expertise en conception de circuits et programmation de microcontrôleurs pour nos projets robotiques. Son approche méthodique et sa créativité technique font de lui un atout précieux pour l'équipe."
+  image="/img/team/giscard.jpg"
+  color="electronique"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '3rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/gracia.jpg')} 
-      alt="Gracia HOUANNOU" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-electronique)',
-        boxShadow: '0 16px 48px rgba(14, 165, 233, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(14, 165, 233, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 16px 48px rgba(14, 165, 233, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Gracia HOUANNOU
-      </h3>
-      <span style={{
-        background: 'var(--color-electronique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        🔌 Électronique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Électronique analogique & numérique
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Spécialisée en électronique analogique et numérique, Gracia contribue au développement des systèmes de contrôle et de communication de nos robots. Sa maîtrise des signaux et sa rigueur technique garantissent la fiabilité de nos systèmes électroniques.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Gracia HOUANNOU"
+  role="Membre"
+  specialty="Électronique analogique & numérique"
+  description="Spécialisée en électronique analogique et numérique, Gracia contribue au développement des systèmes de contrôle et de communication de nos robots. Sa maîtrise des signaux et sa rigueur technique garantissent la fiabilité de nos systèmes électroniques."
+  image="/img/team/gracia.jpg"
+  color="electronique"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/newton.jpg')} 
-      alt="Newton AFFADONOUGBO" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-electronique)',
-        boxShadow: '0 16px 48px rgba(14, 165, 233, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(14, 165, 233, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Newton AFFADONOUGBO
-      </h3>
-      <span style={{
-        background: 'var(--color-electronique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        🔌 Électronique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> IoT & Systèmes embarqués
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Expert en systèmes embarqués et IoT, Newton développe les solutions de connectivité et de télémétrie pour nos robots autonomes. Son expertise en communication sans fil et en protocoles de données est essentielle pour nos systèmes de monitoring.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Newton AFFADONOUGBO"
+  role="Membre"
+  specialty="IoT & Systèmes embarqués"
+  description="Expert en systèmes embarqués et IoT, Newton développe les solutions de connectivité et de télémétrie pour nos robots autonomes. Son expertise en communication sans fil et en protocoles de données est essentielle pour nos systèmes de monitoring."
+  image="/img/team/newton.jpg"
+  color="electronique"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/hamzat.jpg')} 
-      alt="Hamzat BELLO" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-electronique)',
-        boxShadow: '0 16px 48px rgba(14, 165, 233, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(14, 165, 233, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(14, 165, 233, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Hamzat BELLO
-      </h3>
-      <span style={{
-        background: 'var(--color-electronique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        🔌 Électronique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Électronique de puissance
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Spécialiste en électronique de puissance et systèmes de contrôle, Hamzat optimise l'efficacité énergétique de nos robots. Son expertise en gestion de l'alimentation et en contrôle de moteurs garantit des performances optimales.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Hamzat BELLO"
+  role="Membre"
+  specialty="Électronique de puissance"
+  description="Spécialiste en électronique de puissance et systèmes de contrôle, Hamzat optimise l'efficacité énergétique de nos robots. Son expertise en gestion de l'alimentation et en contrôle de moteurs garantit des performances optimales."
+  image="/img/team/hamzat.jpg"
+  color="electronique"
+/>
 
 ### ⚙️ Pôle Mécanique
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/juste.jpg')} 
-      alt="Juste ATHAWET" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-mecanique)',
-        boxShadow: '0 16px 48px rgba(239, 68, 68, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(239, 68, 68, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(239, 68, 68, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Juste ATHAWET
-      </h3>
-      <span style={{
-        background: 'var(--color-mecanique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        ⚙️ Mécanique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Conception mécanique
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Ingénieur mécanique passionné, Juste conçoit et optimise les structures robotiques pour assurer robustesse et performance. Son expertise en CAO et en simulation garantit des solutions mécaniques innovantes et fiables.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Juste ATHAWET"
+  role="Membre"
+  specialty="Conception mécanique"
+  description="Ingénieur mécanique passionné, Juste conçoit et optimise les structures robotiques pour assurer robustesse et performance. Son expertise en CAO et en simulation garantit des solutions mécaniques innovantes et fiables."
+  image="/img/team/juste.jpg"
+  color="mecanique"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/martine.jpg')} 
-      alt="Martine Inès ADEOTAN" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-mecanique)',
-        boxShadow: '0 16px 48px rgba(239, 68, 68, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(239, 68, 68, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(239, 68, 68, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Martine Inès ADEOTAN
-      </h3>
-      <span style={{
-        background: 'var(--color-mecanique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        ⚙️ Mécanique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Fabrication additive & 3D
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Spécialiste en conception 3D et fabrication additive, Martine développe des solutions mécaniques innovantes pour nos robots. Son expertise en impression 3D et en prototypage rapide accélère notre processus de développement.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Martine Inès ADEOTAN"
+  role="Membre"
+  specialty="Fabrication additive & 3D"
+  description="Spécialiste en conception 3D et fabrication additive, Martine développe des solutions mécaniques innovantes pour nos robots. Son expertise en impression 3D et en prototypage rapide accélère notre processus de développement."
+  image="/img/team/martine.jpg"
+  color="mecanique"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/console.jpg')} 
-      alt="Consolé AGOSSOU" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-mecanique)',
-        boxShadow: '0 16px 48px rgba(239, 68, 68, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(239, 68, 68, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(239, 68, 68, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Consolé AGOSSOU
-      </h3>
-      <span style={{
-        background: 'var(--color-mecanique)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        ⚙️ Mécanique
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Mécanique des fluides
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Expert en mécanique des fluides et systèmes hydrauliques, Consolé conçoit les systèmes de propulsion et de manipulation. Son expertise en dynamique des fluides optimise les performances de nos systèmes de mouvement.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Consolé AGOSSOU"
+  role="Membre"
+  specialty="Mécanique des fluides"
+  description="Expert en mécanique des fluides et systèmes hydrauliques, Consolé conçoit les systèmes de propulsion et de manipulation. Son expertise en dynamique des fluides optimise les performances de nos systèmes de mouvement."
+  image="/img/team/console.jpg"
+  color="mecanique"
+/>
 
 ### 💻 Pôle IT
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/merveille.jpg')} 
-      alt="Merveille" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-it)',
-        boxShadow: '0 16px 48px rgba(139, 92, 246, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(139, 92, 246, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(139, 92, 246, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Merveille
-      </h3>
-      <span style={{
-        background: 'var(--color-it)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        💻 IT
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Développement full-stack
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Développeuse full-stack passionnée, Merveille crée les interfaces utilisateur et les systèmes de communication pour nos robots. Son expertise en développement web et mobile facilite l'interaction humain-robot.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="Merveille"
+  role="Membre"
+  specialty="Développement full-stack"
+  description="Développeuse full-stack passionnée, Merveille crée les interfaces utilisateur et les systèmes de communication pour nos robots. Son expertise en développement web et mobile facilite l'interaction humain-robot."
+  image="/img/team/merveille.jpg"
+  color="it"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/jaures.jpg')} 
-      alt="HOUANNOU Jaurès" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-it)',
-        boxShadow: '0 16px 48px rgba(139, 92, 246, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(139, 92, 246, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(139, 92, 246, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        HOUANNOU Jaurès
-      </h3>
-      <span style={{
-        background: 'var(--color-it)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        💻 IT
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Intelligence Artificielle
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Expert en intelligence artificielle et machine learning, Jaurès développe les algorithmes d'autonomie et de prise de décision. Son expertise en deep learning et en vision par ordinateur donne vie à l'intelligence de nos robots.
-    </p>
-  </div>
-</div>
+<TeamMember 
+  name="HOUANNOU Jaurès"
+  role="Chargé de projet"
+  specialty="Intelligence Artificielle"
+  description="Expert en intelligence artificielle et machine learning, Jaurès développe les algorithmes d'autonomie et de prise de décision. Son expertise en deep learning et en vision par ordinateur donne vie à l'intelligence de nos robots."
+  image="/img/team/jaures.jpg"
+  color="it"
+/>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
-  <div style={{marginRight: '2.5rem', flexShrink: 0}}>
-    <img 
-      src={useBaseUrl('/img/team/aboubakar.jpg')} 
-      alt="Aboubakar ADRAMANE" 
-      style={{
-        width: '300px', 
-        height: '400px', 
-        borderRadius: '25px', 
-        objectFit: 'cover', 
-        border: '6px solid var(--color-it)',
-        boxShadow: '0 16px 48px rgba(139, 92, 246, 0.4)',
-        transition: 'all 0.3s ease'
-      }} 
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(139, 92, 246, 0.5)';
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 8px 32px rgba(139, 92, 246, 0.4)';
-      }}
-    />
-  </div>
-  <div style={{flex: 1}}>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    }}>
-      <h3 style={{
-        margin: '0 1.5rem 0 0', 
-        color: 'var(--ifm-color-content)',
-        fontSize: '2rem',
-        fontWeight: '700'
-      }}>
-        Aboubakar ADRAMANE
-      </h3>
-      <span style={{
-        background: 'var(--color-it)',
-        color: 'white',
-        padding: '0.5rem 1.2rem',
-        borderRadius: '25px',
-        fontSize: '1rem',
-        fontWeight: '600'
-      }}>
-        💻 IT
-      </span>
-    </div>
-    <p style={{
-      margin: '0 0 1.5rem 0', 
-      color: 'var(--ifm-color-content-secondary)',
-      fontSize: '0.9rem',
-      fontWeight: '500'
-    }}>
-      <strong>Rôle :</strong> Membre | <strong>Spécialité :</strong> Cybersécurité & Réseaux
-    </p>
-    <p style={{
-      margin: '0', 
-      color: 'var(--ifm-color-content)',
-      lineHeight: '1.7',
-      fontSize: '1.04rem'
-    }}>
-      Spécialiste en cybersécurité et réseaux, Aboubakar assure la sécurité et la fiabilité des communications robotiques. Son expertise en protection des données et en sécurisation des communications garantit l'intégrité de nos systèmes.
-    </p>
-  </div>
-</div>
-
+<TeamMember 
+  name="Aboubakar ADRAMANE"
+  role="Membre"
+  specialty="Cybersécurité & Réseaux"
+  description="Spécialiste en cybersécurité et réseaux, Aboubakar assure la sécurité et la fiabilité des communications robotiques. Son expertise en protection des données et en sécurisation des communications garantit l'intégrité de nos systèmes."
+  image="/img/team/aboubakar.jpg"
+  color="it"
+/>
 
 ## 🎯 Nos valeurs
 
 <FeatureGrid items={[
-  {
-    icon: "🤝",
-    title: "Collaboration",
-    description: "Nous travaillons ensemble pour atteindre des objectifs communs et partager nos connaissances"
-  },
-  {
-    icon: "  ",
-    title: "Innovation",
-    description: "Nous repoussons les limites de la technologie pour créer des solutions innovantes"
-  },
-  {
-    icon: "🎓",
-    title: "Apprentissage",
-    description: "Chaque projet est une opportunité d'apprendre et de développer de nouvelles compétences"
-  },
-  {
-    icon: "🏆",
-    title: "Excellence",
-    description: "Nous visons la qualité et la performance dans tous nos développements"
-  }
+{
+icon: "🤝",
+title: "Collaboration",
+description: "Nous travaillons ensemble pour atteindre des objectifs communs et partager nos connaissances"
+},
+{
+icon: " ",
+title: "Innovation",
+description: "Nous repoussons les limites de la technologie pour créer des solutions innovantes"
+},
+{
+icon: "🎓",
+title: "Apprentissage",
+description: "Chaque projet est une opportunité d'apprendre et de développer de nouvelles compétences"
+},
+{
+icon: "🏆",
+title: "Excellence",
+description: "Nous visons la qualité et la performance dans tous nos développements"
+}
 ]} />
 
 ## Notre approche
@@ -932,8 +240,8 @@ Notre équipe suit une approche structurée et collaborative :
 3. **Intégration** - Assemblage et test des différents composants
 4. **Validation** - Tests complets et optimisation des performances
 5. **Documentation** - Rédaction de la documentation technique complète
-</InfoCard>
 
+</InfoCard>
 
 ## 📞 Contact et collaboration
 

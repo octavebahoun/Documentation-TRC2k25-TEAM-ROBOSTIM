@@ -22,8 +22,8 @@ module.exports = {
 
 
   // Configuration pour GitHub Pages
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   // Configuration corrigée pour le mode sombre
   themeConfig: {

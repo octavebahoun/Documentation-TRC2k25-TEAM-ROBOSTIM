@@ -1,67 +1,119 @@
 .stepCard {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--ifm-background-surface-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--ifm-color-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stepCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stepHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
-  gap: 15px;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .stepNumber {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.125rem;
   flex-shrink: 0;
 }
 
 .stepIcon {
-  font-size: 24px;
-  color: #3b82f6;
+  font-size: 1.75rem;
+  color: var(--ifm-color-primary);
   flex-shrink: 0;
 }
 
 .stepTitle {
   margin: 0;
-  font-size: 1.3em;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--ifm-color-content);
   flex: 1;
 }
 
 .stepContent {
-  color: #475569;
+  color: var(--ifm-color-content-secondary);
   line-height: 1.6;
 }
 
 .stepContent p {
-  margin: 0 0 10px 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .stepContent ul, .stepContent ol {
-  margin: 10px 0;
-  padding-left: 20px;
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
 }
 
 .stepContent li {
-  margin: 5px 0;
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stepCard {
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  
+  .stepHeader {
+    gap: 0.75rem;
+  }
+  
+  .stepNumber {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .stepIcon {
+    font-size: 1.5rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.125rem;
+  }
+  
+  .stepContent {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepCard {
+    padding: 1rem;
+  }
+  
+  .stepNumber {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9375rem;
+  }
+  
+  .stepIcon {
+    font-size: 1.25rem;
+  }
+  
+  .stepTitle {
+    font-size: 1rem;
+    flex-basis: 100%;
+  }
 }

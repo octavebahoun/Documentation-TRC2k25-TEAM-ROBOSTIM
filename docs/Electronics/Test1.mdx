@@ -9,75 +9,395 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Documentation technique des tests en Électronique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    <strong>Test 1 :</strong> Gyroscope et accéléromètre
+  </p>
 
-<InfoCard type="info" title="Objectif du test" icon="🧭">
-  Identifier puis exploiter les valeurs d'un capteur gyroscope et accéléromètre
-  (MPU6050) pour détecter l'orientation dans l'espace et la vitesse de
-  mouvement.
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="#test"
+      className="hero-btn-primary"
+      style={{
+        color: "#1e40af",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      Commencer la lecture
+    </a>
+    <a
+      href="https://vimeo.com/1093499371"
+      target="_blank"
+      className="hero-btn-outline"
+      style={{
+        color: "white",
+        border: "2px solid white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        background: "rgba(255,255,255,0.1)",
+      }}
+    >
+      <i className="fas fa-video"></i> Voir la démo
+    </a>
+  </div>
+</div>
+
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    background: "#fef3c7",
+    color: "#92400e",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    marginBottom: "2rem",
+    border: "1px solid #f59e0b",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
+
+## <i className="fas fa-flask"></i> Test 1 : Gyroscope et Accéléromètre {#test}
+
+S'orienter dans l'espace, savoir distinguer le haut, le bas, la gauche, la droite, l'avant et l'arrière, est une compétence naturelle chez l'être humain. Mais comment faire pour qu'un robot ou un système automatisé reproduise cette capacité ?
+
+:::info[C'est là qu'interviennent les capteurs inertiels]
+Des composants électroniques capables de « sentir » les mouvements et rotations d'un objet dans l'espace.
+:::
+
+Nous avons choisi d'explorer cette technologie avec un capteur **MPU6050**, un module combinant :
+
+- **<i className="fas fa-arrows-alt-h"></i> Accéléromètre 3 axes** - pour détecter les accélérations (y compris la gravité)
+- **<i className="fas fa-sync-alt"></i> Gyroscope 3 axes** - pour mesurer les vitesses de rotation autour de 3 axes
+
+Ce capteur sera placé dans la paume d’une main et connecté à un microcontrôleur **ATmega328P**.
+
+À chaque geste : lever la main, la baisser, la tourner, les informations seront affichées en temps réel sur un écran LCD.
+
+<InfoCard type="info" title="Importance du test" icon="⭐">
+Ce test constitue une immersion concrète dans les systèmes embarqués et la robotique, où les capteurs inertiels comme ceux que l'on retrouve dans les drones, smartphones ou robots sont essentiels pour mesurer la position, la vitesse et la stabilité du système.
+
+En combinant un accéléromètre (qui mesure les accélérations linéaires) et un gyroscope (qui mesure la vitesse de rotation), on peut reconstruire en temps réel la trajectoire et l'orientation d'un objet dans l'espace : c'est ce que l'on appelle la **fusion de données**.
+
 </InfoCard>
 
-### 🎯 Objectifs techniques
+### <i className="fas fa-bullseye"></i> Objectifs du test
 
-- **Identification** : Choisir un capteur I2C (ex: MPU6050) et expliquer son fonctionnement.
-- **Réalisation** : Détecter 6 directions (Haut, Bas, Gauche, Droite, Avant, Arrière).
-- **Affichage** : Indiquer le sens de déplacement et l'accélération sur un écran LCD.
-- **Conception** : Créer un schéma électronique sous KiCad et fabriquer une alimentation stabilisée.
+- Identifier et comprendre le fonctionnement d'un capteur inertiel combiné (MPU6050) intégrant un accéléromètre et un gyroscope
+- Mettre en œuvre la communication I2C entre le capteur et le microcontrôleur ATmega328P
+- Programmer le microcontrôleur pour lire les données brutes du capteur, appliquer un traitement logiciel et calculer les angles d'orientation (yaw, pitch, roll)
+- Développer une logique de détection de direction capable d'interpréter les variations d'angles et d'accélération
+- Assurer l'affichage en temps réel des résultats sur un écran LCD I2C
+- Comprendre l'importance de la calibration et du filtrage pour améliorer la précision et la fiabilité des mesures
+- Acquérir une démarche méthodique de test et validation
 
-### 🛠️ Matériel requis
+### <i className="fas fa-compass"></i> Comprendre les orientations
 
-<FeatureGrid
-  items={[
-    {
-      icon: "📟",
-      title: "MPU6050",
-      description: "Gyroscope & Accéléromètre 6 axes",
-    },
-    { icon: "♾️", title: "Arduino", description: "Nano ou Uno (ATmega328P)" },
-    { icon: "🖥️", title: "LCD 16x2", description: "Interface I2C (PCF8574)" },
-    {
-      icon: "⚡",
-      title: "Alimentation",
-      description: "Régulateurs LM7805 / AMS1117",
-    },
-  ]}
-/>
+Pour décrire précisément comment un objet (comme ta main équipée du capteur MPU6050) s’oriente et se déplace dans l’espace, on utilise trois angles fondamentaux appelés **roulis (roll)**, **tangage (pitch)** et **lacet (yaw)**.
 
-### 📊 Procédure de test
+<div
+  className="custom-card"
+  style={{ padding: "1.5rem", marginBottom: "1.5rem" }}
+>
+  <p>
+    Ces trois mouvements correspondent à des rotations autour de trois axes
+    perpendiculaires, et permettent de définir la position et l’orientation d’un
+    objet dans un espace à trois dimensions.
+  </p>
+  <p align="center">
+    <img src={require("./images/9.png").default} alt="Axes" width="500" />
+  </p>
+</div>
 
-#### Code Arduino (Extrait)
+<div className="grid--2-col">
+    <InfoCard title="Roulis (Roll)" icon="�">
+    Rotation autour de l'axe longitudinal (inclinaison latérale).
+    <img src={require('./images/4.png').default} alt="Roll" width="400" />
+    **Démonstration :** Comme si vous penchiez la main pour verser un verre d'eau.
+    </InfoCard>
 
-```cpp
-#include <Wire.h>
-#include <MPU6050.h>
-#include <LiquidCrystal_I2C.h>
+    <InfoCard title="Tangage (Pitch)" icon="↕️">
+    Rotation autour de l'axe transversal (bascule avant-arrière).
+    <img src={require('./images/5.png').default} alt="Pitch" width="400" />
+    **Démonstration :** Comme un signe de tête pour dire « oui ».
+    </InfoCard>
 
-void loop() {
-  mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+</div>
 
-  // Détection de la direction dominante
-  if (absX > absY && absX > absZ) {
-    if (accelX > THRESHOLD) direction = "DROITE";
-    else direction = "GAUCHE";
-  }
-  // ... affichage sur LCD
-}
-```
+<div className="grid--2-col" style={{marginTop: '1.5rem'}}>
+    <InfoCard title="Lacet (Yaw)" icon="🧭">
+    Rotation autour de l'axe vertical (rotation horizontale).
+    <img src={require('./images/6.png').default} alt="Yaw" width="400" />
+    **Démonstration :** Faire pivoter la main à plat sur elle-même.
+    </InfoCard>
 
-### 📈 Grille de notation (100 pts)
+    <InfoCard title="Importance" icon="⚙️">
+    Essentiel pour interpréter les gestes, détecter les directions de mouvement et améliorer la précision en fusionnant les données.
+    </InfoCard>
+
+</div>
+
+---
+
+## <i className="fas fa-microchip"></i> Choix du matériel {#material}
+
+### <i className="fas fa-microchip"></i> Microcontrôleur : ATmega328P seul
+
+Plutôt que d'utiliser une carte Arduino UNO complète, nous avons choisi d'employer le microcontrôleur ATmega328P en version « puce seule ».
+
+<div className="grid--2-col">
+  <div align="center">
+    <img
+      src="https://th.bing.com/th/id/OIP.VML3Sd1b9wHLA4DsfzLHJAHaFL?r=0&rs=1&pid=ImgDetMain"
+      alt="Schéma"
+      width="300"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+    }}
+  >
+    <ul className="component-list">
+      <li>
+        <i className="fas fa-compress-arrows-alt"></i> **Miniaturisation** - gain
+        de place considérable
+      </li>
+      <li>
+        <i className="fas fa-euro-sign"></i> **Coût réduit** - prix nettement inférieur
+      </li>
+      <li>
+        <i className="fas fa-cogs"></i> **Personnalisation** - circuit optimisé
+      </li>
+      <li>
+        <i className="fas fa-graduation-cap"></i> **Pédagogie** - meilleure compréhension
+        du hardware
+      </li>
+    </ul>
+  </div>
+</div>
+
+### <i className="fas fa-list"></i> Liste du matériel
 
 <Table
-  headers={["Critère", "Points", "Focus"]}
+  headers={["Composants", "Spécifications", "Rôle"]}
   data={[
-    ["Circuiterie", "25", "Sécurité alimentation & gestion câbles"],
-    ["Code", "25", "Lisibilité & commentaires"],
-    ["Fonctionnement", "30", "Précision de détection & stabilité"],
-    ["Documentation", "10", "Organisation GitHub & clarté"],
-    ["Présentation", "10", "Maîtrise du sujet & démo"],
+    ["ATmega328P", "Horloge 16 MHz, 32 kB Flash", "Microcontrôleur principal"],
+    ["MPU6050 (GY-521)", "Interface I2C, DMP intégré", "Capteur inertiel MEMS"],
+    ["Écran LCD 16×2 I²C", "Adresse 0x27 ou 0x3F", "Affichage en temps réel"],
+    ["Module FTDI", "Interface USB-TTL", "Programmation du chip"],
+    ["Veroboard / PCB", "Format Eurorack", "Support du montage"],
+    [
+      "Cristal 16 MHz",
+      "Avec 2 condensateurs 22pF",
+      "Horloge du microcontrôleur",
+    ],
   ]}
 />
 
 ---
 
-_Test réalisé le : Octobre 2025_
-_Responsable : Pôle Électronique_
+## <i className="fas fa-project-diagram"></i> Architecture et fonctionnement {#architecture}
+
+### Principe de fonctionnement
+
+Le système suit un flux précis de traitement de données :
+
+1.  **Acquisition** : Lecture brute des capteurs.
+2.  **Filtrage** : Application d'un filtre passe-bas et utilisation du DMP.
+3.  **Fusion** : Calcul des quaternions et des angles YPR.
+4.  **Détection** : Comparaison avec des seuils d'accélération et d'angles.
+5.  **Affichage** : Sortie visuelle sur l'écran LCD.
+
+### Réalisation du circuit
+
+<FeatureGrid
+  items={[
+    {
+      icon: "🔬",
+      title: "Test Breadboard",
+      description:
+        "Montage minimal avec quartz, alimentation 5V et résistances pull-up sur RESET et I2C.",
+    },
+    {
+      icon: "🔥",
+      title: "Bootloader",
+      description:
+        "Gravure via Arduino as ISP pour permettre la programmation via le module FTDI.",
+    },
+    {
+      icon: "📐",
+      title: "Conception KiCad",
+      description:
+        "Saisie du schéma et routage pour une intégration propre sur Veroboard.",
+    },
+    {
+      icon: "🔨",
+      title: "Soudure",
+      description:
+        "Assemblage final avec composants traversants (THT) et vérification au multimètre.",
+    },
+  ]}
+/>
+
+---
+
+## <i className="fas fa-code"></i> Explication du code {#code}
+
+### Initialisation
+
+On utilise les bibliothèques standards pour l'I2C et le MPU6050 :
+
+```cpp
+#include <Wire.h>               // Communication I2C
+#include <LiquidCrystal_I2C.h> // Gestion écran LCD
+#include "I2Cdev.h"
+#include "MPU6050_6Axis_MotionApps20.h" // Gestion du DMP
+```
+
+### <i className="fas fa-database"></i> Variables et setup
+
+Pour stocker les données du capteur et gérer le traitement :
+
+- **Quaternions (q)** - format mathématique pour représenter l'orientation sans ambiguïté.
+- **Yaw-Pitch-Roll (ypr)** - les trois angles d'orientation calculés.
+- **aaReal** - accélération linéaire réelle (sans l'effet de la gravité).
+
+```cpp
+// Conversion en degrés dans la boucle loop()
+float yaw = ypr[0] * 180/M_PI;
+float pitch = ypr[1] * 180/M_PI;
+float roll = ypr[2] * 180/M_PI;
+```
+
+### <i className="fas fa-sync-alt"></i> Fonctionnement du DMP et de la FIFO
+
+Le capteur MPU6050 traite les données en interne via son **Digital Motion Processor (DMP)** :
+
+1.  **Interruption** : Le capteur prévient le microcontrôleur quand une donnée est prête.
+2.  **Buffer FIFO** : Les données sont stockées dans une pile. On vérifie l'absence d'**Overflow** (débordement) avant lecture.
+3.  **Filtrage** : On applique un filtre passe-bas (coefficient alpha) pour lisser l'accélération Z.
+
+### <i className="fas fa-directions"></i> Logique de détection
+
+La détection repose sur l'analyse dynamique des variations d'angles (delta) et des pics d'accélération sur l'axe Z.
+
+<Table
+  headers={["Mouvement", "Condition Logique"]}
+  data={[
+    ["Haut / Bas", "Accélération filtrée sur l'axe Z > Seuil"],
+    ["Avant / Arrière", "Variation de Tangage (Pitch) dominante"],
+    ["Gauche / Droite", "Variation de Roulis (Roll) dominante"],
+    ["Rotations", "Variation de Lacet (Yaw) dominante"],
+  ]}
+/>
+
+---
+
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test1/doc/DOCUMENTATION%20TECHNIQUE%20DES%20TESTS%20EN%20ELECTRONIQUE.pdf"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Documentation complète (PDF)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test1/code/code_source.zip">
+          <i className="fas fa-file-code"></i> Code source (Arduino/C++)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test1/doc/schemas.zip">
+          <i className="fas fa-drafting-compass"></i> Schémas KiCad
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/doc/ATMEGA328.PDF"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Datasheet ATmega328P
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-cube"></i> Composants clés
+    </h3>
+    <ul className="component-list">
+      <li>
+        <i className="fas fa-microchip"></i> ATmega328P (Standalone)
+      </li>
+      <li>
+        <i className="fas fa-arrows-alt"></i> Capteur MPU6050
+      </li>
+      <li>
+        <i className="fas fa-bolt"></i> Régulateur 5V (AMS1117)
+      </li>
+      <li>
+        <i className="fas fa-clock"></i> Quartz 16 MHz
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success[Bilan du projet]
+Cette réalisation met en avant l'importance d'une documentation rigoureuse et d'une maîtrise progressive des outils matériels et logiciels du domaine des systèmes embarqués.
+:::
+
+#### <i className="fas fa-rocket"></i> Applications Futures
+
+- **Interfaces gestuelles** pour contrôle de dispositifs.
+- **Suivi d'activité** (Wearables).
+- **Drones et robots** pour la navigation spatiale.
+- **Réalité virtuelle** et jeux immersifs.
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

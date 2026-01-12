@@ -1,7 +1,7 @@
 ---
 id: electronics-test2
 slug: Test2
-title: "Test 2 — La Boîte Noire (Communication)"
+title: "Test 2 — La Boîte Noire"
 sidebar_label: Test 2
 ---
 
@@ -9,83 +9,337 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Documentation technique des tests en Électronique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    <strong>Test 2 :</strong> La boîte noire
+  </p>
 
-<InfoCard type="warning" title="Aperçu du test" icon="📡">
-  Test de communication : Réalisation d'un système de communication entre deux
-  modules électroniques sans connaître le protocole exact utilisé par la "boîte
-  noire".
-</InfoCard>
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="#test"
+      className="hero-btn-primary"
+      style={{
+        color: "#1e40af",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      Commencer la lecture
+    </a>
+    <a
+      href="https://vimeo.com/1095186825/ad60296bef?share=copy"
+      target="_blank"
+      className="hero-btn-outline"
+      style={{
+        color: "white",
+        border: "2px solid white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        background: "rgba(255,255,255,0.1)",
+      }}
+    >
+      <i className="fas fa-video"></i> Voir la démo
+    </a>
+  </div>
+</div>
 
-### Objectif
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    background: "#fef3c7",
+    color: "#92400e",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    marginBottom: "2rem",
+    border: "1px solid #f59e0b",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
 
-Ce test évalue votre capacité à analyser, comprendre et implémenter un protocole de communication inconnu. Vous devrez décoder les signaux émis par une "boîte noire" et créer un système capable de communiquer avec elle.
+## <i className="fas fa-flask"></i> Test 2 : La boîte noire {#test}
 
-### Matériel requis
+Dans de nombreux domaines industriels tels que l'aéronautique, l'automobile ou encore le ferroviaire, il est indispensable de disposer de systèmes capables d'enregistrer en temps réel les paramètres de fonctionnement des engins. Ces systèmes, appelés communément **boîtes noires**, permettent de conserver des informations critiques relatives à l'activité de l'appareil.
 
-<Table
-  headers={["Composant", "Référence", "Rôle"]}
-  data={[
-    ["Boîte noire", "Module fourni", "Émetteur de signaux"],
-    ["Oscilloscope", "Tektronix ou équivalent", "Analyse des signaux"],
-    ["Arduino", "Nano ou Uno", "Réception et traitement"],
-    ["Analyseur logique", "Optionnel", "Décodage protocolaire"],
-    [
-      "Composants passifs",
-      "Résistances, condensateurs",
-      "Conditionnement signal",
-    ],
-  ]}
-/>
+:::info[Rôle crucial]
+En cas de dysfonctionnement ou d'accident, les données recueillies servent à analyser les événements ayant précédé l'incident et à comprendre ses causes.
+:::
 
-### Étapes du test
+<div className="grid--3-col">
+  <InfoCard title="Enregistrement" icon="📊">
+    Données physiques (vitesse, position, accélérations).
+  </InfoCard>
+  <InfoCard title="Stockage" icon="🎙️">
+    Communications des opérateurs ou pilotes.
+  </InfoCard>
+  <InfoCard title="Sécurité" icon="🛡️">
+    Conservation des données après un arrêt brutal.
+  </InfoCard>
+</div>
 
-<FeatureGrid
-  items={[
-    {
-      icon: "🔍",
-      title: "Analyse",
-      description: "Analyse des signaux avec oscilloscope",
-    },
-    {
-      icon: "📊",
-      title: "Décodage",
-      description: "Identification du protocole de communication",
-    },
-    {
-      icon: "💻",
-      title: "Implémentation",
-      description: "Code pour communiquer avec la boîte noire",
-    },
-    {
-      icon: "✅",
-      title: "Validation",
-      description: "Test de communication bidirectionnelle",
-    },
-    {
-      icon: "📝",
-      title: "Documentation",
-      description: "Rapport complet du processus",
-    },
-  ]}
-/>
+### <i className="fas fa-bullseye"></i> Objectifs du test
 
-### Protocoles possibles
+L'objectif de ce test est de concevoir une version simplifiée d'une boîte noire capable de :
 
-- **UART/Serial** : Communication série asynchrone
-- **SPI** : Serial Peripheral Interface
-- **I2C** : Inter-Integrated Circuit
-- **OneWire** : Protocole 1-wire
-- **Propriétaire** : Protocole spécifique à décoder
-
-### Critères de notation (100 points)
-
-1. **Analyse (30 points)** : Qualité de l'analyse, identification du protocole
-2. **Implémentation (35 points)** : Code fonctionnel, gestion des erreurs
-3. **Communication (20 points)** : Échange de données réussi
-4. **Documentation (10 points)** : Rapport détaillé, schémas
-5. **Présentation (5 points)** : Démonstration, réponses
+- Mesurer la position et la vitesse via un capteur **MPU6050**.
+- Transmettre les données en temps réel via **I2C**.
+- Afficher les mesures sur un écran **LCD** distant (station de contrôle).
 
 ---
 
-_Note : Les détails spécifiques de la boîte noire seront fournis lors du test._
+## <i className="fas fa-microchip"></i> Choix du matériel {#material}
+
+<Table
+  headers={["Composants", "Référence / Broches", "Rôles"]}
+  data={[
+    [
+      "ATmega328P (Maître)",
+      "DIP28, SDA (A4), SCL (A5)",
+      "Lecture MPU6050 & Envoi",
+    ],
+    [
+      "ATmega328P (Esclave)",
+      "DIP28, SDA (A4), SCL (A5)",
+      "Réception & Pilotage LCD",
+    ],
+    ["MPU6050 (GY-521)", "I2C, adresse 0x68", "Accéléromètre + gyroscope"],
+    ["Matrice LED 8×8", "SPI (MAX7219)", "Retour visuel directionnel"],
+    ["Écran LCD 16×2 I2C", "SDA, SCL", "Affichage à la station de contrôle"],
+    ["Régulateur 5V", "AMS1117", "Alimentation stabilisée"],
+  ]}
+/>
+
+<InfoCard type="warning" title="Alimentation et Sécurité" icon="⚡">
+  Le système dispose d'une **alimentation principale** (secteur) et d'une
+  **batterie de secours 7.4V** interne à la boîte noire pour garantir
+  l'enregistrement même en cas de coupure.
+</InfoCard>
+
+---
+
+## <i className="fas fa-project-diagram"></i> Architecture {#architecture}
+
+### <i className="fas fa-exchange-alt"></i> Communication I2C (Inter-Integrated Circuit)
+
+Le protocole utilise deux fils : **SDA** (Données) et **SCL** (Horloge).
+
+- **Maître (Boîte Noire)** : Initie la communication, lit le capteur.
+- **Esclave (Station Control)** : Reçoit les octets, les traite et les affiche.
+
+### <i className="fas fa-cube"></i> Boîtiers et Intégration
+
+Nous avons conçu des boîtiers sur mesure imprimés en 3D pour protéger les composants et optimiser le câblage.
+
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "center",
+    margin: "2rem 0",
+    flexWrap: "wrap",
+  }}
+>
+  <img
+    src={require("./images/10.png").default}
+    alt="Box 1"
+    width="200"
+    style={{ borderRadius: "10px" }}
+  />
+  <img
+    src={require("./images/11.png").default}
+    alt="Box 2"
+    width="200"
+    style={{ borderRadius: "10px" }}
+  />
+  <img
+    src={require("./images/13.png").default}
+    alt="Box 3"
+    width="200"
+    style={{ borderRadius: "10px" }}
+  />
+</div>
+
+---
+
+## <i className="fas fa-code"></i> Explication du code {#code}
+
+### <i className="fas fa-microchip"></i> Le code MASTER (Boîte Noire)
+
+Le Maître lit le capteur, gère l'affichage matriciel local et transmet les données.
+
+```cpp
+#include <Wire.h>
+#include <MD_MAX72xx.h>
+
+void loop() {
+  // 1. Lecture MPU6050 (DMP)
+  // 2. Détection de direction
+  detectDirection(yaw, pitch, roll, accZ_filtered);
+
+  // 3. Affichage sur Matrice 8x8
+  if (direction == "Haut") displayArrowUp();
+
+  // 4. Transmission à l'Esclave
+  if(slaveConfirm()) {
+    Wire.beginTransmission(addr_slav);
+    Wire.write((uint8_t*)&send_dir, sizeof(send_dir));
+    Wire.write((uint8_t*)&acc, sizeof(acc));
+    Wire.endTransmission();
+  }
+}
+```
+
+### <i className="fas fa-microchip"></i> Le code SLAVE (Station de contrôle)
+
+L'Esclave reçoit les interruptions I2C et met à jour l'affichage LCD.
+
+```cpp
+void receiveData(int taille) {
+  if (taille == sizeof(int) + sizeof(float)) {
+    Wire.readBytes((char*)&rec_dir, sizeof(rec_dir));
+    Wire.readBytes((char*)&rec_acc, sizeof(rec_acc));
+    dataReceived = true;
+  }
+}
+```
+
+---
+
+## <i className="fas fa-video"></i> Démonstration {#video}
+
+<div className="custom-card" style={{ padding: "1.5rem", textAlign: "center" }}>
+  <a
+    href="https://vimeo.com/1095186825/ad60296bef?share=copy"
+    target="_blank"
+    style={{ textDecoration: "none" }}
+  >
+    <div
+      style={{
+        position: "relative",
+        background: "#000",
+        borderRadius: "12px",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        src="https://vumbnail.com/1095186825.jpg"
+        alt="Vimeo Demo"
+        style={{ width: "100%", opacity: 0.7 }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <i
+          className="fas fa-play-circle"
+          style={{ fontSize: "5rem", color: "white" }}
+        ></i>
+      </div>
+    </div>
+    <p style={{ marginTop: "1rem", fontWeight: "600" }}>
+      Cliquez pour voir la démonstration du système en action
+    </p>
+  </a>
+</div>
+
+---
+
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test2/doc/DOCUMENTATION%20TECHNIQUE%20DES%20TESTS%20EN%20ELECTRONIQUE.pdf"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Documentation complète (PDF)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test2/code/code_source.zip">
+          <i className="fas fa-file-code"></i> Code source Master/Slave
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test2/files/kicadFiles.zip">
+          <i className="fas fa-drafting-compass"></i> Schémas KiCad
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test2/files/solidworks_files.zip">
+          <i className="fas fa-box-open"></i> Modèles 3D (Boîtiers)
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-cube"></i> Composants clés
+    </h3>
+    <ul className="component-list">
+      <li>
+        <i className="fas fa-microchip"></i> ATmega328P (x2)
+      </li>
+      <li>
+        <i className="fas fa-sensor"></i> Capteur MPU6050
+      </li>
+      <li>
+        <i className="fas fa-tv"></i> Écran LCD I2C
+      </li>
+      <li>
+        <i className="fas fa-border-all"></i> Matrice LED 8x8 (MAX7219)
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success[Impact Industriel]
+Ce test illustre la synergie entre matériel et logiciel pour la collecte de données critiques, ouvrant la voie à des applications réelles en aéronautique ou robotique avancée.
+:::
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

@@ -1,0 +1,168 @@
+---
+id: piece3
+title: "Pièce 3 — Modélisation 3D"
+sidebar_label: Pièce 3
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import Table from "@site/src/components/Table";
+
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Pièce 3 : Conception Mécanique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    Modélisation géométrique et validation massique
+  </p>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/solidworks_files/Piece_3.zip"
+      className="hero-btn-primary"
+      style={{
+        color: "#0f172a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      <i className="fas fa-file-download"></i> Télécharger le fichier SolidWorks
+      (ZIP)
+    </a>
+  </div>
+</div>
+
+## 1. Présentation générale
+
+**Nom de la pièce :** Pièce 3  
+**Date de création :** 07/06/2025  
+**Échelle :** 1/1
+
+---
+
+## 2. Caractéristiques techniques
+
+<div className="grid--2-col">
+  <InfoCard title="Paramètres" icon="⚙️">
+    * **Système d'unité :** MMGS * **Décimale :** 2 * **Tolérance :** ± 5%
+  </InfoCard>
+  <InfoCard type="info" title="Matériaux" icon="🔩">
+    * **Acier AISI 1020** * **Densité :** 0,0079 g/mm³
+  </InfoCard>
+</div>
+
+---
+
+## 3. Représentation graphique
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/7.png"
+    alt="Vue isométrique Pièce 3"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## 4. Processus de réalisation
+
+### Étape 1 : Réalisation de l'extrusion
+
+1.  **Esquisse de base :** Dessiner le profil initial de la pièce.
+2.  **Décalage :** Appliquer un décalage de **10 mm** pour définir l'épaisseur de l'esquisse.
+3.  **Extrusion :** Utiliser la fonction **"Base/Bossage extrudé"** pour générer le volume.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    margin: "20px 0",
+  }}
+>
+  <div style={{ textAlign: "center" }}>
+    <img
+      src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/1.png"
+      alt="Esquisse de base"
+      width="250"
+    />
+    <p>
+      <small>Esquisse de base</small>
+    </p>
+  </div>
+  <div style={{ textAlign: "center" }}>
+    <img
+      src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/2.png"
+      alt="Après décalage"
+      width="250"
+    />
+    <p>
+      <small>Esquisse après décalage</small>
+    </p>
+  </div>
+  <div style={{ textAlign: "center" }}>
+    <img
+      src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/4.png"
+      alt="Résultat extrusion"
+      width="250"
+    />
+    <p>
+      <small>Résultat de l'extrusion</small>
+    </p>
+  </div>
+</div>
+
+### Étape 2 : Enlèvement de matière
+
+- Appliquer la fonction **"Enlèvement de matière extrudé"** sur les zones intérieures pour finaliser la géométrie fonctionnelle.
+
+<div
+  style={{
+    display: "flex",
+    gap: "20px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/5.png"
+    alt="Esquisse enlèvement"
+    width="350"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece3/6.png"
+    alt="Après enlèvement"
+    width="350"
+  />
+</div>
+
+---
+
+## 5. Évaluation de la masse
+
+Après application du matériau **Acier AISI 1020**, nous obtenons :
+:::success[Résultat final]
+Masse de la Pièce 3 : **1633,25 g**
+:::

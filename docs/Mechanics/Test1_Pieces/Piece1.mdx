@@ -1,0 +1,169 @@
+---
+id: piece1
+title: "Pièce 1 — Modélisation 3D"
+sidebar_label: Pièce 1
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import Table from "@site/src/components/Table";
+
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Pièce 1 : Conception Mécanique
+  </h1>
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/solidworks_files/Piece_1.zip"
+      className="hero-btn-primary"
+      style={{
+        color: "#0f172a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      <i className="fas fa-file-download"></i> Télécharger le fichier SolidWorks
+      (ZIP)
+    </a>
+  </div>
+</div>
+
+## 1. Présentation générale
+
+**Nom de la pièce :** Pièce 1  
+**Date de création :** 07/06/2025  
+**Échelle :** 1/1
+
+---
+
+## 2. Caractéristiques techniques
+
+<div className="grid--2-col">
+  <InfoCard title="Paramètres" icon="⚙️">
+    * **Système d'unité :** MMGS (mm, g, s) * **Décimale :** 2 chiffres après la
+    virgule * **Tolérance :** ± 5%
+  </InfoCard>
+  <InfoCard type="info" title="Matériaux" icon="🔩">
+    * **Acier AISI 1020** * **Densité :** 0,0079 g/mm³
+  </InfoCard>
+</div>
+
+---
+
+## 3. Représentation graphique
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/1.png"
+    alt="Pièce 1"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## 4. Processus de réalisation
+
+### Étape 1 : Configuration initiale
+
+- **Système d'unité :** Sélectionner **MMGS** en bas à droite de l'interface SolidWorks.
+- **Matériau :** Appliquer l'**Acier AISI 1020** via l'arbre de création (clic droit sur Matériau > Éditer).
+
+### Étape 2 : Réalisation de l'extrusion
+
+1.  **Esquisse :** Sélectionner le **Plan de face**.
+2.  **Géométrie :** Tracer les cercles (Ø100 mm et Ø50 mm distants de 150 mm).
+3.  **Raccordement :** Utiliser un arc de 3 points (Rayon 75 mm) avec contraintes de **Tangence**.
+4.  **Ouverture :** Utiliser l'outil "Ligne" et "Décalage des entités" (10 mm bidirectionnel).
+5.  **Symétrie :** Utiliser la fonction "Symétrie des entités" par rapport à l'axe X.
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/2.png"
+    alt="Esquisse pièce 1"
+    width="500"
+  />
+</p>
+
+> **Note :** Ajustez les arcs pour garantir une géométrie fermée avant l'extrusion.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/3.png"
+    alt="Ajustement"
+    width="300"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/4.png"
+    alt="Extrusion"
+    width="300"
+  />
+</div>
+
+6.  **Extrusion :** Commande **Base/Bossage extrudé** sur une profondeur de **20 mm**.
+
+### Étape 3 : Enlèvement de matière
+
+- Dessiner un cercle de Ø **135.6 mm** sur la face supérieure.
+- Appliquer un **Enlèvement de matière extrudé** sur une profondeur de **10 mm**.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/6.png"
+    alt="Esquisse enlèvement"
+    width="250"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/7.png"
+    alt="Aperçu enlèvement"
+    width="250"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece1/8.png"
+    alt="Résultat final"
+    width="250"
+  />
+</div>
+
+---
+
+## 5. Évaluation de la masse
+
+Via l'onglet **Évaluer** > **Propriétés de masse**, nous obtenons :
+:::success[Résultat final]
+Masse de la Pièce 1 : **2850,16 g**
+:::

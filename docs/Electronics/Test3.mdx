@@ -9,71 +9,347 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Documentation technique des tests en Électronique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    <strong>Test 3 :</strong> Réalisation d’un afficheur 7 segments mécanique
+  </p>
 
-<InfoCard type="success" title="Aperçu du test" icon="🔢">
-  Réalisation d'un afficheur 7 segments fonctionnel permettant d'afficher des
-  chiffres et certaines lettres. Test des capacités de sortie (output) du
-  système électronique.
-</InfoCard>
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="#test"
+      className="hero-btn-primary"
+      style={{
+        color: "#0f172a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      Commencer la lecture
+    </a>
+    <a
+      href="#"
+      target="_blank"
+      className="hero-btn-outline"
+      style={{
+        color: "white",
+        border: "2px solid white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        background: "rgba(255,255,255,0.1)",
+      }}
+    >
+      <i className="fas fa-video"></i> Voir la démo
+    </a>
+  </div>
+</div>
 
-### Objectif
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    background: "#fef3c7",
+    color: "#92400e",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    marginBottom: "2rem",
+    border: "1px solid #f59e0b",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
 
-Ce test évalue votre capacité à concevoir et réaliser un système de sortie électronique. Vous devrez créer un afficheur 7 segments capable d'afficher des chiffres (0-9) et éventuellement des lettres.
+## <i className="fas fa-flask"></i> Test 3 : L'afficheur mécanique {#test}
 
-### Matériel requis
+L’objectif de ce test est de concevoir et de réaliser un **afficheur 7 segments mécanique**, où chaque segment est actionné par un servomoteur afin de reproduire les chiffres par des mouvements physiques. Notre afficheur devra compter de 0 à 9 puis de 9 à 0.
+
+<div className="grid--2-col">
+  <InfoCard title="Objectifs du test" icon="🎯">
+    * Communication I2C avec le module **PCA9685**. * Contrôle précis de **7
+    servomoteurs**. * Gestion logicielle non-bloquante (`millis()`).
+  </InfoCard>
+  <InfoCard type="info" title="C'est quoi un servo ?" icon="⚙️">
+    Un servomoteur est un moteur offrant un contrôle de position précis grâce à
+    un potentiomètre interne et une boucle de rétroaction.
+  </InfoCard>
+</div>
+
+---
+
+## <i className="fas fa-microchip"></i> Matériel et Composants {#material}
+
+### <i className="fas fa-microchip"></i> Le contrôleur PCA9685
+
+Comme le microcontrôleur ATmega328P ne possède pas assez de sorties PWM robustes pour 7 servos, nous utilisons le **PCA9685**.
+
+- **16 canaux** PWM indépendants.
+- **Résolution 12 bits** (4096 pas).
+- Communication **I2C** (SDA/SCL).
+
+<div
+  className="custom-card"
+  style={{ padding: "1.5rem", marginBottom: "2rem" }}
+>
+  <h4>Conversion Angle ↔ Ticks</h4>
+  <p>Le PCA9685 fonctionne en "ticks" (0-4095). À 50Hz (période de 20ms) :</p>
+  <ul>
+    <li>
+      <strong>0° (1 ms)</strong> ≈ 205 ticks
+    </li>
+    <li>
+      <strong>90° (1.5 ms)</strong> ≈ 307 ticks
+    </li>
+    <li>
+      <strong>180° (2 ms)</strong> ≈ 410 ticks
+    </li>
+  </ul>
+</div>
 
 <Table
-  headers={["Composant", "Référence", "Rôle"]}
+  headers={["Composants", "Spécifications", "Rôle"]}
   data={[
-    ["Afficheur 7 segments", "Common Anode/Cathode", "Affichage"],
-    ["Décodeur BCD", "74LS47 ou équivalent", "Décodage BCD vers 7 segments"],
-    ["Arduino", "Nano ou Uno", "Contrôle"],
-    ["Résistances", "220Ω-470Ω", "Limitation de courant"],
-    ["Transistors", "2N2222 ou équivalent", "Commutation (si nécessaire)"],
+    ["ATmega328P", "Horloge 16 MHz, DIP28", "Cerveau du système (Maître I2C)"],
+    ["PCA9685", "16 canaux PWM I2C", "Générateur de signaux pour les servos"],
+    [
+      "Servomoteurs (x7)",
+      "SG90 ou similaire",
+      "Actionnement mécanique des segments",
+    ],
+    ["Batterie Li-Po 7.4V", "2S", "Alimentation de puissance"],
+    ["Régulateur 7805", "5V stable", "Alimentation de la logique"],
   ]}
 />
 
-### Fonctionnalités attendues
+---
+
+## <i className="fas fa-project-diagram"></i> Architecture et Réalisation {#architecture}
+
+### <i className="fas fa-sitemap"></i> Fonctionnement global
+
+L'ATmega328P configure le PCA9685 via I2C. Le programme exécute une séquence prédéfinie de chiffres. Chaque servo active un segment physique pour former le chiffre souhaité.
 
 <FeatureGrid
   items={[
     {
-      icon: "0️⃣",
-      title: "Chiffres",
-      description: "Affichage des chiffres 0-9",
-    },
-    {
-      icon: "🔤",
-      title: "Lettres",
-      description: "Affichage de certaines lettres (A-F)",
-    },
-    {
-      icon: "🔄",
-      title: "Multiplexage",
-      description: "Affichage de plusieurs chiffres (optionnel)",
-    },
-    {
-      icon: "💡",
-      title: "Luminosité",
-      description: "Contrôle de la luminosité",
-    },
-    {
       icon: "⚡",
-      title: "Efficacité",
-      description: "Gestion optimale de la consommation",
+      title: "Bootloader",
+      description: "Gravure pour programmation via IDE Arduino.",
+    },
+    {
+      icon: "�",
+      title: "KiCad",
+      description: "Conception du schéma et routage des pistes.",
+    },
+    {
+      icon: "�",
+      title: "Soudure",
+      description: "Assemblage sur veroboard (panne fine 0.4mm).",
+    },
+    {
+      icon: "🧪",
+      title: "Test",
+      description: "Vérification individuelle de chaque servo.",
     },
   ]}
 />
 
-### Critères de notation (100 points)
-
-1. **Circuiterie (30 points)** : Schéma, choix des composants, alimentation
-2. **Code (25 points)** : Fonctionnalité, optimisation, lisibilité
-3. **Fonctionnement (30 points)** : Affichage correct, stabilité
-4. **Documentation (10 points)** : Schémas, explications, code commenté
-5. **Présentation (5 points)** : Démonstration, qualité visuelle
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "center",
+    margin: "2rem 0",
+    flexWrap: "wrap",
+  }}
+>
+  <img
+    src={require("./images/test3/1.jpg").default}
+    alt="Montage 1"
+    width="180"
+    style={{ borderRadius: "8px" }}
+  />
+  <img
+    src={require("./images/test3/2.jpg").default}
+    alt="Montage 2"
+    width="180"
+    style={{ borderRadius: "8px" }}
+  />
+  <img
+    src={require("./images/test3/3.jpg").default}
+    alt="Montage 3"
+    width="180"
+    style={{ borderRadius: "8px" }}
+  />
+  <img
+    src={require("./images/test3/pca.jpeg").default}
+    alt="PCA9685"
+    width="180"
+    style={{ borderRadius: "8px" }}
+  />
+</div>
 
 ---
 
-_Pour plus de détails techniques, consultez la documentation complète._
+## <i className="fas fa-code"></i> Analyse du Code {#code}
+
+### <i className="fas fa-table"></i> Matrice des segments
+
+Nous définissons quels segments sont actifs (1) ou inactifs (0) pour chaque chiffre.
+
+```cpp
+int etatSegments[10][7] = {
+  {1,1,1,1,1,1,0},  // 0
+  {0,1,1,0,0,0,0},  // 1
+  {1,1,0,1,1,0,1},  // 2
+  {1,1,1,1,0,0,1}   // 3...
+};
+```
+
+### <i className="fas fa-sync-alt"></i> Boucle principale non-bloquante
+
+On utilise `millis()` pour changer de chiffre sans arrêter le reste du programme.
+
+```cpp
+void loop() {
+  ajusterVitesse(); // Lecture potentiomètre
+
+  if (actif) {
+    if (millis() - precedentTime >= intervalle) {
+        precedentTime = millis();
+        chiffre += direction;
+        if (chiffre >= 9 || chiffre <= 0) direction *= -1;
+        affichage(chiffre);
+    }
+  }
+}
+```
+
+---
+
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/doc/ATMEGA328.PDF"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Datasheet ATmega328P
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/code_source.zip">
+          <i className="fas fa-file-code"></i> Code source complet
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/kicadFiles.zip">
+          <i className="fas fa-drafting-compass"></i> Schémas KiCad
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/libraries.zip">
+          <i className="fas fa-book"></i> Bibliothèques Arduino
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-cube"></i> Composants clés
+    </h3>
+    <ul className="component-list">
+      <li>
+        <i className="fas fa-microchip"></i> ATmega328P
+      </li>
+      <li>
+        <i className="fas fa-compress-arrows-alt"></i> Module PCA9685
+      </li>
+      <li>
+        <i className="fas fa-robot"></i> Servomoteurs (x7 SG90)
+      </li>
+      <li>
+        <i className="fas fa-bolt"></i> Batterie 7.4V
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success[Bilan]
+Ce test valide la capacité à gérer des actionneurs multiples via un bus de communication industriel I2C. L'intégration mécanique et électronique forme un système complet et visuel.
+:::
+
+<div style={{ textAlign: "center", marginTop: "2rem" }}>
+  <p>
+    <strong>Photos de démonstration finales :</strong>
+  </p>
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+      gap: "10px",
+    }}
+  >
+    <img
+      src={require("./images/test3/4.jpg").default}
+      alt="Demo 4"
+      style={{ width: "100%", borderRadius: "5px" }}
+    />
+    <img
+      src={require("./images/test3/5.jpg").default}
+      alt="Demo 5"
+      style={{ width: "100%", borderRadius: "5px" }}
+    />
+    <img
+      src={require("./images/test3/6.jpg").default}
+      alt="Demo 6"
+      style={{ width: "100%", borderRadius: "5px" }}
+    />
+    <img
+      src={require("./images/test3/7.png").default}
+      alt="Demo 7"
+      style={{ width: "100%", borderRadius: "5px" }}
+    />
+  </div>
+</div>
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

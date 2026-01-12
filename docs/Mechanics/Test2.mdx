@@ -1,7 +1,7 @@
 ---
 id: mechanics-test2
 slug: Test2
-title: "Test 2 — Niveau Intermédiaire"
+title: "Test 2 — Contexte et Justification"
 sidebar_label: Test 2
 ---
 
@@ -9,91 +9,148 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Documentation Tekbot Challenge 2025
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    Introduction et Contexte du Projet Mécanique
+  </p>
 
-<InfoCard type="warning" title="Aperçu du test" icon="⚙️">
-  Test de niveau intermédiaire en mécanique : Modélisation de pièces plus
-  complexes avec assemblages avancés, calculs de contraintes et validation de la
-  faisabilité pour l'impression 3D.
-</InfoCard>
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="#intro"
+      className="hero-btn-primary"
+      style={{
+        color: "#1e3a8a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      Lire l'introduction
+    </a>
+  </div>
+</div>
 
-### Objectif
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test2/Images/a1.png"
+    alt="Hero Image"
+    width="1000"
+    style={{ borderRadius: "12px", boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+  />
+</p>
 
-Ce test évalue vos compétences intermédiaires en modélisation CAO. Vous devrez créer des pièces plus complexes avec des assemblages avancés, en tenant compte des contraintes mécaniques et de la faisabilité de fabrication.
+## <i className="fas fa-book-open"></i> INTRODUCTION {#intro}
 
-### Compétences évaluées
+Dans le cadre du **Tekbot Challenge Robotique 2025**, la conception mécanique occupe une place fondamentale. Elle consiste non seulement à imaginer et modéliser en 3D les différentes pièces du robot, mais également à assurer leur parfaite intégration dans l’assemblage final.
 
-<FeatureGrid
-  items={[
-    {
-      icon: "🔧",
-      title: "Complexité",
-      description: "Pièces avec formes complexes",
-    },
-    {
-      icon: "🧩",
-      title: "Assemblages",
-      description: "Assemblages multi-pièces avancés",
-    },
-    {
-      icon: "📊",
-      title: "Analyse",
-      description: "Calculs de contraintes mécaniques",
-    },
-    {
-      icon: "🖨️",
-      title: "Faisabilité",
-      description: "Validation pour impression 3D",
-    },
-    {
-      icon: "⚖️",
-      title: "Optimisation",
-      description: "Optimisation des masses et volumes",
-    },
-  ]}
-/>
+Au cours de ce test de présélection, la maîtrise de **SolidWorks** — logiciel de conception assistée par ordinateur (CAO) — est indispensable afin de démontrer les compétences en modélisation, modifications de modèles, création de poches, et assemblage de sous-ensembles.
 
-### Aspects techniques
-
-<Table
-  headers={["Aspect", "Description", "Importance"]}
-  data={[
-    [
-      "Contraintes géométriques",
-      "Application correcte et complète",
-      "Critique",
-    ],
-    ["Dimensions", "Respect de toutes les cotes", "Critique"],
-    ["Masses", "Calculs précis des masses", "Important"],
-    ["Assemblage", "Utilisation de toutes les pièces", "Critique"],
-    ["Faisabilité 3D", "Validation pour impression", "Important"],
-  ]}
-/>
-
-### Critères de notation (70 points sur 300, ramené à 100)
-
-1. **Contraintes géométriques (15 points)** : Application des contraintes adéquates
-2. **Dimensions (15 points)** : Respect de toutes les dimensions
-3. **Masses (15 points)** : Capacité à trouver les bonnes valeurs de masses
-4. **Assemblage (15 points)** : Utilisation de toutes les pièces fournies
-5. **Contraintes d'assemblage (10 points)** : Utilisation de toutes les contraintes nécessaires
-
-### Considérations pour l'impression 3D
-
-- **Surplombs** : Éviter les surplombs >45° sans supports
-- **Épaisseurs minimales** : Respecter les épaisseurs minimales (2-3mm)
-- **Tolérances** : Prévoir des jeux fonctionnels (0.2-0.5mm)
-- **Orientation** : Optimiser l'orientation pour la fabrication
-- **Supports** : Minimiser les besoins en supports
-
-### Documentation requise
-
-- **Modèles 3D** : Tous les fichiers CAO
-- **Vues techniques** : Plans avec cotes
-- **Rapport d'analyse** : Contraintes, masses, centre de masse
-- **Validation fabrication** : Analyse de faisabilité 3D
-- **GitHub** : Dépôt complet et organisé
+Ce rapport présente le travail de la **section mécanique de l’équipe BIR**, en utilisant ce logiciel afin de relever le défi technique imposé.
 
 ---
 
-_Pour plus de détails, consultez les spécifications complètes du test._
+## <i className="fas fa-history"></i> CONTEXTE ET JUSTIFICATION
+
+Le **Tekbot Robotique Challenge** consiste à fabriquer un robot urbain pouvant se déplacer et réaliser certaines missions de manière autonome. Sa conception nécessite donc des connaissances approfondies en électronique, en informatique et en mécanique.
+
+<div className="grid--2-col">
+  <InfoCard title="Rôle de l'équipe" icon="👥">
+    Assurer la création des éléments physiques du robot et valider le
+    fonctionnement via la modélisation 3D.
+  </InfoCard>
+  <InfoCard type="info" title="Objectifs CAO" icon="🎯">
+    Validation du montage, respect des dimensions et optimisation de la
+    résistance des matériaux.
+  </InfoCard>
+</div>
+
+### <i className="fas fa-check-double"></i> Pourquoi ce travail est indispensable ?
+
+- **Conformité** : S'assurer que toutes les pièces respectent le cahier des charges.
+- **Robustesse** : Garantir la solidité de la structure face aux contraintes physiques.
+- **Optimisation** : Réduire la masse tout en conservant la résistance nécessaire.
+
+Ce test pratique évalue notre niveau de maîtrise de l'outil de CAO, compétence fondamentale pour aborder sereinement la suite de la compétition.
+
+---
+
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test2/doc/DOCUMENTATION%20TECHNIQUE%20DES%20TESTS%20EN%20ELECTRONIQUE.pdf"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Rapport Complet (PDF)
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test2/Images/TEST%202%20Piece%202.pdf"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Détails Pièce 2 (PDF)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/files/solidWorksFiles.zip">
+          <i className="fas fa-file-archive"></i> Archives CAO (ZIP)
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-external-link-alt"></i> Liens
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test3">
+          <i className="fas fa-arrow-right"></i> Passer au Test 3 (Avancé)
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success
+La maîtrise de la CAO est le socle de notre réussite mécanique. Ce travail préparatoire garantit la viabilité de notre futur robot.
+:::
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

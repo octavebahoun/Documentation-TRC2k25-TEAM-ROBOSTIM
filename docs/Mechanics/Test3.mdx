@@ -9,107 +9,271 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background:
+      "url(/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/back.jpg) no-repeat center",
+    backgroundSize: "cover",
+    color: "white",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "rgba(0,0,0,0.6)",
+      zIndex: 1,
+    }}
+  ></div>
+  <div style={{ position: "relative", zIndex: 2 }}>
+    <h1
+      style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}
+    >
+      Documentation technique des tests en Mécanique
+    </h1>
+    <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+      <strong>Test 3 :</strong> Niveau avancé - Modélisation complexe
+    </p>
 
-<InfoCard type="success" title="Aperçu du test" icon="🏗️">
-  Test de niveau avancé en mécanique : Conception complète d'un convoyeur
-  fonctionnel avec toutes ses pièces, respect des spécifications techniques, et
-  simulation mécanique optionnelle.
-</InfoCard>
+    <div
+      style={{
+        display: "flex",
+        gap: "1rem",
+        justifyContent: "center",
+        marginTop: "2rem",
+      }}
+    >
+      <a
+        href="#test"
+        className="hero-btn-primary"
+        style={{
+          color: "#0f172a",
+          backgroundColor: "white",
+          padding: "0.8rem 1.5rem",
+          borderRadius: "8px",
+          textDecoration: "none",
+          fontWeight: "600",
+        }}
+      >
+        Commencer la lecture
+      </a>
+      <a
+        href="https://vimeo.com/1096557845/f0d115dd4d?share=copy"
+        target="_blank"
+        className="hero-btn-outline"
+        style={{
+          color: "white",
+          border: "2px solid white",
+          padding: "0.8rem 1.5rem",
+          borderRadius: "8px",
+          textDecoration: "none",
+          fontWeight: "600",
+          background: "rgba(255,255,255,0.1)",
+        }}
+      >
+        <i className="fas fa-video"></i> Voir la démo
+      </a>
+    </div>
+  </div>
+</div>
 
-### Objectif
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    background: "#fef3c7",
+    color: "#92400e",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    marginBottom: "2rem",
+    border: "1px solid #f59e0b",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
 
-Ce test évalue vos compétences avancées en conception mécanique. Vous devrez concevoir un convoyeur totalement fonctionnel et capable de déplacer de petits objets, en respectant toutes les spécifications techniques.
+## <i className="fas fa-flask"></i> Test 3 : Niveau avancé {#test}
 
-### Compétences évaluées
+Le test de niveau avancé a pour but d’évaluer les compétences des participants en modélisation de pièces complexes dans **SolidWorks**. Il s’inscrit dans la continuité des tests précédents, en intégrant des notions de conception fonctionnelle, de paramétrage intelligent, et de validation par la masse.
 
-<FeatureGrid
-  items={[
-    {
-      icon: "🏗️",
-      title: "Conception",
-      description: "Conception complète du convoyeur",
-    },
-    {
-      icon: "⚙️",
-      title: "Fonctionnalité",
-      description: "Capacité à déplacer des objets",
-    },
-    {
-      icon: "📐",
-      title: "Spécifications",
-      description: "Respect des spécifications techniques",
-    },
-    {
-      icon: "🖨️",
-      title: "Faisabilité",
-      description: "Faisabilité pour impression 3D",
-    },
-    {
-      icon: "🧪",
-      title: "Simulation",
-      description: "Simulation mécanique (bonus)",
-    },
-  ]}
-/>
-
-### Spécifications techniques
-
-<Table
-  headers={["Spécification", "Description", "Criticité"]}
-  data={[
-    [
-      "Contraintes géométriques",
-      "Application des contraintes adéquates",
-      "Critique",
-    ],
-    ["Dimensions", "Respect de toutes les dimensions", "Critique"],
-    ["Masses", "Capacité à trouver les bonnes valeurs", "Important"],
-    ["Fonctionnalité", "Convoyeur capable de déplacer objets", "Critique"],
-    ["Faisabilité 3D", "Modèles imprimables en 3D", "Important"],
-    ["Assemblage", "Assemblage possible et fonctionnel", "Critique"],
-  ]}
-/>
-
-### Critères de notation (110 points sur 300, ramené à 100)
-
-**Conception et assemblage (100 points)** :
-
-1. **Contraintes géométriques (20 points)** : Application correcte
-2. **Dimensions (20 points)** : Respect complet
-3. **Masses (15 points)** : Calculs précis
-4. **Conception convoyeur (25 points)** : Fonctionnel et complet
-5. **Spécifications techniques (10 points)** : Respect des specs
-6. **Faisabilité 3D (10 points)** : Modèles imprimables
-
-**Bonus Simulation (10 points)** :
-
-- Simulation pertinente réalisée
-- Informations utiles recueillies
-- Analyse et amélioration basée sur la simulation
-
-### Documentation requise
-
-Pour assurer la traçabilité et la compréhension complète du projet :
-
-- **Études préliminaires** : Analyse des besoins fonctionnels et contraintes mécaniques
-- **Choix et justification** : Sélection des matériaux et composants
-- **Modélisation CAO** : Modèles 3D de chaque composant et assemblage
-- **Validation** : Vérification de l'intégrité mécanique et de l'agencement
-- **Simulation** : Résultats de simulation (si réalisée)
-- **GitHub** : Dépôt complet avec tous les fichiers
-
-### Points importants
-
-⚠️ **Attention** : Toute équipe n'ayant pas réalisé une documentation complète et détaillée se verra retirer **30 points** sur sa note finale.
-
-### Améliorations possibles
-
-- **Simulation FEA** : Analyse par éléments finis
-- **Optimisation** : Réduction de masse, amélioration de la rigidité
-- **Innovation** : Solutions créatives et originales
-- **Documentation avancée** : Animations, vidéos, rendus 3D
+<div className="grid--2-col">
+  <InfoCard title="Objectifs du test" icon="🎯">
+    * Concevoir une pièce complexe et paramétrée. * Utiliser des **équations et
+    relations** (W, X, Y, Z). * Valider la conception par le calcul de la masse.
+  </InfoCard>
+  <InfoCard type="warning" title="Matériau imposé" icon="🔩">
+    **Aluminium 1060 Alloy** * Densité : 2700 kg/m³ * Alliage série 1000
+  </InfoCard>
+</div>
 
 ---
 
-_Pour plus de détails, consultez les spécifications complètes du test._
+## <i className="fas fa-ruler-combined"></i> Paramètres géométriques {#params}
+
+La pièce répond à des dimensions variables basées sur des équations :
+
+<Table
+  headers={[
+    "Cas",
+    "A (mm)",
+    "B (mm)",
+    "W = B / 2",
+    "X = A / 4",
+    "Y = B + 5.5",
+    "Z = B + 15",
+  ]}
+  data={[
+    ["a", "193", "88", "44", "48.25", "93.5", "103"],
+    ["b", "205", "100", "50", "51.25", "105.5", "115"],
+    ["c", "210", "105", "52.5", "52.5", "110.5", "120"],
+  ]}
+/>
+
+---
+
+## <i className="fas fa-tasks"></i> Gamme de réalisation {#code}
+
+Cette section décrit les étapes successives pour modéliser la pièce complexe.
+
+### Étapes 1 à 4 : Initialisation et Base
+
+<div className="custom-card" style={{padding: '1.5rem', marginBottom: '2rem'}}>
+    <h4>1. Création du fichier</h4>
+    <p>Ouvrir SolidWorks, créer une nouvelle pièce (Part) et définir l'unité en **MMGS**.</p>
+    
+    <h4>2. Équations paramétriques</h4>
+    <p>Utiliser l'onglet "Outils" -> "Équations" pour définir les variables A, B, W, X, Y, Z.</p>
+    
+    <h4>3. Esquisse de base</h4>
+    <p>Sur le plan de face, tracer le contour général avec les cotes liées aux équations.</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/1.png" alt="Esquisse 1" width="400" />
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/2.png" alt="Esquisse 2" width="400" />
+
+    <h4>4. Extrusion</h4>
+    <p>Lancer le bossage extrudé avec une profondeur de **2X**.</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/3.png" alt="Extrusion" width="400" />
+
+</div>
+
+### Étapes 5 à 8 : Détails et Enlèvements
+
+<div className="custom-card" style={{padding: '1.5rem', marginBottom: '2rem'}}>
+    <h4>5-6. Enlèvement de matière</h4>
+    <p>Dessiner l'esquisse à enlever et appliquer la fonction "Enlèvement de matière à travers tout".</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/5.png" alt="Esquisse" width="400" />
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/6.png" alt="Enlèvement" width="400" />
+
+    <h4>7-8. Extrusion secondaire</h4>
+    <p>Dessiner l'esquisse secondaire et extruder sur la valeur **Y**.</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/7.png" alt="Esquisse Extrusion" width="400" />
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/9.png" alt="Vue 3D" width="400" />
+
+</div>
+
+### Étapes 9 à 11 : Nervures et Finition
+
+<div className="custom-card" style={{padding: '1.5rem', marginBottom: '2rem'}}>
+    <h4>9. Réalisation de la nervure</h4>
+    <p>Création de la forme à extruder pour renforcer la structure.</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/11.png" alt="Nervure" width="400" />
+
+    <h4>10-11. Derniers ajustements</h4>
+    <p>Finalisation de l'enlèvement de matière sur les faces latérales.</p>
+    <img src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/13.png" alt="Finalisation" width="400" />
+
+</div>
+
+### Étape 12 : Évaluation de la masse
+
+La validation finale repose sur la précision du calcul de masse pour les 3 paramétrages :
+
+<div className="grid--2-col">
+  <div>
+    <strong>Paramétrage 1 :</strong>
+    <img
+      src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/14.png"
+      alt="Masse 1"
+      style={{ width: "100%" }}
+    />
+  </div>
+  <div>
+    <strong>Paramétrage 2 :</strong>
+    <img
+      src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/images/16.png"
+      alt="Masse 2"
+      style={{ width: "100%" }}
+    />
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/kicadFiles.zip">
+          <i className="fas fa-file-archive"></i> Fichiers SolidWorks (.zip)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test3/doc/schemas.zip">
+          <i className="fas fa-drafting-compass"></i> Plans de fabrication
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Electroniques/Test3/doc/ATMEGA328.PDF"
+          target="_blank"
+        >
+          <i className="fas fa-file-pdf"></i> Documentation Technique Complète
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-video"></i> Multimédia
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="https://vimeo.com/1096557845/f0d115dd4d?share=copy"
+          target="_blank"
+        >
+          <i className="fas fa-play-circle"></i> Vidéo de démonstration{" "}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success[Bilan Avancé]
+Ce test démontre notre capacité à gérer des contraintes techniques multiples (géométrie variable, densité de matériau, équations) pour produire une solution mécanique précise et fonctionnelle.
+:::
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

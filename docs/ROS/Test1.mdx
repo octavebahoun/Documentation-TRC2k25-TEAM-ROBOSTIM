@@ -1,70 +1,188 @@
 ---
 id: ros-test1
 slug: Test1
-title: "Test 1 — Installation et configuration ROS"
+title: "Test 1 — Création d’une classe Robot"
 sidebar_label: Test 1
 ---
 
 import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
-import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-it">🤖 ROS</span>
+<div className="hero-section">
+  <div className="hero-section-content">
+    <h1>Documentation technique des tests en IT</h1>
+    <p>Test 1 : Création d’une classe pour un Robot</p>
+    <div style={{ marginTop: "2rem" }}>
+      <a
+        href="https://vimeo.com/1093499371"
+        target="_blank"
+        className="hero-btn-outline"
+        style={{
+          padding: "0.8rem 1.5rem",
+          borderRadius: "30px",
+          border: "2px solid white",
+          color: "white",
+          textDecoration: "none",
+        }}
+      >
+        <i className="fas fa-video"></i> Voir la démo
+      </a>
+    </div>
+  </div>
+</div>
 
-<InfoCard type="info" title="Objectif du test" icon="🛠️">
-  Installer et configurer un environnement ROS fonctionnel pour le développement
-  de notre système robotique distribué.
-</InfoCard>
+<div
+  className="badge-sticker"
+  style={{
+    display: "inline-block",
+    background: "#e74c3c",
+    color: "white",
+    padding: "5px 15px",
+    borderRadius: "20px",
+    fontWeight: "bold",
+    marginBottom: "20px",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
 
-### 🎯 Critères de réussite
+## <i className="fas fa-book"></i> 1. Introduction {#intro}
 
-- **Installation complète** : ROS Noetic (Ubuntu 20.04) ou ROS 2 installé sans erreurs.
-- **Environnement** : Variables d'environnement (`.bashrc`) configurées.
-- **Communication** : Topics et services opérationnels.
-- **Simulation** : Gazebo et RViz fonctionnels.
+Dans un contexte mondial où la robotique devient un pilier fondamental de l’innovation technologique, les compétences en programmation orientée objet (POO) et en conception de systèmes modulaires sont devenues essentielles. Le Tekbot Robotics Challenge 2024, organisé au sein d’un cadre académique dynamique, offre aux étudiants une opportunité concrète de mobiliser ces compétences dans un projet cohérent, pratique et professionnalisant.
 
-### 🛠️ Prérequis système
-
-<FeatureGrid
-  items={[
-    { icon: "🐧", title: "OS", description: "Ubuntu 20.04 LTS" },
-    { icon: "💾", title: "RAM/Disk", description: "8GB RAM / 20GB HDD" },
-    { icon: "⚡", title: "CPU", description: "Min. 4 cœurs" },
-    {
-      icon: "📦",
-      title: "Logiciels",
-      description: "Git, Python3, build-essential",
-    },
-  ]}
-/>
-
-### 📊 Procédure d'installation (Extrait)
-
-```bash
-# Ajout du repository ROS et clé GPG
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-
-# Installation
-sudo apt update && sudo apt install -y ros-noetic-desktop-full
-
-# Workspace
-mkdir -p ~/catkin_ws/src && cd ~/catkin_ws && catkin_make
-```
-
-### 📉 Validation des performances
-
-<Table
-  headers={["Métrique", "Valeur attendue", "Statut"]}
-  data={[
-    ["Temps démarrage", "&lt; 30s", "✅"],
-    ["Utilisation RAM", "&lt; 500MB (Core)", "✅"],
-    ["Latence Topics", "&lt; 10ms", "✅"],
-    ["Tests réussis", "100%", "✅"],
-  ]}
-/>
+Ce projet consiste à concevoir une application Python qui permet de simuler la création et la gestion de différents types de robots, chacun ayant des caractéristiques propres, tout en partageant une base commune. L’approche choisie repose sur une architecture modulaire, orientée objet, facilitant l’extensibilité, la réutilisabilité et la maintenabilité du code. Chaque type de robot est défini dans un fichier spécifique, héritant d’une classe mère abstraite, et mettant en œuvre ses propres attributs et comportements.
 
 ---
 
-_Test réalisé le : Octobre 2025_
-_Responsable : Pôle ROS_
+## <i className="fas fa-bullseye"></i> 2. Objectif du test {#objectif}
+
+L’objectif est de construire une application Python capable de gérer dynamiquement des objets représentant des robots spécialisés. Chaque robot possède des attributs généraux (nom, fabricant, etc.) et spécifiques selon son type (médical, industriel, etc.). Le programme doit :
+
+- Permettre à l’utilisateur de créer différents types de robots via un menu interactif
+- Assurer la validation des données entrées par l’utilisateur
+- Stocker les robots créés en mémoire et les sauvegarder dans un fichier texte
+- Implémenter le principe d’héritage, d’abstraction, d’encapsulation et de polymorphisme
+
+---
+
+## <i className="fas fa-tools"></i> 3. Prérequis et outils nécessaires {#outils}
+
+- **Langage :** Python 3.8 ou supérieur
+- **Bibliothèques standards :** abc, uuid
+- **Éditeur conseillé :** VS Code, PyCharm ou Thonny
+- **OS compatible :** Windows, Linux, macOS
+- **Connaissances requises :** notions de POO, structures conditionnelles, boucles, saisies utilisateur
+
+---
+
+## <i className="fas fa-sitemap"></i> 4. Structure du projet {#structure}
+
+Le projet est organisé autour de fichiers spécialisés :
+
+- `main.py` – Point d’entrée de l’application
+- `ClassRobot.py` – Classe de base abstraite
+- `Robot.py` – Démonstration simplifiée
+- `Gestion.py` – Fonctions de menu, sauvegarde, saisie
+- `Menager.py`, `Indistruel.py`, etc. – Définissent chaque type de robot
+
+---
+
+## <i className="fas fa-file-code"></i> 5. Fichier : ClassRobot.py {#code}
+
+Ce fichier définit la classe abstraite `Robot` qui sert de base à toutes les autres.
+
+```python
+from abc import ABC, abstractmethod
+
+class Robot(ABC):
+    def __init__(self, name, model):
+        self.name = name
+        self.model = model
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_model(self):
+        return self.model
+
+    def set_model(self, model):
+        self.model = model
+
+    @abstractmethod
+    def move(self):
+        pass
+
+    def __str__(self):
+        return f"Robot {self.name}, modèle {self.model}"
+```
+
+---
+
+## <i className="fas fa-robot"></i> 6. Fichier : Robot.py {#robot-py}
+
+Ce fichier sert d’introduction à la programmation orientée objet (POO). Il contient une classe abstraite `Robot`, ainsi que deux classes concrètes : `FlyingRobot` et `WheeledRobot`.
+
+```python
+class FlyingRobot(Robot):
+    def move(self):
+        return f"{self.name} vole dans les airs avec agilité."
+
+class WheeledRobot(Robot):
+    def move(self):
+        return f"{self.name} roule rapidement sur le sol."
+```
+
+---
+
+## <i className="fas fa-cogs"></i> 7. Fichier : Gestion.py {#gestion}
+
+Ce fichier regroupe les fonctions utiles pour l’interaction utilisateur, la validation des entrées et la sauvegarde des données robots.
+
+---
+
+## <i className="fas fa-cog"></i> 8. Fichier : main.py {#main}
+
+Ce fichier est le cœur du programme. Il orchestre le menu, appelle les fonctions de gestion, et crée dynamiquement les objets robots.
+
+---
+
+## <i className="fas fa-robot"></i> 9. Types de robots {#types}
+
+### 9.1 Menager.py
+
+Définit la classe `RobotMenager` pour les tâches domestiques (nettoyage, autonomie, niveau sonore).
+
+### 9.2 Industriel.py
+
+Définit la classe `RobotIndustriel` pour l'assemblage ou la manipulation d’objets lourds.
+
+### 9.3 Medical.py
+
+Définit la classe `RobotMedical` pour les interventions chirurgicales.
+
+### 9.4 Explorateur.py
+
+Modélise un robot capable d’opérer dans des environnements extrêmes.
+
+---
+
+## <i className="fas fa-project-diagram"></i> 10. Diagramme UML {#uml}
+
+Le diagramme UML ci-dessous montre la hiérarchie des classes :
+
+<p align="center">
+  <img
+    src={require("./images/image6.jpg").default}
+    alt="Diagramme UML"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+La qualité du code repose sur une architecture modulaire bien pensée. Cette documentation a été pensée comme un guide pratique, technique et pédagogique.

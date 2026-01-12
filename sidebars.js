@@ -27,7 +27,17 @@ module.exports = {
           label: 'Mechanical Pole',
           items: [
             'Mechanics/mechanics-overview',
-            'Mechanics/mechanics-test1',
+            {
+              type: 'category',
+              label: 'Test 1 - Conception CAO',
+              items: [
+                'Mechanics/mechanics-test1',
+                'Mechanics/Test1_Pieces/piece1',
+                'Mechanics/Test1_Pieces/piece2',
+                'Mechanics/Test1_Pieces/piece3',
+                'Mechanics/Test1_Pieces/piece4',
+              ],
+            },
             'Mechanics/mechanics-test2',
             'Mechanics/mechanics-test3',
           ],

@@ -1,0 +1,165 @@
+---
+id: piece4
+title: "Pièce 4 — Modélisation 3D"
+sidebar_label: Pièce 4
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import Table from "@site/src/components/Table";
+
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Pièce 4 : Conception Mécanique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    Modélisation par extrusion successive et finitions
+  </p>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/solidworks_files/Piece_4.zip"
+      className="hero-btn-primary"
+      style={{
+        color: "#1e3a8a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      <i className="fas fa-file-download"></i> Télécharger le fichier SolidWorks
+      (ZIP)
+    </a>
+  </div>
+</div>
+
+## 1. Présentation générale
+
+**Nom de la pièce :** Pièce 4  
+**Date de création :** 07/06/2025  
+**Échelle :** 1/1
+
+---
+
+## 2. Caractéristiques techniques
+
+<div className="grid--2-col">
+  <InfoCard title="Paramètres" icon="⚙️">
+    * **Système d'unité :** MMGS * **Décimale :** 2 * **Tolérance :** ± 5%
+  </InfoCard>
+  <InfoCard type="warning" title="Matériaux" icon="🔩">
+    * **Aluminium Alliage 1060** * **Densité :** 0.0027 g/mm³
+  </InfoCard>
+</div>
+
+---
+
+## 3. Représentation graphique
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/1.png"
+    alt="Pièce 4"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## 4. Processus de réalisation
+
+### Étape 2 : Première extrusion
+
+- **Esquisse :** Utiliser l'outil **Ligne** pour dessiner le profil de base.
+- **Cotation :** Appliquer les dimensions via **Cote intelligente**.
+- **Extrusion :** Profondeur de **100 mm**.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/2.png"
+    alt="Esquisse Ligne"
+    width="230"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/3.png"
+    alt="Cotation"
+    width="230"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/5.png"
+    alt="Extrusion 1"
+    width="230"
+  />
+</div>
+
+### Étape 3 : Deuxième extrusion
+
+- Dessiner le second profil sur la face latérale et extruder.
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/8.png"
+    alt="Extrusion 2"
+    width="400"
+  />
+</p>
+
+### Étape 4-5 : Finitions et Enlèvement de matière
+
+- **Cercle :** Tracer et extruder le cylindre de raccordement.
+- **Enlèvement :** Utiliser l'option **"Jusqu'à la surface"** pour percer la structure.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/12.png"
+    alt="Esquisse enlèvement"
+    width="300"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece4/13.png"
+    alt="Aperçu perçage"
+    width="300"
+  />
+</div>
+
+---
+
+## 5. Évaluation de la masse
+
+Via l'onglet **Évaluer** > **Propriétés de masse** :
+:::success[Résultat final]
+Masse de la Pièce 4 : **297,29 g**
+:::

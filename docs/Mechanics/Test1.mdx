@@ -1,7 +1,7 @@
 ---
 id: mechanics-test1
 slug: Test1
-title: "Test 1 — Simulation FEA"
+title: "Test 1 — Conception et Modélisation CAO"
 sidebar_label: Test 1
 ---
 
@@ -9,66 +9,206 @@ import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
 import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-mecanique">⚙️ Mécanique</span>
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    TRC25 - Conception Mécanique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    Maîtrise du logiciel SolidWorks & Conception Assistée par Ordinateur
+  </p>
 
-<InfoCard type="info" title="Objectif du test" icon="🔬">
-  Effectuer une analyse par éléments finis (FEA) sur les composants mécaniques
-  critiques pour valider leur résistance et optimiser leur conception
-  structurelle.
-</InfoCard>
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="#intro"
+      className="hero-btn-primary"
+      style={{
+        color: "#0f172a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      Commencer la lecture
+    </a>
+    <a
+      href="https://github.com/Akinerinlamoulerogiscardisidore/Documentation-TRC2k25-TEAM-ROBOSTIM"
+      target="_blank"
+      className="hero-btn-outline"
+      style={{
+        color: "white",
+        border: "2px solid white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        background: "rgba(255,255,255,0.1)",
+      }}
+    >
+      <i className="fab fa-github"></i> Dépôt GitHub
+    </a>
+  </div>
+</div>
 
-### 🎯 Critères de réussite
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    background: "#fef3c7",
+    color: "#92400e",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    marginBottom: "2rem",
+    border: "1px solid #f59e0b",
+  }}
+>
+  <i className="fas fa-trophy"></i> TRC 25
+</div>
 
-- **Contrainte maximale** : &lt;80% de la limite élastique
-- **Facteur de sécurité** : >2.0
-- **Déformation maximale** : &lt;1mm
-- **Fréquence propre** : >50Hz (pour éviter la résonance)
+## <i className="fas fa-compass"></i> Notre Défi : Maîtrise de SolidWorks {#intro}
 
-### 🛠️ Logiciels et Paramètres
+Bienvenue sur la documentation de notre projet pour le **concours international TRC25, volet mécanique !**
+
+Notre équipe a brillamment relevé un défi technique centré sur la **Conception Assistée par Ordinateur (CAO)** avec **SolidWorks**. Cette épreuve nous a poussés à démontrer notre rigueur et notre précision à travers plusieurs étapes clés.
+
+<div className="grid--2-col">
+  <InfoCard title="Modélisation 3D" icon="📐">
+    Transformation de croquis 2D en modèles 3D complexes, avec pour objectif une
+    **précision de masse inférieure à ±5 %**.
+  </InfoCard>
+  <InfoCard type="success" title="Assemblage Technique" icon="⚙️">
+    Reconstruction d'une pince mécanique fonctionnelle en appliquant des
+    contraintes géométriques avancées.
+  </InfoCard>
+</div>
+
+---
+
+## <i className="fas fa-sitemap"></i> Structure du Projet
 
 <FeatureGrid
   items={[
     {
-      icon: "💻",
-      title: "SolidWorks",
-      description: "Simulation Statique Linéaire",
+      icon: "🧩",
+      title: "Pièces Individuelles",
+      description:
+        "Conception de 4 pièces uniques avec respect strict des cotes.",
     },
     {
-      icon: "🕸️",
-      title: "Maillage",
-      description: "Tétraèdres 2ème ordre (0.5mm)",
+      icon: "🔧",
+      title: "Assemblage Pince",
+      description: "Intégration des pièces et validation du centre de masse.",
     },
-    { icon: "🧮", title: "Solveur", description: "Direct Sparse" },
-    { icon: "🔩", title: "Matériau", description: "Aluminium 7075-T6" },
+    {
+      icon: "⚖️",
+      title: "Analyse Physique",
+      description: "Validation des propriétés massiques et géométriques.",
+    },
+    {
+      icon: "🤝",
+      title: "Collaboration",
+      description:
+        "Travail d'équipe et structuration de la documentation technique.",
+    },
   ]}
 />
 
-### 📊 Procédure de test
+### <i className="fas fa-list-ol"></i> Étapes de conception
 
-#### Analyse Statique (Extrait YAML)
+1.  **Modélisation de Pièces Uniques :** Nous avons transformé des croquis 2D en modèles 3D complexes. Une véritable mise à l'épreuve de notre maîtrise des volumes et des propriétés physiques.
+2.  **Assemblage Fonctionnel :** Nous avons validé la justesse de l'assemblage par le calcul du centre de masse et l'application de contraintes de mouvement.
 
-```yaml
-Boundary_Conditions:
-  - type: "Fixed_Support"
-    location: "Base_plate"
-  - type: "Force"
-    magnitude: 1000 N
-    direction: [0, 0, -1] # Vers le bas
-```
-
-### 📈 Résultats de validation
-
-<Table
-  headers={["Paramètre", "Valeur calculée", "Valeur limite", "Statut"]}
-  data={[
-    ["Contrainte max", "350 MPa", "400 MPa", "✅"],
-    ["Déformation max", "0.8 mm", "1.0 mm", "✅"],
-    ["Facteur sécurité", "2.3", "2.0", "✅"],
-    ["Fréquence propre", "75 Hz", "50 Hz", "✅"],
-  ]}
-/>
+Ce projet a été une formidable opportunité de renforcer notre **esprit d'équipe** et notre capacité à structurer une documentation technique claire et accessible.
 
 ---
 
-_Test réalisé le : Octobre 2025_
-_Responsable : Pôle Mécanique_
+## <i className="fas fa-toolbox"></i> Ressources et Annexes {#ressources}
+
+<div className="grid--2-col">
+  <div>
+    <h3>
+      <i className="fas fa-download"></i> Téléchargements
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/solidworks_files/assemblage_pince.zip">
+          <i className="fas fa-file-archive"></i> Assemblage complet (ZIP)
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test1_Pieces/piece1">
+          <i className="fas fa-eye"></i> Pièce 1 - Détails & Réalisation
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test1_Pieces/piece2">
+          <i className="fas fa-eye"></i> Pièce 2 - Détails & Réalisation
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test1_Pieces/piece3">
+          <i className="fas fa-eye"></i> Pièce 3 - Détails & Réalisation
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test1_Pieces/piece4">
+          <i className="fas fa-eye"></i> Pièce 4 - Détails & Réalisation
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      <i className="fas fa-external-link-alt"></i> Liens Rapides
+    </h3>
+    <ul className="component-list">
+      <li>
+        <a
+          href="https://github.com/Akinerinlamoulerogiscardisidore/Documentation-TRC2k25-TEAM-ROBOSTIM"
+          target="_blank"
+        >
+          <i className="fab fa-github"></i> Dépôt GitHub
+        </a>
+      </li>
+      <li>
+        <a href="/Documentation-TRC2k25-TEAM-ROBOSTIM/docs/Mechanics/Test2">
+          <i className="fas fa-arrow-right"></i> Voir le Test 2 (Intro CAO)
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## <i className="fas fa-flag-checkered"></i> Conclusion {#conclusion}
+
+:::success[Bilan]
+Ce test valide notre capacité à utiliser des outils de CAO industriels pour transformer des concepts théoriques en modèles physiques précis, base indispensable pour la construction du robot Tekbot.
+:::
+
+---
+
+_Dernière mise à jour : Janvier 2026_
+_Documentation par la team ROBOSTIM - TRC 25_

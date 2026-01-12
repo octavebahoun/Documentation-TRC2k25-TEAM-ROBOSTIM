@@ -1,0 +1,174 @@
+---
+id: piece2
+title: "Pièce 2 — Modélisation 3D"
+sidebar_label: Pièce 2
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import Table from "@site/src/components/Table";
+
+<div
+  className="hero-section"
+  style={{
+    padding: "3rem 2rem",
+    borderRadius: "20px",
+    marginBottom: "3rem",
+    textAlign: "center",
+    background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)",
+    color: "white",
+  }}
+>
+  <h1 style={{ color: "white", border: "none", margin: 0, fontSize: "2.5rem" }}>
+    Pièce 2 : Conception Mécanique
+  </h1>
+  <p style={{ fontSize: "1.25rem", marginTop: "1rem", opacity: 0.9 }}>
+    Modélisation multi-extrusion et matériaux légers
+  </p>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem",
+    }}
+  >
+    <a
+      href="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/solidworks_files/Piece_2.zip"
+      className="hero-btn-primary"
+      style={{
+        color: "#1e3a8a",
+        backgroundColor: "white",
+        padding: "0.8rem 1.5rem",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontWeight: "600",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.2)",
+      }}
+    >
+      <i className="fas fa-file-download"></i> Télécharger le fichier SolidWorks
+      (ZIP)
+    </a>
+  </div>
+</div>
+
+## 1. Présentation générale
+
+**Nom de la pièce :** Pièce 2  
+**Date de création :** 07/06/2025  
+**Échelle :** 1/1
+
+---
+
+## 2. Caractéristiques techniques
+
+<div className="grid--2-col">
+  <InfoCard title="Paramètres" icon="⚙️">
+    * **Système d'unité :** MMGS * **Décimale :** 2 * **Tolérance :** ± 5%
+  </InfoCard>
+  <InfoCard type="warning" title="Matériaux" icon="🔩">
+    * **Aluminium Alliage 1060** * **Densité :** 0.0027 g/mm³
+  </InfoCard>
+</div>
+
+---
+
+## 3. Représentation graphique
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/1.png"
+    alt="Pièce 2"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## 4. Processus de réalisation
+
+### Étape 1 : Première extrusion (Corps central)
+
+1.  **Esquisse :** Tracer les cercles de diamètres **20, 38, 34 et 64 mm**.
+2.  **Relations :** Aligner les centres verticalement (Distance : 75 mm).
+3.  **Arcs :** Relier les cercles par des arcs de 3 points avec contraintes de **Tangence**.
+4.  **Extrusion :** Commande Bossage extrudé (Direction : **Plan milieu**) d'une épaisseur de **10 mm**.
+
+<p align="center">
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/2.png"
+    alt="Esquisse pièce 2"
+    width="400"
+  />
+</p>
+
+### Étape 2 : Deuxième extrusion (Cylindres)
+
+1.  Réafficher l'esquisse précédente.
+2.  Sélectionner les zones circulaires et extruder en **"Plan milieu"** sur **30 mm**.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/3.png"
+    alt="Étape extrusion 1"
+    width="300"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/5.png"
+    alt="Résultat cylindres"
+    width="300"
+  />
+</div>
+
+### Étape 3 : Troisième extrusion (Épaulement)
+
+1.  Utiliser la fonction **"Convertir entités"** sur le cercle Ø34 mm.
+2.  Appliquer un **décalage de 4.5 mm** vers l'extérieur.
+3.  Extruder sur une profondeur de **15 mm**.
+
+### Étape 4 : Enlèvement de matière
+
+- Convertir le contour extérieur récemment créé.
+- Appliquer un décalage de **6 mm vers l'intérieur**.
+- Utiliser **"Enlèvement de matière extrudé"** sur une profondeur de **5 mm**.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    justifyContent: "center",
+    margin: "20px 0",
+  }}
+>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/11.png"
+    alt="Esquisse 1"
+    width="200"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/12.png"
+    alt="Esquisse 2"
+    width="200"
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/files/Mechanic/Test1/images/piece2/16.png"
+    alt="Final"
+    width="200"
+  />
+</div>
+
+---
+
+## 5. Évaluation de la masse
+
+Après application du matériau **Aluminium 1060**, nous obtenons :
+:::success[Résultat final]
+Masse de la Pièce 2 : **297,29 g**
+:::

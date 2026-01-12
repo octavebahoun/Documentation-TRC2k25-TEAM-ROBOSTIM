@@ -1,115 +1,168 @@
 ---
 id: ros-test2
 slug: Test2
-title: "Test 2 — Introduction à ROS 2"
+title: "Test 2 — Validation de Données Capteurs"
 sidebar_label: Test 2
 ---
 
 import InfoCard from "@site/src/components/InfoCard";
 import FeatureGrid from "@site/src/components/FeatureGrid";
-import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+<div className="hero-section">
+  <div className="hero-section-content">
+    <h2 className="hero-title">REAL-TIME SENSOR DATA VALIDATION</h2>
+    <center>
+      <img
+        src={require("./images/img18.jpg").default}
+        alt="Sensor Data"
+        style={{ maxWidth: "300px", borderRadius: "15px" }}
+      />
+    </center>
+    <p className="hero-subtitle">
+      Documentation technique complète : sensor_data_evaluation
+    </p>
+  </div>
+</div>
 
-<InfoCard type="info" title="Aperçu du test" icon="🛰️">
-  Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2,
-  création de nœuds, publication/abonnement de topics, et utilisation des
-  services.
-</InfoCard>
+## <i className="fas fa-bullseye"></i> Objectif du projet {#objectif}
 
-### Objectif
-
-Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des systèmes robotiques distribués. Vous devrez créer des nœuds ROS 2 capables de communiquer via topics et services.
-
-### Concepts ROS 2
-
-<FeatureGrid
-  items={[
-    {
-      icon: "📡",
-      title: "Topics",
-      description: "Publication/Subscription de messages",
-    },
-    {
-      icon: "🔧",
-      title: "Services",
-      description: "Communication requête/réponse",
-    },
-    { icon: "🗺️", title: "TF", description: "Transformations de repères" },
-    { icon: "📦", title: "Packages", description: "Organisation du code" },
-    { icon: "🛠️", title: "Nodes", description: "Processus ROS 2" },
-  ]}
-/>
-
-### Nœuds et topics à créer
-
-<Table
-  headers={["Nœud", "Topic/Service", "Type", "Description"]}
-  data={[
-    [
-      "publisher_node",
-      "/chatter",
-      "std_msgs/String",
-      "Publication de messages",
-    ],
-    ["subscriber_node", "/chatter", "std_msgs/String", "Réception de messages"],
-    [
-      "service_server",
-      "/add_two_ints",
-      "example_interfaces/AddTwoInts",
-      "Service de calcul",
-    ],
-    [
-      "service_client",
-      "/add_two_ints",
-      "example_interfaces/AddTwoInts",
-      "Client de service",
-    ],
-  ]}
-/>
-
-### Structure de package ROS 2
-
-```
-my_robot_package/
-├── package.xml
-├── setup.py
-├── setup.cfg
-└── my_robot_package/
-    ├── __init__.py
-    ├── publisher_node.py
-    ├── subscriber_node.py
-    └── service_node.py
-```
-
-### Critères de notation (100 points)
-
-1. **Compréhension (25 points)** : Maîtrise des concepts ROS 2
-2. **Implémentation (40 points)** : Nœuds fonctionnels, communication correcte
-3. **Documentation (20 points)** : README, commentaires, explications
-4. **Tests (10 points)** : Validation du fonctionnement
-5. **Présentation (5 points)** : Démonstration, réponses
-
-### Exemple de code
-
-```python
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import String
-
-class PublisherNode(Node):
-    def __init__(self):
-        super().__init__('publisher_node')
-        self.publisher = self.create_publisher(String, 'chatter', 10)
-        self.timer = self.create_timer(1.0, self.publish_message)
-
-    def publish_message(self):
-        msg = String()
-        msg.data = 'Hello ROS 2!'
-        self.publisher.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
-```
+Le projet consiste à développer un package ROS 2 intitulé `sensor_data_evaluation`, dont le but principal est de simuler l'acquisition, la transmission et la vérification de données issues de capteurs environnementaux. Ce système met en œuvre un flux **publisher/subscriber** et permet une évaluation en temps réel de la validité des données selon des critères définis.
 
 ---
 
-_Pour plus de détails, consultez la documentation ROS 2 officielle._
+## <i className="fas fa-sitemap"></i> Structure du package {#structure}
+
+<p align="center">
+  <img
+    src={require("./images/img28.jpg").default}
+    alt="Structure du package"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+---
+
+## <i className="fas fa-file-code"></i> Modules Clés {#modules}
+
+### 1. sensor_publisher.py — Générateur de données de capteurs
+
+Ce fichier définit un **node ROS 2** chargé de générer des données aléatoires simulant les lectures de trois capteurs : température, humidité et pression. Ces valeurs sont générées toutes les **0,5 secondes**.
+
+- **Fonctionnement général :** Les données sont encapsulées dans un dictionnaire Python puis converties en **format JSON**. Elles sont ensuite publiées sur un **topic ROS 2** nommé `/sensor_data`.
+- **Affichage :** Utilise une coloration personnalisée dans le terminal.
+
+<p align="center">
+  <img
+    src={require("./images/img31.jpg").default}
+    alt="Code Publisher"
+    style={{ borderRadius: "10px", maxWidth: "100%" }}
+  />
+</p>
+
+### 2. sensor_subscriber.py — Vérificateur de validité des données
+
+Ce fichier contient le node ROS 2 subscriber qui écoute le topic `/sensor_data`. À chaque message reçu, il décode les données JSON, extrait les valeurs des capteurs, et vérifie leur validité selon les plages définies :
+
+- **Température :** 15°C à 30°C
+- **Humidité :** 30% à 70%
+- **Pression :** 950 hPa à 1050 hPa
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  }}
+>
+  <img
+    src={require("./images/img37.jpg").default}
+    alt="Subscriber"
+    style={{ width: "45%", borderRadius: "10px" }}
+  />
+  <img
+    src={require("./images/img38.jpg").default}
+    alt="Terminal"
+    style={{ width: "45%", borderRadius: "10px" }}
+  />
+</div>
+
+---
+
+## <i className="fas fa-rocket"></i> Lancement et Configuration {#config}
+
+### 3. sensor_launch.py — Lancement automatisé
+
+Ce fichier est un **fichier de lancement ROS 2** écrit en Python. Il permet de **démarrer simultanément** les deux nodes.
+
+<p align="center">
+  <img
+    src={require("./images/img41.jpg").default}
+    alt="Launch file"
+    style={{ borderRadius: "10px" }}
+  />
+</p>
+
+### 4. package.xml — Déclaration du package
+
+Ce fichier est un **fichier de configuration XML obligatoire**. Il décrit les informations de base et les dépendances (`rclpy`, `std_msgs`).
+
+<p align="center">
+  <img
+    src={require("./images/img44.jpg").default}
+    alt="Package XML"
+    style={{ borderRadius: "10px" }}
+  />
+</p>
+
+### 5. setup.py & 6. setup.cfg
+
+Scripts permettant à ROS 2 d'installer le package comme un module Python ROS.
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  }}
+>
+  <img
+    src={require("./images/img49.png").default}
+    alt="Setup Py"
+    style={{ width: "45%", borderRadius: "10px" }}
+  />
+  <img
+    src={require("./images/img48.jpg").default}
+    alt="Setup Cfg"
+    style={{ width: "45%", borderRadius: "10px" }}
+  />
+</div>
+
+---
+
+## <i className="fas fa-bug"></i> Difficultés rencontrées et solutions {#difficultes}
+
+1.  **Double affichage dans le terminal :** Solutionnée en désactivant les logs bruts pour ne garder que la sortie stylisée.
+2.  **Affichage noir lors de l'enregistrement vidéo :** Résolu en utilisant SimpleScreenRecorder en mode X11.
+3.  **Fichier de lancement introuvable :** Corrigé en vérifiant le chemin dans `setup.py` sous `data_files`.
+
+---
+
+## <i className="fas fa-network-wired"></i> Connexion réseau (Communication inter-PC) {#network}
+
+Dans un projet ROS 2 distribué, il est impératif de configurer la connexion réseau :
+
+- **Même réseau local (LAN)**
+- **ROS_DOMAIN_ID :** Doit être identique sur chaque machine.
+- **Pas besoin de ROS_MASTER_URI :** Contrairement à ROS 1.
+
+<p align="center">
+  <img
+    src={require("./images/img50.jpg").default}
+    alt="Network configuration"
+    style={{ borderRadius: "10px", maxWidth: "500px" }}
+  />
+</p>
+
+[**Vidéo de démonstration**](https://vimeo.com/1094983036/0cf89e6ea7?share=copy)

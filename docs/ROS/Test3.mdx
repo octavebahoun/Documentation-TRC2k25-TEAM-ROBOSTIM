@@ -1,10 +1,553 @@
 ---
 id: ros-test3
 slug: Test3
-title: "Test 3 — Navigation Autonome TekBot"
+title: "Test 3 — Navigation Autonome avec ROS 2"
 sidebar_label: Test 3
 ---
 
-## 1. Introduction
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
 
-Contenu simple pour tester le chargement de la page Test 3.
+## Documentation technique des tests en IT <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<div
+  className="hero-section"
+  style={{ minHeight: "40vh", marginBottom: "2rem" }}
+>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      position: "relative",
+      zIndex: 10,
+    }}
+  >
+    <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+      Navigation Autonome avec Pathfinding
+    </h1>
+    <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>
+      <strong>Test 3 :</strong> Utilisation de ROS 2, Gazebo et RViz pour une
+      navigation autonome
+    </p>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "wrap",
+        position: "relative",
+        zIndex: 10,
+      }}
+    >
+      <a
+        href="#presentation"
+        className="hero-btn-primary cursor-pointer"
+        style={{ position: "relative", zIndex: 10 }}
+      >
+        📖 Commencer la lecture
+      </a>
+      <a
+        href="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/vid.mp4"
+        target="_blank"
+        className="hero-btn-outline cursor-pointer"
+        style={{ position: "relative", zIndex: 10 }}
+      >
+        🎥 Voir la démo
+      </a>
+    </div>
+  </div>
+</div>
+
+---
+
+## 1. Présentation Générale {#presentation}
+
+<InfoCard type="info" title="Objectif du projet" icon="🎯">
+  Développer un système de navigation autonome pour un robot mobile simulé
+  (TekBot) dans l'environnement Gazebo, en utilisant ROS 2 (Humble).
+</InfoCard>
+
+Ce projet a pour objectif de développer un système de navigation autonome pour un robot mobile simulé (TekBot) dans l'environnement Gazebo, en utilisant ROS 2 (Humble). Le TekBot est un robot équipé de capteurs permettant de s'orienter dans un environnement simulé, tel qu'un labyrinthe.
+
+À travers ce projet, nous avons voulu simuler une navigation complète comprenant :
+
+- La planification de trajectoire (pathfinding)
+- Le suivi du chemin
+- L'évitement d'obstacles
+- La visualisation en temps réel dans RViz2
+
+### Compétences clés développées
+
+<FeatureGrid
+  items={[
+    {
+      icon: "🤖",
+      title: "ROS 2",
+      description: "Compréhension et manipulation de ROS 2",
+    },
+    {
+      icon: "📡",
+      title: "LIDAR",
+      description: "Utilisation de capteurs pour détecter l'environnement",
+    },
+    {
+      icon: "🎮",
+      title: "Gazebo",
+      description: "Intégration de simulations complexes",
+    },
+    {
+      icon: "📊",
+      title: "Odométrie",
+      description: "Traitement pour le suivi de position",
+    },
+    {
+      icon: "🗺️",
+      title: "Cartographie",
+      description: "Génération de cartes pour la navigation",
+    },
+  ]}
+/>
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Arborescence finale du dossier ros2_ws/src/</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/abo.png"
+    alt="Arborescence du projet"
+    style={{
+      maxWidth: "100%",
+      borderRadius: "8px",
+      boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+    }}
+  />
+  <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
+    🔺 Cliquer sur l'image pour agrandir
+  </p>
+</div>
+
+---
+
+## 2. Configuration de l'Environnement {#configuration}
+
+Pour mettre en place le projet de navigation autonome TekBot dans un environnement ROS 2, il est essentiel de disposer d'une configuration logicielle rigoureuse.
+
+### Prérequis
+
+<Table
+  headers={["Composant", "Version", "Description"]}
+  data={[
+    ["ROS 2", "Humble", "Distribution ROS 2 stable"],
+    ["Ubuntu", "22.04", "Système d'exploitation recommandé"],
+    ["Gazebo", "Classic", "Simulateur 3D"],
+    ["RViz2", "-", "Outil de visualisation"],
+    ["Python", "3.10", "Langage de programmation"],
+  ]}
+/>
+
+### Packages ROS 2
+
+Le projet s'articule autour de plusieurs packages :
+
+- **`pathfinding_robot`** : Package principal contenant tous les scripts relatifs à l'intelligence du robot (algorithme A\*, suivi de chemin, évitement d'obstacles)
+- **`tekbot_sim`** : Base logicielle incluant la définition du robot (URDF), les contrôleurs, et les mondes simulés
+
+### Installation
+
+#### Étape 1 : Cloner les dépôts
+
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/charif-tekbot/tekbot_sim.git
+# Cloner également votre dépôt pathfinding_robot
+```
+
+#### Étape 2 : Compiler les packages
+
+```bash
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+<InfoCard type="warning" title="Important" icon="⚠️">
+  Assurez-vous d'utiliser Python 3.10 avec ROS 2 Humble et que tous les packages
+  requis (`nav_msgs`, `geometry_msgs`, `rclpy`) sont bien installés.
+</InfoCard>
+
+---
+
+## 3. Structure du package pathfinding_robot {#structure}
+
+Le package `pathfinding_robot` constitue le cœur logique du système de navigation autonome. Il est structuré selon les standards ROS 2 pour assurer modularité, clarté et extensibilité.
+
+### Organisation des répertoires
+
+```
+pathfinding_robot/
+├── launch/
+│   └── simulation.launch.py
+├── path_planner/
+│   └── path_planner_node.py
+├── path_follower/
+│   └── path_follower_node.py
+├── rviz/
+│   └── pathfinding_config.rviz
+├── package.xml
+└── setup.py
+```
+
+### Composants principaux
+
+#### 📁 `launch/`
+
+Contient `simulation.launch.py` qui démarre simultanément :
+
+- Le monde Gazebo
+- Le modèle du robot TekBot
+- Les nœuds de planification et de suivi
+
+#### 📁 `path_planner/`
+
+Script `path_planner_node.py` implémentant l'algorithme A\* pour générer le chemin optimal. Publie sur le topic `/planned_path`.
+
+#### 📁 `path_follower/`
+
+Nœud `path_follower_node.py` responsable du suivi du chemin. Lit `/planned_path` et compare avec `/odom` pour ajuster les vitesses.
+
+#### 📁 `rviz/`
+
+Configuration `pathfinding_config.rviz` pour afficher le robot, capteurs, chemin planifié, TF et odométrie.
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Contenu du fichier simulation.launch.py</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/3.png"
+    alt="simulation.launch.py"
+    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+  />
+
+{" "}
+
+<p>
+  <strong>Contenu du fichier package.xml</strong>
+</p>
+<img
+  src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/pac.png"
+  alt="package.xml"
+  style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+/>
+
+  <p>
+    <strong>Contenu du fichier setup.py</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/s.png"
+    alt="setup.py"
+    style={{ maxWidth: "100%", borderRadius: "8px" }}
+  />
+</div>
+
+---
+
+## 4. Algorithme de Pathfinding (A\*)
+
+L'algorithme A\* implémenté dans `path_planner_node.py` est un classique en intelligence artificielle pour la recherche de chemin.
+
+### Principe de fonctionnement
+
+L'algorithme repose sur une représentation de l'environnement sous forme de grille, où chaque cellule est soit traversable, soit occupée. Il évalue un coût :
+
+**f(n) = g(n) + h(n)**
+
+Où :
+
+- **g(n)** : coût réel depuis le départ
+- **h(n)** : estimation heuristique de la distance vers la cible
+
+### Processus
+
+1. Construction d'une file de priorité ("open list")
+2. Sélection du nœud le plus prometteur à chaque itération
+3. Stockage des cellules explorées dans une "closed list"
+4. Reconstruction du chemin en suivant les parents
+
+### Publication du chemin
+
+Le nœud publie le chemin sous forme de message `nav_msgs/Path` contenant une liste de `geometry_msgs/PoseStamped`.
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Contenu du fichier path_planner_node.py</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/pl1.png"
+    alt="path_planner 1"
+    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/pl2.png"
+    alt="path_planner 2"
+    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/pl3.png"
+    alt="path_planner 3"
+    style={{ maxWidth: "100%", borderRadius: "8px" }}
+  />
+</div>
+
+---
+
+## 5. Suivi de Chemin (Path Following)
+
+Le suivi de chemin est réalisé dans le nœud `path_follower_node.py`.
+
+### Fonctionnement
+
+Le nœud reçoit :
+
+- La séquence de positions via `/planned_path`
+- La position actuelle via `/odom`
+
+### Stratégie de suivi
+
+1. **Réalignement** : Si l'angle entre la direction actuelle et la cible est trop important, le robot pivote
+2. **Avancement** : Si l'angle est faible, le robot avance
+3. **Tolérance** : 20 cm pour considérer qu'un waypoint est atteint
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Contenu du fichier path_follower_node.py</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/4.png"
+    alt="path_follower 1"
+    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/5.png"
+    alt="path_follower 2"
+    style={{ maxWidth: "100%", borderRadius: "8px", marginBottom: "1rem" }}
+  />
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/6.png"
+    alt="path_follower 3"
+    style={{ maxWidth: "100%", borderRadius: "8px" }}
+  />
+</div>
+
+---
+
+## 6. Évitement d'Obstacles
+
+L'évitement d'obstacles utilise un capteur LIDAR simulé publiant sur le topic `/scan`.
+
+### Caractéristiques
+
+- **Champ de vision** : ~180°
+- **Zone de détection frontale** : ±15° autour de l'axe avant
+- **Distance de sécurité** : 0.4 m
+- **Action** : Arrêt immédiat si obstacle détecté
+
+### Type de message
+
+`sensor_msgs/LaserScan` fournissant les distances pour chaque angle.
+
+<InfoCard type="info" title="Amélioration possible" icon="💡">
+  Ce système pourrait être amélioré avec une replanification dynamique ou un
+  algorithme de contournement automatique.
+</InfoCard>
+
+---
+
+## 7. Simulation & Visualisation {#visualisation}
+
+### Gazebo Classic
+
+La simulation est réalisée dans un monde appelé `maze_4_metal_6x6.world`, représentant un labyrinthe avec :
+
+- Couloirs étroits
+- Intersections multiples
+- Position initiale définie dans `simulation.launch.py`
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Visualisation dans Gazebo</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/2.png"
+    alt="Gazebo simulation"
+    style={{
+      maxWidth: "100%",
+      borderRadius: "8px",
+      boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+    }}
+  />
+</div>
+
+### RViz2
+
+Visualisation en temps réel de :
+
+- `/scan` (laser)
+- `/odom` (odométrie)
+- `/planned_path` (chemin généré)
+- Modèle URDF du robot
+- TF (transformations)
+
+<InfoCard type="warning" title="Configuration importante" icon="⚙️">
+  Configurer le `Fixed Frame` en `odom` pour garantir une visualisation
+  cohérente.
+</InfoCard>
+
+---
+
+## 8. Lancement {#lancement}
+
+### Lancement complet
+
+Le système peut être démarré avec un seul fichier :
+
+```bash
+ros2 launch pathfinding_robot simulation.launch.py
+```
+
+Ce fichier regroupe tous les composants :
+
+- Insertion du robot dans Gazebo
+- Démarrage des nœuds de planification
+- Suivi et évitement
+
+### Lancement individuel des nœuds
+
+Pour des tests ciblés :
+
+```bash
+# Planificateur de chemin
+ros2 run pathfinding_robot path_planner
+
+# Suiveur de chemin
+ros2 run pathfinding_robot path_follower
+```
+
+<InfoCard type="info" title="Conseil" icon="💡">
+  Assurez-vous que Gazebo est bien lancé et que le robot est chargé avant
+  d'activer ces composants manuellement.
+</InfoCard>
+
+---
+
+## 9. Difficultés Rencontrées & Solutions {#problemes}
+
+### Problème 1 : Écran noir dans RViz2
+
+**Symptôme** : L'écran RViz2 reste noir, ne montrant que le quadrillage.
+
+**Solution** : Configurer correctement le champ `Fixed Frame` en `odom`.
+
+### Problème 2 : Absence de chemin A\*
+
+**Symptôme** : L'algorithme A\* ne retourne aucun chemin.
+
+**Cause** : Mauvais positionnement initial du robot (hors de la grille virtuelle).
+
+**Solution** : Ajuster les coordonnées `x_init` et `y_init` dans le fichier de lancement.
+
+---
+
+## 10. Visualisation recommandée dans RViz2
+
+### Configuration optimale
+
+<Table
+  headers={["Élément", "Type", "Description"]}
+  data={[
+    ["Fixed Frame", "odom", "Cohérence temporelle des données"],
+    ["RobotModel", "Display", "Structure du TekBot et liaisons"],
+    ["LaserScan", "Display", "Mesures LIDAR en temps réel"],
+    ["Path", "Display", "Waypoints à suivre"],
+    ["TF", "Display", "Transformations entre frames"],
+    ["Odometry", "Display", "Position et orientation calculée"],
+  ]}
+/>
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <p>
+    <strong>Visualisation dans RViz2</strong>
+  </p>
+  <img
+    src="/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/1png.png"
+    alt="RViz visualization"
+    style={{
+      maxWidth: "100%",
+      borderRadius: "8px",
+      boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+    }}
+  />
+</div>
+
+---
+
+## 11. Conclusion & Améliorations Possibles
+
+Ce projet de navigation autonome avec ROS 2 a permis de mettre en œuvre l'ensemble des briques fonctionnelles nécessaires au déplacement intelligent d'un robot mobile dans un environnement structuré.
+
+### Points forts
+
+✅ Implémentation complète de A\* pour la planification  
+✅ Suivi de chemin efficace avec évitement d'obstacles  
+✅ Séparation modulaire des composants ROS 2  
+✅ Visualisation complète Gazebo + RViz2
+
+### Améliorations possibles
+
+<FeatureGrid
+  items={[
+    {
+      icon: "🔄",
+      title: "Replanification dynamique",
+      description: "Adaptation en temps réel",
+    },
+    {
+      icon: "🧭",
+      title: "Intégration nav2",
+      description: "Stack de navigation complète",
+    },
+    { icon: "🗺️", title: "SLAM", description: "Avec slam_toolbox" },
+    {
+      icon: "🎯",
+      title: "Optimisation",
+      description: "Performance et robustesse",
+    },
+  ]}
+/>
+
+### Ressources
+
+- 🎥 [Vidéo de démonstration](/Documentation-TRC2k25-TEAM-ROBOSTIM/img/ros/vid.mp4)
+- 📚 [Documentation ROS 2 officielle](https://docs.ros.org/en/humble/)
+
+---
+
+<div
+  style={{
+    textAlign: "center",
+    padding: "2rem",
+    background: "var(--ifm-color-emphasis-100)",
+    borderRadius: "8px",
+    marginTop: "3rem",
+  }}
+>
+  <p style={{ margin: 0, fontSize: "0.9rem" }}>
+    © 2025 Documentation technique des tests en ROS - Team ROBOSTIM 🏆 TRC 25
+  </p>
+</div>

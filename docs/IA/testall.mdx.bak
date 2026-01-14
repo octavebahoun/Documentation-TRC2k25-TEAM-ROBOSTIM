@@ -1,0 +1,332 @@
+---
+id: ia-test1
+slug: Test1
+title: "Test 1 — Classification d'images"
+sidebar_label: Test 1
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Objectif du test" icon="📷">
+  Développer et tester un modèle de classification d'images pour la
+  reconnaissance d'objets dans notre environnement robotique.
+</InfoCard>
+
+### 🎯 Critères de réussite
+
+- **Précision** : >95% sur le dataset de test
+- **Temps d'inférence** : &lt;100ms par image
+- **Robustesse** : >90% sur données bruitées
+- **Généralisation** : >85% sur données non vues
+
+### 🛠️ Environnement technique
+
+<FeatureGrid
+  items={[
+    { icon: "🔥", title: "TensorFlow", description: "v2.13.0" },
+    { icon: "🧠", title: "Keras", description: "v2.13.1" },
+    { icon: "👁️", title: "OpenCV", description: "v4.8.0" },
+    { icon: "📊", title: "NumPy", description: "v1.24.3" },
+  ]}
+/>
+
+### 📊 Procédure de test
+
+#### Étape 1 : Préparation des données
+
+```python
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import cv2
+
+# Configuration des paramètres
+IMG_SIZE = 224
+BATCH_SIZE = 32
+
+def load_dataset(data_path):
+    # Chargement et préprocessing des images
+    pass
+```
+
+#### Étape 2 : Architecture du modèle (MobileNetV2)
+
+```python
+def create_model(input_shape, num_classes):
+    base_model = keras.applications.MobileNetV2(
+        input_shape=input_shape,
+        include_top=False,
+        weights='imagenet'
+    )
+    base_model.trainable = False
+
+    model = keras.Sequential([
+        base_model,
+        keras.layers.GlobalAveragePooling2D(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(num_classes, activation='softmax')
+    ])
+    return model
+```
+
+### 📈 Résultats attendus
+
+<Table
+  headers={["Métrique", "Objectif", "Statut"]}
+  data={[
+    ["Accuracy", ">95%", "✅"],
+    ["Precision", ">94%", "✅"],
+    ["Recall", ">93%", "✅"],
+    ["F1-Score", ">94%", "✅"],
+  ]}
+/>
+
+---
+
+_Test réalisé le : Octobre 2025_
+_Responsable : Pôle IA_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+id: ia-test2
+slug: Test2
+title: "Test 2 — Introduction à ROS 2"
+sidebar_label: Test 2
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🛰️">
+  Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2,
+  création de nœuds, publication/abonnement de topics, et utilisation des
+  services.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des systèmes robotiques distribués. Vous devrez créer des nœuds ROS 2 capables de communiquer via topics et services.
+
+### Concepts ROS 2
+
+<FeatureGrid
+  items={[
+    { icon: "📡", title: "Topics", description: "Publication/Subscription" },
+    { icon: "🔧", title: "Services", description: "Requête/Réponse" },
+    { icon: "🗺️", title: "TF", description: "Transformations" },
+    { icon: "📦", title: "Packages", description: "Organisation" },
+    { icon: "🛠️", title: "Nodes", description: "Processus ROS 2" },
+  ]}
+/>
+
+### Nœuds à créer
+
+<Table
+  headers={["Nœud", "Topic/Service", "Type", "Description"]}
+  data={[
+    ["publisher_node", "/chatter", "std_msgs/String", "Publication"],
+    ["subscriber_node", "/chatter", "std_msgs/String", "Réception"],
+    [
+      "service_server",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Service",
+    ],
+    [
+      "service_client",
+      "/add_two_ints",
+      "example_interfaces/AddTwoInts",
+      "Client",
+    ],
+  ]}
+/>
+
+### Critères de notation (100 points)
+
+1. **Compréhension (25 points)** : Maîtrise des concepts ROS 2
+2. **Implémentation (40 points)** : Nœuds fonctionnels
+3. **Documentation (20 points)** : README, commentaires
+4. **Tests (10 points)** : Validation
+5. **Présentation (5 points)** : Démonstration
+
+---
+
+_Pour plus de détails, consultez la documentation ROS 2 officielle._
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+id: ia-test3
+slug: Test3
+title: "Test 3 — Algorithme de Pathfinding"
+sidebar_label: Test 3
+---
+
+import InfoCard from "@site/src/components/InfoCard";
+import FeatureGrid from "@site/src/components/FeatureGrid";
+import Table from "@site/src/components/Table";
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🧭">
+  Création d'un algorithme de pathfinding permettant à un robot de trouver le
+  chemin optimal entre un point de départ et un point d'arrivée dans un
+  environnement avec obstacles.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à implémenter des algorithmes de recherche de chemin. Vous devrez créer un algorithme capable de trouver le chemin le plus court ou le plus efficace dans un environnement donné.
+
+### Algorithmes possibles
+
+<FeatureGrid
+  items={[
+    {
+      icon: "⭐",
+      title: "A*",
+      description: "Algorithme A* (A-star) - Optimal et efficace",
+    },
+    {
+      icon: "🌳",
+      title: "Dijkstra",
+      description: "Algorithme de Dijkstra - Plus court chemin",
+    },
+    { icon: "🔄", title: "RRT", description: "Rapidly-exploring Random Tree" },
+    { icon: "📐", title: "RRT*", description: "RRT* - Version optimisée" },
+    { icon: "🧩", title: "Autre", description: "Algorithme personnalisé" },
+  ]}
+/>
+
+### Fonctionnalités attendues
+
+<Table
+  headers={["Fonctionnalité", "Description", "Priorité"]}
+  data={[
+    ["Recherche de chemin", "Trouver un chemin valide", "Obligatoire"],
+    ["Éviter obstacles", "Détection et contournement", "Obligatoire"],
+    ["Optimisation", "Chemin le plus court/rapide", "Recommandé"],
+    ["Visualisation", "Affichage graphique du chemin", "Recommandé"],
+    ["Temps réel", "Calcul rapide du chemin", "Bonus"],
+  ]}
+/>
+
+### Structure de données
+
+```python
+class Node:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.g_cost = 0  # Coût depuis le départ
+        self.h_cost = 0  # Heuristique vers l'arrivée
+        self.f_cost = 0  # Coût total (g + h)
+        self.parent = None
+```
+
+### Critères de notation (100 points)
+
+1. **Algorithme (40 points)** : Implémentation correcte, optimisation
+2. **Fonctionnement (30 points)** : Trouve un chemin valide, évite obstacles
+3. **Code (15 points)** : Qualité, lisibilité, commentaires
+4. **Documentation (10 points)** : Explications, schémas, complexité
+5. **Présentation (5 points)** : Démonstration, visualisation
+
+### Exemple A\*
+
+```python
+def a_star(start, goal, grid):
+    open_set = [start]
+    closed_set = []
+
+    while open_set:
+        current = min(open_set, key=lambda n: n.f_cost)
+        if current == goal:
+            return reconstruct_path(current)
+
+        open_set.remove(current)
+        closed_set.append(current)
+
+        for neighbor in get_neighbors(current, grid):
+            if neighbor in closed_set:
+                continue
+
+            tentative_g = current.g_cost + distance(current, neighbor)
+            if neighbor not in open_set:
+                open_set.append(neighbor)
+            elif tentative_g >= neighbor.g_cost:
+                continue
+
+            neighbor.parent = current
+            neighbor.g_cost = tentative_g
+            neighbor.h_cost = heuristic(neighbor, goal)
+            neighbor.f_cost = neighbor.g_cost + neighbor.h_cost
+```
+
+---
+
+_Pour plus de détails, consultez la documentation complète._

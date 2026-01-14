@@ -6,87 +6,26 @@ sidebar_label: Test 1
 ---
 
 import InfoCard from "@site/src/components/InfoCard";
-import FeatureGrid from "@site/src/components/FeatureGrid";
-import Table from "@site/src/components/Table";
 
-## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+## 🚧 Page en maintenance
 
-<InfoCard type="info" title="Objectif du test" icon="📷">
-  Développer et tester un modèle de classification d'images pour la
-  reconnaissance d'objets dans notre environnement robotique.
+<InfoCard type="warning" title="Contenu en cours de développement" icon="⚠️">
+  Cette page est actuellement en cours de mise à jour. Le contenu sera bientôt
+  disponible.
 </InfoCard>
 
-### 🎯 Critères de réussite
+### 📝 Informations
 
-- **Précision** : >95% sur le dataset de test
-- **Temps d'inférence** : &lt;100ms par image
-- **Robustesse** : >90% sur données bruitées
-- **Généralisation** : >85% sur données non vues
+Cette section de documentation est en cours de rédaction par le **Pôle IA**. Nous travaillons activement à vous fournir un contenu de qualité sur la classification d'images et les modèles d'apprentissage automatique utilisés dans notre projet robotique.
 
-### 🛠️ Environnement technique
+### 🔜 Prochainement disponible
 
-<FeatureGrid
-  items={[
-    { icon: "🔥", title: "TensorFlow", description: "v2.13.0" },
-    { icon: "🧠", title: "Keras", description: "v2.13.1" },
-    { icon: "👁️", title: "OpenCV", description: "v4.8.0" },
-    { icon: "📊", title: "NumPy", description: "v1.24.3" },
-  ]}
-/>
-
-### 📊 Procédure de test
-
-#### Étape 1 : Préparation des données
-
-```python
-import tensorflow as tf
-from tensorflow import keras
-import numpy as np
-import cv2
-
-# Configuration des paramètres
-IMG_SIZE = 224
-BATCH_SIZE = 32
-
-def load_dataset(data_path):
-    # Chargement et préprocessing des images
-    pass
-```
-
-#### Étape 2 : Architecture du modèle (MobileNetV2)
-
-```python
-def create_model(input_shape, num_classes):
-    base_model = keras.applications.MobileNetV2(
-        input_shape=input_shape,
-        include_top=False,
-        weights='imagenet'
-    )
-    base_model.trainable = False
-
-    model = keras.Sequential([
-        base_model,
-        keras.layers.GlobalAveragePooling2D(),
-        keras.layers.Dropout(0.2),
-        keras.layers.Dense(128, activation='relu'),
-        keras.layers.Dense(num_classes, activation='softmax')
-    ])
-    return model
-```
-
-### 📈 Résultats attendus
-
-<Table
-  headers={["Métrique", "Objectif", "Statut"]}
-  data={[
-    ["Accuracy", ">95%", "✅"],
-    ["Precision", ">94%", "✅"],
-    ["Recall", ">93%", "✅"],
-    ["F1-Score", ">94%", "✅"],
-  ]}
-/>
+- Architecture du modèle de classification
+- Procédures de test et validation
+- Résultats et métriques de performance
+- Guide d'utilisation et d'intégration
 
 ---
 
-_Test réalisé le : Octobre 2025_
-_Responsable : Pôle IA_
+_Dernière mise à jour : Janvier 2026_  
+_Responsable : Pôle IA - Team ROBOSTIM_
